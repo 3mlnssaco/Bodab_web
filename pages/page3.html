@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>비전</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportique</title>
+    
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="../css/globals.css">  <!-- 전역 스타일 -->
+    <link rel="stylesheet" href="../css/subpage.css">
+    <link rel="stylesheet" href="../css/navbar.css"> <!-- navbar style -->
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="../js/animation.js" defer></script>  <!-- 애니메이션 관련 JS -->
+    <script src="../js/language.js" defer></script>   <!-- 언어 변경 기능 JS -->
+    <script src="../js/navbar.js" defer></script>    <!-- navbar 관련 JS -->
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="logo" data-lang="logo">보답</a>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="page1.html" class="dropdown-btn" data-lang="about">소개</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="page1.html" data-lang="vision">비전</a></li>
+                        <li><a href="page2.html" data-lang="greeting">인사말</a></li>
+                        <li><a href="page3.html" data-lang="team">조직</a></li>
+                    </ul>
+                </li>
+                <li><a href="social.html" data-lang="socialValue">사회적 가치</a></li>
+                <li class="dropdown-program">
+                    <a href="page4.html" class="dropdown-btn" data-lang="programs">프로그램</a>
+                    <ul class="dropdown-program-menu">
+                        <li><a href="page4.html" data-lang="door">활동</a></li>
+                        <li><a href="page5.html" data-lang="healthcare">헬스케어</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html" data-lang="news">개발소식</a></li>
+                <li><a href="contact.html" data-lang="contact">문의사항</a></li>
+            </ul>
+        </nav>
+        <button id="lang-toggle">🇰🇷 한국어</button>
+    </header>
+
+    <section class="first-vision">
+        <div class="hero-track">
+            <img src="../image/bodabstrtureimg.jpg" alt="vision image">
+            <h1 class="hero-text" data-lang="team">조직</h1>
+        </div>
+    </section>
+    <section>
+        <div class="first-vision-text">
+            <h1 data-lang="team">조직</h1>
+            <p data-lang="teamsub1">
+                보답은 시니어의 건강과 행복을 위한 통합 플랫폼 구축을 목표로 다양한 분야의 전문가들이 함께하고 있습니다.<br>
+                기획, 서비스 개발, 헬스케어, 커뮤니티 운영 등 각 분야별 팀이 유기적으로 협력하며<br>
+                시니어 맞춤형 서비스를 제공하기 위해 노력하고 있습니다.
+            </p>
+        </div>
+        <div class="second-vision-text">
+            <p data-lang="teamsub2">
+              우리 팀은 서로의 전문성을 존중하며 유기적으로 협력합니다.<br>
+              기술의 복잡함은 줄이고, 따뜻한 사용 경험은 더하며<br>
+              시니어 한 분 한 분이 건강한 일상을 이어갈 수 있도록<br>
+              신뢰받는 디지털 동반자로 성장해 나가고 있습니다.
+            </p>
+        </div>
+        <div class="third-vision-text">
+            <p data-lang="teamsub3">
+              우리는 사람을 가장 잘 이해하는 기술을 만들고자 합니다.<br>
+              보답은 시니어의 일상에 자연스럽게 녹아드는 서비스를 통해,<br>
+              건강 관리가 어렵지 않고 따뜻하게 느껴지도록 돕고 있습니다.<br>
+              누구나 소외되지 않고 함께하는 삶을 위해, 기술 너머의 배려를 담아갑니다.
+            </p>
+        </div>
+    </section>
+    
+    <!-- 타임라인 섹션 추가 -->
+    <section class="timeline">
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>2024.07</h3>
+          <p>초기앱 Sportique 앱 계획<br>윤영준 팀원 합류<br>주요개발</p>
+        </div>
+      </div>
+    
+      <div class="timeline-item right">
+        <div class="content">
+          <h3>2024.11</h3>
+          <p>Sportique 앱 서비스 계획<br>프로젝트 구체화</p>
+        </div>
+      </div>
+    
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>2024.12</h3>
+          <p>기업 명을 '보답'으로 변경<br>신재혁 팀원 합류<br>새로운 디자인과 새로운 기능 추가</p>
+        </div>
+      </div>
+    
+      <div class="timeline-item right">
+        <div class="content">
+          <h3>2025.02</h3>
+          <p>랜딩페이지 개발<br>프로그램 고도화<br>구체적인 서비스 기획</p>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="content">
+          <h3>2025.04</h3>
+          <p>앱 개발 착수<br>프로토타입 제작</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="content">
+          <h3>2025.07</h3>
+          <p>일반 서비스 시제품 출시 예정<br>오프라인 서비스 시행 예정</p>
+        </div>
+      </div>
+    </section>
+    
+    
+</body>
+</html>

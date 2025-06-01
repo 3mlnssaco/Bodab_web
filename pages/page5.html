@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>비전</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportique</title>
+    
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="../css/globals.css">  <!-- 전역 스타일 -->
+    <link rel="stylesheet" href="../css/subpage.css">
+    <link rel="stylesheet" href="../css/navbar.css"> <!-- navbar style -->
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="../js/animation.js" defer></script>  <!-- 애니메이션 관련 JS -->
+    <script src="../js/language.js" defer></script>   <!-- 언어 변경 기능 JS -->
+    <script src="../js/navbar.js" defer></script>    <!-- navbar 관련 JS -->
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="logo" data-lang="logo">보답</a>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="page1.html" class="dropdown-btn" data-lang="about">소개</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="page1.html" data-lang="vision">비전</a></li>
+                        <li><a href="page2.html" data-lang="greeting">인사말</a></li>
+                        <li><a href="page3.html" data-lang="team">조직</a></li>
+                    </ul>
+                </li>
+                <li><a href="social.html" data-lang="socialValue">사회적 가치</a></li>
+                <li class="dropdown-program">
+                    <a href="page4.html" class="dropdown-btn" data-lang="programs">프로그램</a>
+                    <ul class="dropdown-program-menu">
+                        <li><a href="page4.html" data-lang="door">활동</a></li>
+                        <li><a href="page5.html" data-lang="healthcare">헬스케어</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html" data-lang="news">개발소식</a></li>
+                <li><a href="contact.html" data-lang="contact">문의사항</a></li>
+            </ul>
+        </nav>
+        <button id="lang-toggle">🇰🇷 한국어</button>
+    </header>
+
+    <section class="first-vision">
+        <div class="hero-track">
+            <img src="../image/bodabhealthcare.jpg" alt="vision image">
+            <h1 class="hero-text" data-lang="healthcare">헬스케어</h1>
+        </div>
+    </section>
+    <section>
+        <div class="first-vision-text">
+            <h1 data-lang="healthcare">헬스케어</h1>
+            <p data-lang="healthcaresub1">
+                모바일을 통해 AI 기반 건강 설문을 통해 사용자의 현재 건강 상태를 분석하고,<br>
+                그 결과에 따라 개인에게 맞는 운동, 스트레칭, 수면 습관 등을 정밀하게 추천해드립니다.<br>
+                간단한 문답 형식의 설문만으로도 나의 몸 상태를 파악할 수 있으며,<br>
+                이후 챗봇 상담 기능을 통해 건강에 대한 궁금증을 실시간으로 질문하고 쉽게 해결할 수 있습니다.
+            </p>
+        </div>
+        <div class="second-vision-text">
+            <p data-lang="healthcaresub2">
+                사용자에게 맞춤화된 헬스 관련 영상 콘텐츠를 제공하여,<br>
+                집에서도 전문가의 가이드를 따라 안전하고 효과적으로 운동할 수 있도록 도와드립니다.
+            </p>
+        </div>
+        <div class="third-vision-text">
+            <p data-lang="healthcaresub3">
+                운동을 할 때마다 ‘운동 점수’가 기록되어 내 건강이 어떻게 변하고 있는지 시각적으로 확인할 수 있고,<br>
+                이 점수를 통해 성취감과 동기부여를 얻을 수 있습니다.
+            </p>
+        </div>
+        <div class="fourth-vision-text">
+            <p data-lang="healthcaresub4">
+                단순한 정보 제공에 그치지 않고, 매일의 작은 변화와 성과를 직접 체감할 수 있도록 설계된 이 서비스는<br>
+                사용자의 자발적인 건강 관리 습관 형성을 이끌며, 더 나은 내일을 위한 꾸준한 건강 증진을 지원합니다.
+            </p>
+        </div>
+    </section>
+</body>
+</html>

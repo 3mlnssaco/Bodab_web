@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>비전</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportique</title>
+    
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="../css/globals.css">  <!-- 전역 스타일 -->
+    <link rel="stylesheet" href="../css/subpage.css">
+    <link rel="stylesheet" href="../css/navbar.css"> <!-- navbar style -->
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="../js/animation.js" defer></script>  <!-- 애니메이션 관련 JS -->
+    <script src="../js/language.js" defer></script>   <!-- 언어 변경 기능 JS -->
+    <script src="../js/navbar.js" defer></script>    <!-- navbar 관련 JS -->
+</head>
+<body>
+    <header class="navbar">
+        <a href="../index.html" class="logo" data-lang="logo">보답</a>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="page1.html" class="dropdown-btn" data-lang="about">소개</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="page1.html" data-lang="vision">비전</a></li>
+                        <li><a href="page2.html" data-lang="greeting">인사말</a></li>
+                        <li><a href="page3.html" data-lang="team">조직</a></li>
+                    </ul>
+                </li>
+                <li><a href="social.html" data-lang="socialValue">사회적 가치</a></li>
+                <li class="dropdown-program">
+                    <a href="page4.html" class="dropdown-btn" data-lang="programs">프로그램</a>
+                    <ul class="dropdown-program-menu">
+                        <li><a href="page4.html" data-lang="door">활동</a></li>
+                        <li><a href="page5.html" data-lang="healthcare">헬스케어</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html" data-lang="news">개발소식</a></li>
+                <li><a href="contact.html" data-lang="contact">문의사항</a></li>
+            </ul>
+        </nav>
+        <button id="lang-toggle">🇰🇷 한국어</button>
+    </header>
+
+    <section class="first-vision">
+        <div class="hero-track">
+            <img src="../image/bodabcontact.jpg" alt="vision image">
+            <h1 class="hero-text" data-lang="contact">문의사항</h1>
+        </div>
+    </section>
+    <section>
+        <div class="first-vision-text">
+            <h1 data-lang="contact">문의사항</h1>
+            <p data-lang="contactsub1">
+                문의사항이 있으신가요?<br>
+                서비스 이용 중 궁금한 점이나 제휴 관련 문의가 있으시면 아래 연락처로 언제든지 문의해 주세요.<br>
+                빠르게 확인 후 정성껏 답변드리겠습니다.
+            </p>
+            <p data-lang="contactsub2">
+                <br>이메일:0000@0000.com
+            </p>
+            <p data-lang="contactsub3">
+                <br>전화:000-0000-0000
+            </p>
+            <p data-lang="contactsub4">
+                <br>제휴문의:0000@0000.com
+            </p>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,169 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* 스크롤 시 스타일 */
+.navbar.scrolled {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 로고, 메뉴, 언어버튼 기본 스타일 */
+.navbar .logo,
+.navbar #lang-toggle,
+.navbar nav ul li a {
+    color: var(--text1-color);
+    transition: color 0.3s ease;
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 80px;
+    height: 80px;
+    display: inline-block;
+    vertical-align: middle;
+    user-select: none;
+}
+
+/* 스크롤 시 색상 */
+.navbar.scrolled .logo,
+.navbar.scrolled #lang-toggle,
+.navbar.scrolled nav ul li a {
+    color: #000 !important;
+}
+
+/* 로고 */
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    flex: 1.5;
+    padding-left: 100px;
+    text-decoration: none;
+}
+
+/* 메뉴 리스트 */
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* 메뉴 항목 */
+.navbar nav ul li {
+    position: relative;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: inherit;
+    padding: 0 10px;
+    user-select: none;
+}
+
+/* 언어 버튼 */
+.navbar #lang-toggle {
+    background: none;
+    border: none;
+    color: var(--text1-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-family: var(--font-main);
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 80px;
+    line-height: 80px;
+}
+
+/* ✅ 드롭다운 전체 wrapper */
+.navbar .dropdown-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(98, 98, 98, 0.136);
+    box-shadow: 0 8px 16px rgba(135, 135, 135, 0.551);
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    padding: 20px 0;
+    z-index: 999;
+    transition: all 0.3s ease;
+    min-width: 300px;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    padding-left: 470px;
+
+}
+
+/* 드롭다운 활성화 */
+.navbar .dropdown-wrapper.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    
+}
+
+/* 드롭다운 컬럼 */
+.dropdown-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* 드롭다운 텍스트 기본 */
+.dropdown-column a,
+.dropdown-column strong {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+/* 드롭다운 hover 시 색상 */
+.dropdown-column a:hover {
+    color: #007acc;
+}
+
+/* 스크롤 상태에서 드롭다운 스타일 */
+.navbar.scrolled .dropdown-wrapper {
+    background-color: #fff;
+}
+
+.navbar.scrolled .dropdown-wrapper a,
+.navbar.scrolled .dropdown-wrapper strong {
+    color: black;
+}
+
+.navbar.scrolled .dropdown-wrapper a:hover {
+    color: #007acc;
+}
+
+/* ✅ 기존 hover 드롭다운 무력화 */
+.navbar nav ul li:hover .dropdown-menu,
+.navbar nav ul li:hover .dropdown-program-menu {
+    display: none !important;
+}
