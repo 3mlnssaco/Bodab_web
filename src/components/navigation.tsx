@@ -13,26 +13,6 @@ export function Navigation() {
     setLanguage((prev) => (prev === "ko" ? "en" : "ko"));
   };
 
-  const handleScrollToSection = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string
-  ) => {
-    e.preventDefault();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const navHeight = 64; // Height of fixed navigation (h-16 = 64px)
-      const sectionRect = section.getBoundingClientRect();
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const targetPosition = sectionRect.top + scrollTop - navHeight;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      });
-      setMobileMenuOpen(false);
-    }
-  };
-
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     navigate("/");
@@ -62,20 +42,18 @@ export function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a
-              href="#xrpl"
-              onClick={(e) => handleScrollToSection(e, "xrpl")}
+            <Link
+              to="/uniqdata"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
-              XRPL
-            </a>
-            <a
-              href="#rewards"
-              onClick={(e) => handleScrollToSection(e, "rewards")}
+              UniqData
+            </Link>
+            <Link
+              to="/bodab"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
               보답
-            </a>
+            </Link>
 
             <Button
               variant="ghost"
@@ -117,20 +95,20 @@ export function Navigation() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
-              <a
-                href="#xrpl"
-                onClick={(e) => handleScrollToSection(e, "xrpl")}
+              <Link
+                to="/uniqdata"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
-                XRPL
-              </a>
-              <a
-                href="#rewards"
-                onClick={(e) => handleScrollToSection(e, "rewards")}
+                UniqData
+              </Link>
+              <Link
+                to="/bodab"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 보답
-              </a>
+              </Link>
             </div>
           </div>
         )}

@@ -28,18 +28,22 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://uniqdata.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  XRPL 플랫폼
+                  UniqData 웹
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://uniqdata.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  데이터 마켓플레이스
+                  UniqData 앱
                 </a>
               </li>
             </ul>

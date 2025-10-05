@@ -29,7 +29,7 @@ export function RewardsSection() {
   return (
     <section
       ref={sectionRef}
-      id="rewards"
+      id="bodab"
       className="py-24 bg-primary text-primary-foreground"
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -47,28 +47,41 @@ export function RewardsSection() {
               className="object-contain animate-float"
             />
           </div>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-8 h-8 bg-primary-foreground rounded-lg flex items-center justify-center">
+              <span className="text-primary font-bold text-lg">S</span>
+            </div>
+            <span className="text-lg text-primary-foreground/80">Sportique</span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">보답 (Bodab)</h2>
           <p className="text-xl mb-8 text-primary-foreground/90 leading-relaxed">
-            AI 기반 통합 시니어 케어 & 모니터링 솔루션으로<br />
-            고령화 시대의 건강한 돌봄을 제공합니다
+            AI 기반 실버 헬스케어 앱으로<br />
+            데이터 측정과 건강 분석을 통한<br />
+            맞춤형 시니어 케어를 제공합니다
           </p>
+          <div className="bg-primary-foreground/10 rounded-2xl p-6 mb-8 border border-primary-foreground/20">
+            <p className="text-primary-foreground/90 text-lg">
+              💡 <span className="font-semibold">수집된 건강 데이터는 UniqData로 전송되어</span><br />
+              데이터 주권과 수익화의 기반이 됩니다
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
               {
                 icon: "🤖",
-                title: "RAG 기반 AI 의료 상담",
-                description: "과거 진료기록 접근, 맞춤형 질문 생성, 음성 인식 기능",
+                title: "AI 건강 분석",
+                description: "RAG 기반 의료 상담, 과거 진료기록 분석, 맞춤형 건강 추천",
               },
               {
                 icon: "📊",
-                title: "AI 건강 레포트 작성",
-                description: "주요 통증 및 증상 패턴 분석, 진료과 추천 및 예약",
+                title: "실시간 데이터 측정",
+                description: "웨어러블 기기 연동, 24/7 생체신호 모니터링, 건강 상태 추적",
               },
               {
-                icon: "⌚",
-                title: "웨어러블 기기 연동",
-                description: "24/7 생체신호 모니터링, AI 예방 건강관리",
+                icon: "👴",
+                title: "시니어 케어 솔루션",
+                description: "고령화 시대 맞춤 돌봄, 응급상황 대응, 가족 안심 서비스",
               },
             ].map((reward, index) => (
               <div
