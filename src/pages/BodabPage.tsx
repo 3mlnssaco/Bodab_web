@@ -27,9 +27,7 @@ export default function BodabPage() {
             </div>
             <div className="text-7xl mb-6 animate-float">💚</div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in text-foreground">
-              보답 (Bodab)
-              <br />
-              Healthcare Agent App
+              보답 (Bodab) Healthcare Agent App
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground animate-fade-in">
               AI 기반의 통합 시니어 케어 & 모니터링 솔루션

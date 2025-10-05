@@ -68,9 +68,7 @@ export function ServicesSection() {
                 </div>
                 <h3 className="text-3xl font-bold mb-4">보답 (Bodab)</h3>
                 <p className="text-lg text-primary-foreground/90 mb-6 leading-relaxed">
-                  AI 기반 실버 헬스케어 앱으로<br />
-                  데이터 측정과 건강 분석을 통한<br />
-                  맞춤형 시니어 케어를 제공합니다
+                  AI 기반 실버 헬스케어 앱으로 데이터 측정과 건강 분석을 통한 맞춤형 시니어 케어를 제공합니다
                 </p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3">
@@ -121,9 +119,7 @@ export function ServicesSection() {
                 </div>
                 <h3 className="text-3xl font-bold mb-4">UniqData</h3>
                 <p className="text-lg text-secondary-foreground/90 mb-6 leading-relaxed">
-                  글로벌 데이터 마켓플레이스로<br />
-                  건강데이터 주권을 실현하고<br />
-                  NFT와 영지식 증명으로 수익화합니다
+                  글로벌 데이터 마켓플레이스로 건강데이터 주권을 실현하고 NFT와 영지식 증명으로 수익화합니다
                 </p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3">
