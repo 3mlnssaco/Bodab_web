@@ -1,0 +1,372 @@
+/* UniQdata Page Specific Styles */
+.uniq-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    text-align: center;
+}
+
+.uniq-hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.uniq-hero-content h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.uniq-hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+.value-prop {
+    padding: 80px 0;
+    background: white;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.value-card {
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    background: #f8f9fa;
+    transition: all 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
+    color: #1a202c;
+    margin-bottom: 15px;
+}
+
+.marketplace {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.process-step {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 180px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.process-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.process-step h3 {
+    font-size: 1.1rem;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.process-step p {
+    font-size: 0.9rem;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+.flow-arrow {
+    font-size: 30px;
+    color: #3b82f6;
+}
+
+.data-types {
+    padding: 80px 0;
+    background: white;
+}
+
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.data-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 4px solid #3b82f6;
+}
+
+.data-card h3 {
+    font-size: 1.3rem;
+    color: #1a202c;
+    margin-bottom: 20px;
+}
+
+.data-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.data-card li {
+    padding: 8px 0;
+    color: #4a5568;
+    position: relative;
+    padding-left: 20px;
+}
+
+.data-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+}
+
+.security {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.security-features {
+    max-width: 800px;
+    margin: 50px auto 0;
+}
+
+.security-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.security-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+}
+
+.security-content h3 {
+    font-size: 1.4rem;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.security-content p {
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.revenue {
+    padding: 80px 0;
+    background: white;
+}
+
+.revenue-breakdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.revenue-chart {
+    display: flex;
+    gap: 30px;
+    align-items: flex-end;
+}
+
+.chart-item {
+    flex: 1;
+    text-align: center;
+}
+
+.chart-bar {
+    background: linear-gradient(to top, #3b82f6, #8b5cf6);
+    border-radius: 10px 10px 0 0;
+    height: calc(var(--percentage) * 3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.chart-item p {
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.revenue-info h3 {
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin-bottom: 15px;
+}
+
+.revenue-info p {
+    color: #4a5568;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.revenue-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.revenue-info li {
+    padding: 10px 0;
+    color: #4a5568;
+    position: relative;
+    padding-left: 25px;
+}
+
+.revenue-info li::before {
+    content: '💎';
+    position: absolute;
+    left: 0;
+}
+
+.partners {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-top: -20px;
+    margin-bottom: 50px;
+}
+
+.partner-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.partner-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.partner-card h3 {
+    font-size: 1.3rem;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.partner-card p {
+    color: #4a5568;
+}
+
+.uniq-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    text-align: center;
+    color: white;
+}
+
+.uniq-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.uniq-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.uniq-cta .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.uniq-cta .cta-button {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.uniq-cta .cta-button.primary {
+    background: white;
+    color: #3b82f6;
+}
+
+.uniq-cta .cta-button.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.uniq-cta .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu a.active {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .process-flow {
+        flex-direction: column;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .revenue-breakdown {
+        grid-template-columns: 1fr;
+    }
+
+    .uniq-cta .cta-buttons {
+        flex-direction: column;
+    }
+}

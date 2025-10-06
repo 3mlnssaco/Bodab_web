@@ -1,0 +1,584 @@
+/* Vision/Scaleup Page Specific Styles */
+
+/* Vision Hero */
+.vision-hero {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #2d3436;
+}
+
+/* Dual Perspective Section */
+.dual-perspective {
+    padding: 80px 0;
+    background: white;
+}
+
+.perspective-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.perspective-card {
+    background: #f8f9fa;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.perspective-card.child-view {
+    border-top: 4px solid #2563eb;
+}
+
+.perspective-card.parent-view {
+    border-top: 4px solid #10b981;
+}
+
+.perspective-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.perspective-header h3 {
+    font-size: 1.5rem;
+    color: #2d3436;
+}
+
+.perspective-emoji {
+    font-size: 2.5rem;
+}
+
+.worry-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.worry-item:last-child {
+    border-bottom: none;
+}
+
+.worry-item p {
+    color: #636e72;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.connection-message {
+    text-align: center;
+    margin-top: 50px;
+    padding: 40px;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    border-radius: 20px;
+    color: white;
+}
+
+.connection-message p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Our Solution */
+.our-solution {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.solution-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.solution-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.solution-card h3 {
+    font-size: 1.5rem;
+    color: #2d3436;
+    margin-bottom: 20px;
+}
+
+.solution-detail p {
+    font-weight: 600;
+    color: #2d3436;
+    margin: 20px 0 10px;
+}
+
+.solution-detail ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.solution-detail li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #636e72;
+}
+
+.solution-detail li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+}
+
+/* Life Journey */
+.life-journey {
+    padding: 80px 0;
+    background: white;
+}
+
+.journey-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.journey-item {
+    text-align: center;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 20px;
+    position: relative;
+}
+
+.journey-age {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.journey-content h4 {
+    font-size: 1.3rem;
+    color: #2d3436;
+    margin-bottom: 10px;
+}
+
+.journey-content p {
+    color: #636e72;
+    line-height: 1.6;
+}
+
+/* Trust Message */
+.trust-message {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+}
+
+.message-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.message-content h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.message-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+/* Service Ecosystem */
+.service-ecosystem {
+    padding: 80px 0;
+    background: white;
+}
+
+.ecosystem-visual {
+    margin-top: 50px;
+    position: relative;
+    width: 700px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.eco-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 3px solid #2563eb;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.eco-center h3 {
+    font-size: 1.5rem;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.eco-center p {
+    color: #636e72;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.eco-services {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.eco-service {
+    position: absolute;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 20px 15px;
+    width: 130px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+/* Position 6 services in a perfect circle - evenly distributed */
+.eco-service[data-position="top"] {
+    /* 0 degrees - 12 o'clock */
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.eco-service[data-position="top-right"] {
+    /* 60 degrees */
+    top: 145px;
+    right: 100px;
+}
+
+.eco-service[data-position="bottom-right"] {
+    /* 120 degrees */
+    bottom: 145px;
+    right: 100px;
+}
+
+.eco-service[data-position="bottom"] {
+    /* 180 degrees - 6 o'clock */
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.eco-service[data-position="bottom-left"] {
+    /* 240 degrees */
+    bottom: 145px;
+    left: 100px;
+}
+
+.eco-service[data-position="top-left"] {
+    /* 300 degrees */
+    top: 145px;
+    left: 100px;
+}
+
+.eco-service:hover {
+    border-color: #2563eb;
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
+    z-index: 10;
+}
+
+/* Fix hover transforms for positioned elements */
+.eco-service[data-position="top"]:hover,
+.eco-service[data-position="bottom"]:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+.eco-service[data-position="top-right"]:hover,
+.eco-service[data-position="bottom-right"]:hover,
+.eco-service[data-position="bottom-left"]:hover,
+.eco-service[data-position="top-left"]:hover {
+    transform: scale(1.05);
+}
+
+.service-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.eco-service h4 {
+    font-size: 1rem;
+    color: #2d3436;
+    margin-bottom: 5px;
+}
+
+.eco-service p {
+    font-size: 0.85rem;
+    color: #636e72;
+}
+
+.ecosystem-description {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.ecosystem-description p {
+    color: #636e72;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Growth Strategy */
+.growth-strategy {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.strategy-phases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.phase {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.phase:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.phase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.phase-num {
+    background: #2563eb;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.phase-period {
+    color: #636e72;
+    font-size: 0.9rem;
+}
+
+.phase h3 {
+    font-size: 1.3rem;
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+.phase p {
+    color: #636e72;
+    line-height: 1.6;
+}
+
+/* Final Message */
+.final-message {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+}
+
+.message-box {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.message-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.message-box p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.cta-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cta-btn {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.cta-btn.primary {
+    background: white;
+    color: #2563eb;
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Selector Styles */
+.service-selector {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.service-btn {
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.service-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-color: #2563eb;
+}
+
+.btn-age {
+    font-size: 0.9rem;
+    color: #636e72;
+    margin-bottom: 10px;
+}
+
+.btn-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 5px;
+}
+
+.btn-desc {
+    font-size: 0.9rem;
+    color: #636e72;
+}
+
+.uniqdata-btn {
+    background: white;
+    border-color: #8b5cf6;
+}
+
+.uniqdata-btn .btn-title {
+    color: #8b5cf6;
+}
+
+.uniqdata-btn:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .service-selector {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .perspective-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ecosystem-visual {
+        height: auto;
+        padding: 200px 0;
+    }
+
+    .eco-service {
+        position: static;
+        transform: none;
+        margin: 20px auto;
+    }
+
+    .strategy-phases {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .service-selector {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .service-btn {
+        padding: 20px 15px;
+    }
+}
