@@ -1,0 +1,364 @@
+/* About Page Specific Styles */
+.about-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+.about-hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.about-hero-content h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.about-hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+.mission-vision {
+    padding: 80px 0;
+    background: white;
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.mv-card {
+    padding: 50px;
+    background: #f8f9fa;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.mv-card h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #764ba2;
+    margin-bottom: 10px;
+}
+
+.mv-card h3 {
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin-bottom: 20px;
+}
+
+.mv-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+}
+
+.core-values {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.value-item {
+    text-align: center;
+}
+
+.value-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #764ba2;
+    opacity: 0.2;
+    margin-bottom: 20px;
+}
+
+.value-item h3 {
+    font-size: 1.5rem;
+    color: #1a202c;
+    margin-bottom: 15px;
+}
+
+.value-item p {
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.company-story {
+    padding: 80px 0;
+    background: white;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 50px auto 0;
+    text-align: center;
+}
+
+.story-highlight {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #764ba2;
+    margin-bottom: 30px;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 20px;
+}
+
+.products {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.product-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    color: #4a5568;
+    margin-bottom: 20px;
+}
+
+.product-link {
+    color: #764ba2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.product-link:hover {
+    transform: translateX(5px);
+    display: inline-block;
+}
+
+.coming-soon {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.technology {
+    padding: 80px 0;
+    background: white;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.tech-item {
+    text-align: center;
+}
+
+.tech-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.tech-item h3 {
+    font-size: 1.3rem;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.tech-item p {
+    color: #4a5568;
+}
+
+.timeline {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.timeline-wrapper {
+    max-width: 800px;
+    margin: 50px auto 0;
+    position: relative;
+}
+
+.timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #e0e7ff;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-date {
+    flex: 0 0 45%;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #764ba2;
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+    text-align: left;
+}
+
+.timeline-content {
+    flex: 0 0 45%;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: #4a5568;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #764ba2;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.contact-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    text-align: center;
+    color: white;
+}
+
+.contact-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.contact-cta .cta-button {
+    padding: 15px 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: white;
+    color: #764ba2;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.contact-cta .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu a.active {
+    color: #764ba2;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .mv-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-wrapper::before {
+        left: 20px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 60px;
+    }
+
+    .timeline-item::after {
+        left: 20px;
+    }
+
+    .timeline-date,
+    .timeline-item:nth-child(even) .timeline-date {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content {
+        width: 100%;
+    }
+}

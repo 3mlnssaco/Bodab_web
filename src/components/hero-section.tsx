@@ -24,12 +24,13 @@ export function HeroSection() {
         <div className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] py-12 md:py-20">
           {/* Hero Content */}
           <div className="text-center mb-8 md:mb-12 animate-fade-in-up">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 md:mb-6 text-balance leading-tight">
-              Sportique의 두 가지 서비스로 건강한 미래를 만듭니다
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight">
+              <span className="block sm:inline">Sportique의 두 가지 서비스로</span>{" "}
+              <span className="block sm:inline">건강한 미래를 만듭니다</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 mb-6 md:mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
-              <span className="font-semibold">보답(Bodab)</span>으로 AI 헬스케어를 경험하고{" "}
-              <span className="font-semibold">UniqData</span>에서 데이터 주권을 실현하세요
+            <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
+              <span className="block sm:inline"><span className="font-semibold">보답(Bodab)</span>으로 AI 헬스케어를 경험하고</span>{" "}
+              <span className="block sm:inline"><span className="font-semibold">UniqData</span>에서 데이터 주권을 실현하세요</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12">

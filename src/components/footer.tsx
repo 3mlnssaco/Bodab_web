@@ -1,15 +1,17 @@
+import { Link } from "react-router-dom";
+
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4 hover:opacity-80 transition-opacity">
               <div className="w-10 h-10 bg-primary-foreground rounded-lg flex items-center justify-center">
                 <span className="text-primary font-bold text-xl">S</span>
               </div>
               <span className="font-bold text-xl">Sportique</span>
-            </div>
+            </Link>
             <p className="text-primary-foreground/80 text-sm">
               XRPL 기반 블록체인 기술로 데이터주권을 되찾고, AI 기반 헬스케어 솔루션을 제공하는 플랫폼입니다.
             </p>
@@ -19,12 +21,12 @@ export function Footer() {
             <h3 className="font-bold mb-4">서비스</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/bodab"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  보답 (Bodab) 앱
-                </a>
+                  보답 (Bodab)
+                </Link>
               </li>
               <li>
                 <a
@@ -33,18 +35,16 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  UniqData 웹
+                  UniqData
                 </a>
               </li>
               <li>
-                <a
-                  href="https://uniqdata.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/xrpl"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  UniqData 앱
-                </a>
+                  XRPL
+                </Link>
               </li>
             </ul>
           </div>
@@ -53,16 +53,19 @@ export function Footer() {
             <h3 className="font-bold mb-4">회사</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
-                <a
-                  href="#"
+                <button
+                  onClick={() => {
+                    const element = document.getElementById('about');
+                    element?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="hover:text-primary-foreground transition-colors"
                 >
                   소개
-                </a>
+                </button>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="mailto:contact@sportique.biz"
                   className="hover:text-primary-foreground transition-colors"
                 >
                   채용
@@ -70,7 +73,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="mailto:contact@sportique.biz"
                   className="hover:text-primary-foreground transition-colors"
                 >
                   파트너십
@@ -84,7 +87,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
                 <a
-                  href="#"
+                  href="mailto:contact@sportique.biz"
                   className="hover:text-primary-foreground transition-colors"
                 >
                   고객센터
@@ -92,7 +95,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="mailto:contact@sportique.biz"
                   className="hover:text-primary-foreground transition-colors"
                 >
                   FAQ
@@ -100,7 +103,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="mailto:contact@sportique.biz"
                   className="hover:text-primary-foreground transition-colors"
                 >
                   문의하기
@@ -115,13 +118,13 @@ export function Footer() {
             <p>© 2025 Sportique. All rights reserved.</p>
             <div className="flex gap-6">
               <a
-                href="#"
+                href="mailto:contact@sportique.biz"
                 className="hover:text-primary-foreground transition-colors"
               >
                 개인정보처리방침
               </a>
               <a
-                href="#"
+                href="mailto:contact@sportique.biz"
                 className="hover:text-primary-foreground transition-colors"
               >
                 이용약관
