@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Navigation } from "@/components/navigation";
 import "../styles/base-styles.css";
 import "../styles/service-styles.css";
 
@@ -9,6 +10,7 @@ export default function WoorijibPage() {
 
   return (
     <div className="woorijib-page">
+      <Navigation />
       {/* Hero Section */}
       <section className="service-hero woorijib-hero" style={{paddingTop: '140px', paddingBottom: '80px', background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%)', textAlign: 'center'}}>
         <div className="container">

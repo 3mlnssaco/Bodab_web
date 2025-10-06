@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Navigation } from "@/components/navigation";
 import "../styles/base-styles.css";
 import "../styles/vision-styles.css";
 
@@ -10,6 +11,7 @@ export default function ScaleupPage() {
 
   return (
     <div className="scaleup-page">
+      <Navigation />
       {/* Hero Section */}
       <section className="vision-hero" style={{paddingTop: '140px', paddingBottom: '80px', background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%)', textAlign: 'center'}}>
         <div className="container">
