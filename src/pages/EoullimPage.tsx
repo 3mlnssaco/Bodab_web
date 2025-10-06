@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { Navigation } from "@/components/navigation";
+import { useLanguage } from "@/contexts/LanguageContext";
 import "../styles/base-styles.css";
 import "../styles/service-styles.css";
 
 export default function EoullimPage() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -15,11 +18,10 @@ export default function EoullimPage() {
       <section className="service-hero eoullim-hero" style={{paddingTop: '140px', paddingBottom: '80px', background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%)', textAlign: 'center'}}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="hero-content">
-            <h1 style={{fontSize: '3.5rem', fontWeight: 900, marginBottom: '20px', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>어울림</h1>
-            <h2 style={{fontSize: '1.8rem', fontWeight: 400, color: '#2d3436', marginBottom: '20px'}}>인생 2막을 위한 특별한 공간</h2>
-            <p className="hero-subtitle" style={{fontSize: '1.2rem', color: '#636e72', lineHeight: 1.8, marginBottom: '30px'}}>
-              50-60대를 위한 프리미엄 피트니스 & 소셜 클럽<br/>
-              건강한 몸과 마음, 그리고 새로운 친구들
+            <h1 style={{fontSize: '3.5rem', fontWeight: 900, marginBottom: '20px', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t('eoullim.title')}</h1>
+            <h2 style={{fontSize: '1.8rem', fontWeight: 400, color: '#2d3436', marginBottom: '20px'}}>{t('eoullim.subtitle')}</h2>
+            <p className="hero-subtitle" style={{fontSize: '1.2rem', color: '#636e72', lineHeight: 1.8, marginBottom: '30px', whiteSpace: 'pre-line'}}>
+              {t('eoullim.desc')}
             </p>
           </div>
         </div>

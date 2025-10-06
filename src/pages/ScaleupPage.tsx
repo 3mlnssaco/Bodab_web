@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/navigation";
+import { useLanguage } from "@/contexts/LanguageContext";
 import "../styles/base-styles.css";
 import "../styles/vision-styles.css";
 
 export default function ScaleupPage() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -16,11 +19,9 @@ export default function ScaleupPage() {
       <section className="vision-hero" style={{paddingTop: '140px', paddingBottom: '80px', background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%)', textAlign: 'center'}}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="hero-content" style={{maxWidth: '900px', margin: '0 auto'}}>
-            <h1 style={{fontSize: '3rem', fontWeight: 900, marginBottom: '20px', color: '#2d3436'}}>우리가 바라보는 가족</h1>
-            <p className="hero-subtitle" style={{fontSize: '1.2rem', color: '#636e72', lineHeight: 1.8}}>
-              부모님을 걱정하는 자녀의 마음,<br/>
-              자녀에게 짐이 되고 싶지 않은 부모님의 마음,<br/>
-              우리는 그 두 마음을 모두 이해합니다.
+            <h1 style={{fontSize: '3rem', fontWeight: 900, marginBottom: '20px', color: '#2d3436'}}>{t('vision.title')}</h1>
+            <p className="hero-subtitle" style={{fontSize: '1.2rem', color: '#636e72', lineHeight: 1.8, whiteSpace: 'pre-line'}}>
+              {t('vision.subtitle')}
             </p>
           </div>
         </div>
@@ -30,9 +31,9 @@ export default function ScaleupPage() {
       <section className="final-message" style={{padding: '80px 0', background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)'}}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="message-box" style={{maxWidth: '900px', margin: '0 auto', textAlign: 'center', color: 'white'}}>
-            <h2 style={{fontSize: '2.5rem', marginBottom: '30px', color: 'white'}}>지금 시작하세요</h2>
+            <h2 style={{fontSize: '2.5rem', marginBottom: '30px', color: 'white'}}>{t('vision.cta')}</h2>
             <p style={{fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '40px', opacity: 0.95, color: 'white'}}>
-              연령대별 맞춤 서비스를 선택하세요
+              {t('vision.cta.desc')}
             </p>
 
             <div className="service-selector" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', maxWidth: '1200px', margin: '0 auto'}}>

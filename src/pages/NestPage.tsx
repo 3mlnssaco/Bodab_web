@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { Navigation } from "@/components/navigation";
+import { useLanguage } from "@/contexts/LanguageContext";
 import "../styles/base-styles.css";
 import "../styles/service-styles.css";
 
 export default function NestPage() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -15,11 +18,10 @@ export default function NestPage() {
       <section className="service-hero nest-hero" style={{paddingTop: '140px', paddingBottom: '80px', background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%)', textAlign: 'center'}}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="nest-hero-content">
-            <h1 style={{fontSize: '3.5rem', fontWeight: 900, marginBottom: '20px', background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Nest</h1>
-            <h2 style={{fontSize: '1.8rem', fontWeight: 400, color: '#2d3436', marginBottom: '20px'}}>따뜻한 보금자리, 전문적인 케어</h2>
-            <p className="hero-subtitle" style={{fontSize: '1.2rem', color: '#636e72', lineHeight: 1.8, marginBottom: '30px'}}>
-              70대 이상 어르신을 위한 프리미엄 요양 시설<br/>
-              가족과 함께하는 투명한 케어 시스템
+            <h1 style={{fontSize: '3.5rem', fontWeight: 900, marginBottom: '20px', background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t('nest.title')}</h1>
+            <h2 style={{fontSize: '1.8rem', fontWeight: 400, color: '#2d3436', marginBottom: '20px'}}>{t('nest.subtitle')}</h2>
+            <p className="hero-subtitle" style={{fontSize: '1.2rem', color: '#636e72', lineHeight: 1.8, marginBottom: '30px', whiteSpace: 'pre-line'}}>
+              {t('nest.desc')}
             </p>
           </div>
         </div>
