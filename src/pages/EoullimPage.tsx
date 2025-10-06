@@ -9,11 +9,11 @@ export default function EoullimPage() {
   }, []);
 
   return (
-    <div className="eoullim-page">
+    <div className="min-h-screen">
       <Navigation />
       {/* Hero Section */}
       <section className="service-hero eoullim-hero" style={{paddingTop: '140px', paddingBottom: '80px', background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%)', textAlign: 'center'}}>
-        <div className="container">
+        <div className="container mx-auto px-4 lg:px-8">
           <div className="hero-content">
             <h1 style={{fontSize: '3.5rem', fontWeight: 900, marginBottom: '20px', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>어울림</h1>
             <h2 style={{fontSize: '1.8rem', fontWeight: 400, color: '#2d3436', marginBottom: '20px'}}>인생 2막을 위한 특별한 공간</h2>
@@ -27,7 +27,7 @@ export default function EoullimPage() {
 
       {/* Programs Section */}
       <section className="programs-section" style={{padding: '80px 0', background: '#ffffff'}}>
-        <div className="container">
+        <div className="container mx-auto px-4 lg:px-8">
           <h2 className="section-title" style={{fontSize: '2.5rem', textAlign: 'center', marginBottom: '50px'}}>맞춤형 프로그램</h2>
           <div className="programs-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px'}}>
             <div className="program-card" style={{background: '#f8f9fa', borderRadius: '20px', padding: '30px'}}>
@@ -44,7 +44,7 @@ export default function EoullimPage() {
 
       {/* CTA Section */}
       <section className="cta-section" style={{padding: '100px 0', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', color: 'white', textAlign: 'center'}}>
-        <div className="container">
+        <div className="container mx-auto px-4 lg:px-8">
           <h2 style={{fontSize: '2.5rem', marginBottom: '20px', color: 'white'}}>건강한 인생 2막을 시작하세요</h2>
           <p style={{fontSize: '1.2rem', marginBottom: '40px', opacity: 0.95}}>지금 가입하시면 첫 달 50% 할인</p>
         </div>

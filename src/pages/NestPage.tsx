@@ -9,11 +9,11 @@ export default function NestPage() {
   }, []);
 
   return (
-    <div className="nest-page">
+    <div className="min-h-screen">
       <Navigation />
       {/* Hero Section */}
       <section className="service-hero nest-hero" style={{paddingTop: '140px', paddingBottom: '80px', background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%)', textAlign: 'center'}}>
-        <div className="container">
+        <div className="container mx-auto px-4 lg:px-8">
           <div className="nest-hero-content">
             <h1 style={{fontSize: '3.5rem', fontWeight: 900, marginBottom: '20px', background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Nest</h1>
             <h2 style={{fontSize: '1.8rem', fontWeight: 400, color: '#2d3436', marginBottom: '20px'}}>따뜻한 보금자리, 전문적인 케어</h2>
@@ -27,7 +27,7 @@ export default function NestPage() {
 
       {/* Features Section */}
       <section className="nest-section" style={{padding: '80px 0', background: 'white'}}>
-        <div className="container">
+        <div className="container mx-auto px-4 lg:px-8">
           <h2 className="section-title" style={{fontSize: '2.5rem', textAlign: 'center', marginBottom: '50px'}}>Nest만의 특별함</h2>
           <div className="nest-features" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px'}}>
             <div className="nest-feature" style={{textAlign: 'center', padding: '30px', borderRadius: '20px', background: '#f8f9fa'}}>
@@ -46,7 +46,7 @@ export default function NestPage() {
 
       {/* CTA Section */}
       <section className="nest-cta" style={{padding: '80px 0', background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)', textAlign: 'center', color: 'white'}}>
-        <div className="container">
+        <div className="container mx-auto px-4 lg:px-8">
           <h2 style={{fontSize: '2.5rem', marginBottom: '20px', color: 'white'}}>부모님을 위한 최선의 선택</h2>
           <p style={{fontSize: '1.2rem', marginBottom: '40px', opacity: 0.95, color: 'white'}}>
             Nest와 함께 부모님께 편안하고 행복한 노후를 선물하세요
