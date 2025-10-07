@@ -23,13 +23,13 @@ export default function Home() {
 
       {/* Services Grid */}
       <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-16">세대별 맞춤 솔루션</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* 우리집 */}
-            <Link to="/woorijib" className="block">
-              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+            <Link to="/woorijib" className="block w-full">
+              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow h-full">
                 <div className="text-sm text-gray-500 mb-2">30대</div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">우리집</h3>
                 <p className="text-gray-600 mb-4">접근성 연구 프로젝트</p>
@@ -42,8 +42,8 @@ export default function Home() {
             </Link>
 
             {/* 어울림 */}
-            <Link to="/eoullim" className="block">
-              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+            <Link to="/eoullim" className="block w-full">
+              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow h-full">
                 <div className="text-sm text-gray-500 mb-2">50-60대</div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">어울림</h3>
                 <p className="text-gray-600 mb-4">인생 2막</p>
@@ -56,8 +56,8 @@ export default function Home() {
             </Link>
 
             {/* Bodab */}
-            <Link to="/bodab" className="block">
-              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+            <Link to="/bodab" className="block w-full">
+              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow h-full">
                 <div className="text-sm text-gray-500 mb-2">60-70대</div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">Bodab</h3>
                 <p className="text-gray-600 mb-4">건강 관리</p>
@@ -70,8 +70,8 @@ export default function Home() {
             </Link>
 
             {/* Nest */}
-            <Link to="/nest" className="block">
-              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+            <Link to="/nest" className="block w-full">
+              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow h-full">
                 <div className="text-sm text-gray-500 mb-2">70대+</div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">Nest</h3>
                 <p className="text-gray-600 mb-4">전문 케어</p>
@@ -84,8 +84,8 @@ export default function Home() {
             </Link>
 
             {/* UniQdata */}
-            <a href="https://uniqdata.io" target="_blank" rel="noopener noreferrer" className="block">
-              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow border-2 border-purple-200">
+            <a href="https://uniqdata.io" target="_blank" rel="noopener noreferrer" className="block w-full">
+              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow border-2 border-purple-200 h-full">
                 <div className="text-sm text-gray-500 mb-2">전 연령</div>
                 <h3 className="text-2xl font-bold mb-3 text-purple-600">UniQdata</h3>
                 <p className="text-gray-600 mb-4">데이터 보호 & 수익화</p>
@@ -98,8 +98,8 @@ export default function Home() {
             </a>
 
             {/* Q-Tech */}
-            <Link to="/qtech" className="block">
-              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+            <Link to="/qtech" className="block w-full">
+              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow h-full">
                 <div className="text-sm text-gray-500 mb-2">미래</div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">Q-Tech</h3>
                 <p className="text-gray-600 mb-4">케어 기술 혁신</p>
