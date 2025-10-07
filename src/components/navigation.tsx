@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -9,7 +9,22 @@ export function Navigation() {
   const { language, setLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsLangDropdownOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -90,7 +105,7 @@ export function Navigation() {
             </Link>
 
             {/* Language Selector Dropdown */}
-            <div className="relative">
+            <div className="relative" ref={dropdownRef}>
               <Button
                 variant="ghost"
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
@@ -136,7 +151,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
             {/* Language Selector Dropdown */}
-            <div className="relative">
+            <div className="relative" ref={dropdownRef}>
               <Button
                 variant="ghost"
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
