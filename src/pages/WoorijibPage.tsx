@@ -1,26 +1,22 @@
-import { useEffect } from "react";
-import { Navigation } from "@/components/navigation";
+import { PageLayout } from "@/components/page-layout";
 import { useLanguage } from "@/contexts/LanguageContext";
-import "../styles/base-styles.css";
-import "../styles/service-styles.css";
 
 export default function WoorijibPage() {
   const { t } = useLanguage();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <PageLayout>
       {/* Hero Section */}
-      <section className="service-hero woorijib-hero" style={{paddingTop: '140px', paddingBottom: '80px', background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%)', textAlign: 'center'}}>
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="hero-content">
-            <h1 style={{fontSize: '3.5rem', fontWeight: 900, marginBottom: '20px', background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t('woorijib.title')}</h1>
-            <h2 style={{fontSize: '1.8rem', fontWeight: 400, color: '#2d3436', marginBottom: '20px'}}>{t('woorijib.subtitle')}</h2>
-            <p className="hero-subtitle" style={{fontSize: '1.2rem', color: '#636e72', lineHeight: 1.8, marginBottom: '30px', whiteSpace: 'pre-line'}}>
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              {t('woorijib.title')}
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              {t('woorijib.subtitle')}
+            </p>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
               {t('woorijib.desc')}
             </p>
           </div>
@@ -28,31 +24,62 @@ export default function WoorijibPage() {
       </section>
 
       {/* Features Section */}
-      <section className="features-section" style={{padding: '80px 0', background: '#ffffff'}}>
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <h2 className="section-title" style={{fontSize: '2.5rem', textAlign: 'center', marginBottom: '20px'}}>연구 프로젝트 개요</h2>
-          <div className="feature-list">
-            <div className="feature-item" style={{background: '#f8f9fa', borderRadius: '15px', padding: '25px', marginBottom: '20px'}}>
-              <div className="feature-left">
-                <div className="feature-icon">💬</div>
-                <div className="feature-content">
-                  <h3>가족 전용 메신저</h3>
-                  <p>광고 없는 깨끗한 가족 소통 공간</p>
-                </div>
-              </div>
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">주요 기능</h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-3xl mb-4">💬</div>
+              <h3 className="text-xl font-semibold mb-2">가족 전용 메신저</h3>
+              <p className="text-gray-600">광고 없는 깨끗한 가족 소통 공간</p>
             </div>
-            {/* Add more features as needed */}
+
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-3xl mb-4">📸</div>
+              <h3 className="text-xl font-semibold mb-2">자동 앨범 정리</h3>
+              <p className="text-gray-600">AI가 자동으로 사진과 동영상을 정리</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-3xl mb-4">📅</div>
+              <h3 className="text-xl font-semibold mb-2">가족 일정 공유</h3>
+              <p className="text-gray-600">중요한 가족 일정을 함께 관리</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-3xl mb-4">👴</div>
+              <h3 className="text-xl font-semibold mb-2">부모님 모드</h3>
+              <p className="text-gray-600">큰 글씨와 간편한 인터페이스</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-3xl mb-4">🏥</div>
+              <h3 className="text-xl font-semibold mb-2">건강 체크</h3>
+              <p className="text-gray-600">가족 구성원의 건강 상태 확인</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-3xl mb-4">🔒</div>
+              <h3 className="text-xl font-semibold mb-2">프라이버시 보장</h3>
+              <p className="text-gray-600">가족 데이터의 안전한 보호</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section" style={{padding: '100px 0', background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)', color: 'white', textAlign: 'center'}}>
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <h2 style={{fontSize: '2.5rem', marginBottom: '20px', color: 'white'}}>접근성 향상 연구 프로젝트</h2>
-          <p style={{fontSize: '1.2rem', marginBottom: '40px', opacity: 0.95}}>가족 소통의 새로운 미래를 함께 만들어갑니다</p>
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto px-4 text-center text-white">
+          <h2 className="text-3xl font-bold mb-6">접근성 향상 연구 프로젝트</h2>
+          <p className="text-xl mb-8 opacity-90">
+            가족 소통의 새로운 미래를 함께 만들어갑니다
+          </p>
+          <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+            프로젝트 참여하기
+          </button>
         </div>
       </section>
-    </div>
+    </PageLayout>
   );
 }

@@ -1,26 +1,22 @@
-import { useEffect } from "react";
-import { Navigation } from "@/components/navigation";
+import { PageLayout } from "@/components/page-layout";
 import { useLanguage } from "@/contexts/LanguageContext";
-import "../styles/base-styles.css";
-import "../styles/service-styles.css";
 
 export default function EoullimPage() {
   const { t } = useLanguage();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <PageLayout>
       {/* Hero Section */}
-      <section className="service-hero eoullim-hero" style={{paddingTop: '140px', paddingBottom: '80px', background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%)', textAlign: 'center'}}>
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="hero-content">
-            <h1 style={{fontSize: '3.5rem', fontWeight: 900, marginBottom: '20px', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>{t('eoullim.title')}</h1>
-            <h2 style={{fontSize: '1.8rem', fontWeight: 400, color: '#2d3436', marginBottom: '20px'}}>{t('eoullim.subtitle')}</h2>
-            <p className="hero-subtitle" style={{fontSize: '1.2rem', color: '#636e72', lineHeight: 1.8, marginBottom: '30px', whiteSpace: 'pre-line'}}>
+      <section className="py-20 bg-gradient-to-br from-green-50 to-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              {t('eoullim.title')}
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              {t('eoullim.subtitle')}
+            </p>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
               {t('eoullim.desc')}
             </p>
           </div>
@@ -28,29 +24,108 @@ export default function EoullimPage() {
       </section>
 
       {/* Programs Section */}
-      <section className="programs-section" style={{padding: '80px 0', background: '#ffffff'}}>
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <h2 className="section-title" style={{fontSize: '2.5rem', textAlign: 'center', marginBottom: '50px'}}>맞춤형 프로그램</h2>
-          <div className="programs-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px'}}>
-            <div className="program-card" style={{background: '#f8f9fa', borderRadius: '20px', padding: '30px'}}>
-              <h3 style={{fontSize: '1.5rem', color: '#2d3436', marginBottom: '15px'}}>시니어 요가</h3>
-              <p style={{color: '#636e72'}}>관절에 무리 없는 부드러운 동작으로 유연성과 균형감각 향상</p>
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">맞춤형 프로그램</h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-green-600">시니어 요가</h3>
+              <p className="text-gray-600">
+                관절에 무리 없는 부드러운 동작으로 유연성과 균형감각 향상
+              </p>
             </div>
-            <div className="program-card" style={{background: '#f8f9fa', borderRadius: '20px', padding: '30px'}}>
-              <h3 style={{fontSize: '1.5rem', color: '#2d3436', marginBottom: '15px'}}>아쿠아로빅</h3>
-              <p style={{color: '#636e72'}}>물속에서 즐기는 전신 운동, 관절 부담 최소화</p>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-green-600">아쿠아로빅</h3>
+              <p className="text-gray-600">
+                물속에서 즐기는 전신 운동, 관절 부담 최소화
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-green-600">걷기 모임</h3>
+              <p className="text-gray-600">
+                동네 공원에서 함께하는 건강한 걷기 운동
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-green-600">댄스 클래스</h3>
+              <p className="text-gray-600">
+                즐거운 음악과 함께하는 실버 댄스
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-green-600">근력 운동</h3>
+              <p className="text-gray-600">
+                안전한 기구를 활용한 근력 강화 프로그램
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-green-600">명상 & 스트레칭</h3>
+              <p className="text-gray-600">
+                마음과 몸의 균형을 찾는 힐링 프로그램
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Section */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">함께하는 커뮤니티</h2>
+              <p className="text-lg text-gray-600 mb-4">
+                또래와 함께 운동하며 새로운 친구를 만나고, 건강한 생활 습관을 만들어갑니다.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <span className="text-green-600 mr-3">✓</span>
+                  <span>전문 트레이너의 안전한 지도</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-600 mr-3">✓</span>
+                  <span>연령별 맞춤 운동 프로그램</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-600 mr-3">✓</span>
+                  <span>운동 후 건강한 차 모임</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-600 mr-3">✓</span>
+                  <span>월별 건강 체크 및 상담</span>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-green-100 p-8 rounded-2xl">
+              <div className="text-center">
+                <div className="text-6xl mb-4">🏃‍♀️</div>
+                <p className="text-xl font-semibold text-green-800">
+                  건강한 인생 2막을 시작하세요
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section" style={{padding: '100px 0', background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', color: 'white', textAlign: 'center'}}>
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <h2 style={{fontSize: '2.5rem', marginBottom: '20px', color: 'white'}}>건강한 인생 2막을 시작하세요</h2>
-          <p style={{fontSize: '1.2rem', marginBottom: '40px', opacity: 0.95}}>지금 가입하시면 첫 달 50% 할인</p>
+      <section className="py-20 bg-gradient-to-r from-green-600 to-emerald-600">
+        <div className="max-w-4xl mx-auto px-4 text-center text-white">
+          <h2 className="text-3xl font-bold mb-6">건강한 인생 2막을 시작하세요</h2>
+          <p className="text-xl mb-8 opacity-90">
+            지금 가입하시면 첫 달 50% 할인
+          </p>
+          <button className="bg-white text-green-600 px-8 py-3 rounded-full font-semibold hover:bg-green-50 transition-colors">
+            무료 체험 신청하기
+          </button>
         </div>
       </section>
-    </div>
+    </PageLayout>
   );
 }
