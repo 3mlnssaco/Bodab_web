@@ -17,7 +17,7 @@ export default function ScaleupPage() {
       <Navigation />
       {/* Hero Section */}
       <section className="vision-hero" style={{paddingTop: '140px', paddingBottom: '80px', background: 'linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%)', textAlign: 'center'}}>
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="hero-content" style={{maxWidth: '900px', margin: '0 auto'}}>
             <h1 style={{fontSize: '3rem', fontWeight: 900, marginBottom: '20px', color: '#2d3436'}}>{t('vision.title')}</h1>
             <p className="hero-subtitle" style={{fontSize: '1.2rem', color: '#636e72', lineHeight: 1.8, whiteSpace: 'pre-line'}}>
@@ -29,7 +29,7 @@ export default function ScaleupPage() {
 
       {/* Service Selector Section */}
       <section className="final-message" style={{padding: '80px 0', background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)'}}>
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="message-box" style={{maxWidth: '900px', margin: '0 auto', textAlign: 'center', color: 'white'}}>
             <h2 style={{fontSize: '2.5rem', marginBottom: '30px', color: 'white'}}>{t('vision.cta')}</h2>
             <p style={{fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '40px', opacity: 0.95, color: 'white'}}>
