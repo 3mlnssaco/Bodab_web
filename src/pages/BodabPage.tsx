@@ -14,7 +14,7 @@ export default function BodabPage() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-accent to-accent/70">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-8">
               <img
@@ -38,7 +38,7 @@ export default function BodabPage() {
 
       {/* Problem & Need Section */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             왜 필요한가?
           </h2>
@@ -82,7 +82,7 @@ export default function BodabPage() {
 
       {/* Core Features */}
       <section className="py-20 bg-accent/10">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             핵심 기능
           </h2>
@@ -156,7 +156,7 @@ export default function BodabPage() {
 
       {/* Benefits for Stakeholders */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             누구에게 도움이 되나요?
           </h2>
@@ -226,7 +226,7 @@ export default function BodabPage() {
 
       {/* Tablet Home Installation */}
       <section className="py-20 bg-accent/10">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             태블릿 가정 설치 모델
           </h2>
@@ -273,7 +273,7 @@ export default function BodabPage() {
 
       {/* Competitive Advantage */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             경쟁사 대비 차별점
           </h2>
@@ -373,7 +373,7 @@ export default function BodabPage() {
 
       {/* Development Plan */}
       <section className="py-20 bg-accent/10">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             향후 발전 계획
           </h2>

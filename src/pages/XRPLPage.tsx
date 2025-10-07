@@ -14,7 +14,7 @@ export default function XRPLPage() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-primary to-primary/70 text-primary-foreground">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-8">
               <img
@@ -42,7 +42,7 @@ export default function XRPLPage() {
 
       {/* Problem Section */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             문제점
           </h2>
@@ -82,7 +82,7 @@ export default function XRPLPage() {
 
       {/* Solution Section */}
       <section className="py-20 bg-accent/10">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             해결책
           </h2>
@@ -130,7 +130,7 @@ export default function XRPLPage() {
 
       {/* XRPL USE Cases */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             XRPL 활용
           </h2>
@@ -180,7 +180,7 @@ export default function XRPLPage() {
 
       {/* B2B2C Structure */}
       <section className="py-20 bg-accent/10">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             B2B2C 구조
           </h2>
@@ -227,7 +227,7 @@ export default function XRPLPage() {
 
       {/* Roadmap */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             로드맵
           </h2>

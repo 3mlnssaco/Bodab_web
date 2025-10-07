@@ -14,7 +14,7 @@ export default function UniqDataPage() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-secondary to-secondary/70 text-secondary-foreground">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-8">
               <img
@@ -57,7 +57,7 @@ export default function UniqDataPage() {
 
       {/* What is UniqData Section */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
               UniqData 플랫폼 상세 소개
@@ -172,7 +172,7 @@ export default function UniqDataPage() {
 
       {/* Technology Section */}
       <section className="py-20 bg-secondary/10">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
             XRPL 블록체인 기술 아키텍처
           </h2>
@@ -290,7 +290,7 @@ export default function UniqDataPage() {
 
       {/* Use Cases Section */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
             실제 활용 사례
           </h2>
@@ -363,7 +363,7 @@ export default function UniqDataPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               지금 UniqData를 시작하세요
