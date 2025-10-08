@@ -4,16 +4,16 @@ export default function BodabPage() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 to-white">
+      <section className="py-12 sm:py-20 bg-gradient-to-br from-orange-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
               Bodab
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 mb-4 sm:mb-8 max-w-3xl mx-auto">
               60-70대 어르신을 위한 자립적 건강 관리 플랫폼
             </p>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto px-2">
               큰 글씨와 음성 인터페이스로 쉽게 사용할 수 있는 건강 관리 서비스입니다
             </p>
           </div>

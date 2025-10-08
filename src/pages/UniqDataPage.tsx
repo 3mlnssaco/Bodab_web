@@ -4,16 +4,16 @@ export default function UniqDataPage() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-white">
+      <section className="py-12 sm:py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               UniQdata
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 mb-4 sm:mb-8 max-w-3xl mx-auto">
               데이터 보호 & 수익화 플랫폼
             </p>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto px-2">
               블록체인 기반으로 의료 데이터를 안전하게 보호하고,
               익명화된 데이터 판매로 수익을 창출합니다
             </p>

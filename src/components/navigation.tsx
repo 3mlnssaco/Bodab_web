@@ -150,48 +150,15 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
-            {/* Language Selector Dropdown */}
-            <div className="relative" ref={dropdownRef}>
-              <Button
-                variant="ghost"
-                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                className="hover:bg-secondary/20 font-medium text-sm px-3 flex items-center gap-1"
-                aria-label="Select language"
-              >
-                <span>{language === "ko" ? "🇰🇷 한국어" : "🇺🇸 English"}</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </Button>
-              {isLangDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                  <div className="py-1">
-                    <button
-                      onClick={() => {
-                        setLanguage("ko");
-                        setIsLangDropdownOpen(false);
-                      }}
-                      className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
-                        language === "ko" ? "bg-blue-50 text-blue-600" : "text-gray-700"
-                      }`}
-                    >
-                      🇰🇷 한국어
-                    </button>
-                    <button
-                      onClick={() => {
-                        setLanguage("en");
-                        setIsLangDropdownOpen(false);
-                      }}
-                      className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
-                        language === "en" ? "bg-blue-50 text-blue-600" : "text-gray-700"
-                      }`}
-                    >
-                      🇺🇸 English
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
+            {/* Language Toggle for Mobile */}
+            <Button
+              variant="ghost"
+              onClick={() => setLanguage(language === "ko" ? "en" : "ko")}
+              className="hover:bg-secondary/20 text-xs px-2 py-1"
+              aria-label="Toggle language"
+            >
+              {language === "ko" ? "EN" : "한"}
+            </Button>
             <Button
               variant="ghost"
               size="icon"

@@ -8,13 +8,13 @@ export default function ScaleupPage() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-5xl font-bold mb-6 text-gray-900">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
               {t('vision.title')}
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto whitespace-pre-line">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-2">
               {t('vision.subtitle')}
             </p>
           </div>

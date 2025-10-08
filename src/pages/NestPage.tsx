@@ -7,16 +7,16 @@ export default function NestPage() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-white">
+      <section className="py-12 sm:py-20 bg-gradient-to-br from-purple-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               {t('nest.title')}
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-8 max-w-3xl mx-auto px-2">
               {t('nest.subtitle')}
             </p>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto whitespace-pre-line">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-500 max-w-2xl mx-auto px-2">
               {t('nest.desc')}
             </p>
           </div>
