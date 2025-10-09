@@ -28,7 +28,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-16">세대별 맞춤 솔루션</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 어울림 */}
             <Link to="/eoullim" className="block w-full">
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow h-full">
@@ -70,21 +70,50 @@ export default function Home() {
                 </ul>
               </div>
             </Link>
-
-            {/* UniQdata */}
-            <a href="https://uniqdata.io" target="_blank" rel="noopener noreferrer" className="block w-full">
-              <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow border-2 border-purple-200 h-full">
-                <div className="text-sm text-gray-500 mb-2">전 연령</div>
-                <h3 className="text-2xl font-bold mb-3 text-purple-600">UniQdata</h3>
-                <p className="text-gray-600 mb-4">데이터 보호 & 수익화</p>
-                <ul className="text-sm text-gray-500 space-y-2">
-                  <li>• 블록체인 데이터 보호</li>
-                  <li>• 데이터 판매 수익</li>
-                  <li>• 의료비 30% 회수</li>
-                </ul>
-              </div>
-            </a>
           </div>
+        </div>
+      </section>
+
+      {/* UniQdata Section - Separated */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-4">데이터로 수익 창출</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            모든 세대가 함께 사용할 수 있는 의료 데이터 관리 & 수익화 플랫폼
+          </p>
+
+          <a href="https://uniqdata.io" target="_blank" rel="noopener noreferrer" className="block">
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all border-2 border-purple-200">
+              <div className="flex items-center justify-between flex-wrap gap-6">
+                <div className="flex-1 min-w-[250px]">
+                  <div className="text-sm text-purple-600 font-semibold mb-2">전 연령</div>
+                  <h3 className="text-3xl font-bold mb-3 text-purple-600">UniQdata</h3>
+                  <p className="text-lg text-gray-700 mb-6">데이터 보호 & 수익화</p>
+                  <ul className="space-y-3">
+                    <li className="flex items-center text-gray-700">
+                      <span className="text-purple-600 mr-3">✓</span>
+                      블록체인 데이터 보호
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <span className="text-purple-600 mr-3">✓</span>
+                      데이터 판매 수익
+                    </li>
+                    <li className="flex items-center text-gray-700">
+                      <span className="text-purple-600 mr-3">✓</span>
+                      의료비 30% 회수
+                    </li>
+                  </ul>
+                </div>
+                <div className="text-center">
+                  <div className="text-6xl mb-4">💎</div>
+                  <div className="bg-white px-6 py-4 rounded-xl shadow-md">
+                    <p className="text-sm text-gray-600 mb-1">연간 예상 수익</p>
+                    <p className="text-2xl font-bold text-purple-600">₩ 1,200,000+</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
       </section>
 
