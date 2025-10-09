@@ -86,7 +86,13 @@ export default function Home() {
           <a href="https://uniqdata.io" target="_blank" rel="noopener noreferrer" className="block">
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all border-2 border-purple-200">
               <div className="text-center mb-6">
-                <div className="text-sm text-purple-600 font-semibold mb-2">전 연령</div>
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <svg className="w-12 h-12" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="170" cy="170" r="170" fill="#23292F"/>
+                    <path d="M267.5 137.5L232.5 102.5L170 165L107.5 102.5L72.5 137.5L135 200L72.5 262.5L107.5 297.5L170 235L232.5 297.5L267.5 262.5L205 200L267.5 137.5Z" fill="white"/>
+                  </svg>
+                  <div className="text-sm text-purple-600 font-semibold">Powered by XRPL</div>
+                </div>
                 <h3 className="text-3xl font-bold mb-3 text-purple-600">UniQdata</h3>
                 <p className="text-lg text-gray-700 mb-2">XRPL 기반 의료 데이터 직거래 플랫폼</p>
                 <p className="text-sm text-gray-600">블록체인으로 투명하고 안전하게 데이터를 거래합니다</p>
