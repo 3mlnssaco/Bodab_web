@@ -62,12 +62,6 @@ export function Navigation() {
               {t('nav.home')}
             </Link>
             <Link
-              to="/woorijib"
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              {t('nav.woorijib')}
-            </Link>
-            <Link
               to="/eoullim"
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
@@ -90,12 +84,6 @@ export function Navigation() {
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
               {t('nav.uniqdata')}
-            </Link>
-            <Link
-              to="/qtech"
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              {t('nav.qtech')}
             </Link>
 
             {/* Language Selector Dropdown */}
@@ -181,13 +169,6 @@ export function Navigation() {
                 {t('nav.home')}
               </Link>
               <Link
-                to="/woorijib"
-                className="text-foreground hover:text-primary transition-colors font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t('nav.woorijib')}
-              </Link>
-              <Link
                 to="/eoullim"
                 className="text-foreground hover:text-primary transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
@@ -214,13 +195,6 @@ export function Navigation() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t('nav.uniqdata')}
-              </Link>
-              <Link
-                to="/qtech"
-                className="text-foreground hover:text-primary transition-colors font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t('nav.qtech')}
               </Link>
             </div>
           </div>
