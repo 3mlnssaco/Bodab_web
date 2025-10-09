@@ -85,35 +85,31 @@ export default function Home() {
 
           <a href="https://uniqdata.io" target="_blank" rel="noopener noreferrer" className="block">
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all border-2 border-purple-200">
-              <div className="flex items-center justify-between flex-wrap gap-6">
-                <div className="flex-1 min-w-[250px]">
-                  <div className="text-sm text-purple-600 font-semibold mb-2">전 연령</div>
-                  <h3 className="text-3xl font-bold mb-3 text-purple-600">UniQdata</h3>
-                  <p className="text-lg text-gray-700 mb-6">의료 데이터 직접 판매 플랫폼</p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start text-gray-700">
-                      <span className="text-purple-600 mr-3 mt-1">✓</span>
-                      <span>병원 검진 데이터를 블록체인으로 안전하게 보관</span>
-                    </li>
-                    <li className="flex items-start text-gray-700">
-                      <span className="text-purple-600 mr-3 mt-1">✓</span>
-                      <span>익명화된 내 데이터를 제약사·연구소에 직접 판매</span>
-                    </li>
-                    <li className="flex items-start text-gray-700">
-                      <span className="text-purple-600 mr-3 mt-1">✓</span>
-                      <span>병원비의 최대 30%를 수익으로 돌려받기</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="text-center">
-                  <div className="text-6xl mb-4">💎</div>
-                  <div className="bg-white px-6 py-4 rounded-xl shadow-md">
-                    <p className="text-sm text-gray-600 mb-1">연간 예상 수익</p>
-                    <p className="text-2xl font-bold text-purple-600">₩ 1,200,000+</p>
-                    <p className="text-xs text-gray-500 mt-2">* 정기 검진 기준</p>
-                  </div>
-                </div>
+              <div className="text-center mb-6">
+                <div className="text-sm text-purple-600 font-semibold mb-2">전 연령</div>
+                <h3 className="text-3xl font-bold mb-3 text-purple-600">UniQdata</h3>
+                <p className="text-lg text-gray-700 mb-2">XRPL 기반 의료 데이터 직거래 플랫폼</p>
+                <p className="text-sm text-gray-600">블록체인으로 투명하고 안전하게 데이터를 거래합니다</p>
               </div>
+
+              <ul className="space-y-3 max-w-2xl mx-auto">
+                <li className="flex items-start text-gray-700">
+                  <span className="text-purple-600 mr-3 mt-1">✓</span>
+                  <span>병원 검진 데이터를 XRPL 블록체인에 안전하게 보관</span>
+                </li>
+                <li className="flex items-start text-gray-700">
+                  <span className="text-purple-600 mr-3 mt-1">✓</span>
+                  <span>익명화된 내 데이터를 제약사·연구소에 직접 판매</span>
+                </li>
+                <li className="flex items-start text-gray-700">
+                  <span className="text-purple-600 mr-3 mt-1">✓</span>
+                  <span>XRP로 즉시 정산되는 투명한 수익 분배</span>
+                </li>
+                <li className="flex items-start text-gray-700">
+                  <span className="text-purple-600 mr-3 mt-1">✓</span>
+                  <span>내 데이터는 내가 소유하고 내가 판매</span>
+                </li>
+              </ul>
             </div>
           </a>
         </div>
