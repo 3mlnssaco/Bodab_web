@@ -1,8 +1,11 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <main className="min-h-screen bg-white">
       <Navigation />
@@ -26,19 +29,19 @@ export default function Home() {
       {/* Services Grid */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-16">세대별 맞춤 솔루션</h2>
+          <h2 className="text-3xl font-bold text-center mb-16">{t('home.services.title')}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 어울림 */}
             <Link to="/eoullim" className="block w-full">
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow h-full">
-                <div className="text-sm text-gray-500 mb-2">50-60대</div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">어울림</h3>
-                <p className="text-gray-600 mb-4">인생 2막</p>
+                <div className="text-sm text-gray-500 mb-2">{t('home.eoullim.age')}</div>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">{t('home.eoullim.title')}</h3>
+                <p className="text-gray-600 mb-4">{t('home.eoullim.subtitle')}</p>
                 <ul className="text-sm text-gray-500 space-y-2">
-                  <li>• 또래와 함께하는 운동</li>
-                  <li>• 취미 활동과 동호회</li>
-                  <li>• 건강한 생활 습관</li>
+                  <li>• {t('home.eoullim.feature1')}</li>
+                  <li>• {t('home.eoullim.feature2')}</li>
+                  <li>• {t('home.eoullim.feature3')}</li>
                 </ul>
               </div>
             </Link>
@@ -46,13 +49,13 @@ export default function Home() {
             {/* Bodab */}
             <Link to="/bodab" className="block w-full">
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow h-full">
-                <div className="text-sm text-gray-500 mb-2">60-70대</div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">Bodab</h3>
-                <p className="text-gray-600 mb-4">건강 관리</p>
+                <div className="text-sm text-gray-500 mb-2">{t('home.bodab.age')}</div>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">{t('home.bodab.title')}</h3>
+                <p className="text-gray-600 mb-4">{t('home.bodab.subtitle')}</p>
                 <ul className="text-sm text-gray-500 space-y-2">
-                  <li>• 음성 인터페이스</li>
-                  <li>• 복약 알림</li>
-                  <li>• AI 건강 상담</li>
+                  <li>• {t('home.bodab.feature1')}</li>
+                  <li>• {t('home.bodab.feature2')}</li>
+                  <li>• {t('home.bodab.feature3')}</li>
                 </ul>
               </div>
             </Link>
@@ -60,13 +63,13 @@ export default function Home() {
             {/* Nest */}
             <Link to="/nest" className="block w-full">
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow h-full">
-                <div className="text-sm text-gray-500 mb-2">70대+</div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">Nest</h3>
-                <p className="text-gray-600 mb-4">전문 케어</p>
+                <div className="text-sm text-gray-500 mb-2">{t('home.nest.age')}</div>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">{t('home.nest.title')}</h3>
+                <p className="text-gray-600 mb-4">{t('home.nest.subtitle')}</p>
                 <ul className="text-sm text-gray-500 space-y-2">
-                  <li>• 24시간 전문 케어</li>
-                  <li>• 가족과 실시간 소통</li>
-                  <li>• 투명한 케어 기록</li>
+                  <li>• {t('home.nest.feature1')}</li>
+                  <li>• {t('home.nest.feature2')}</li>
+                  <li>• {t('home.nest.feature3')}</li>
                 </ul>
               </div>
             </Link>
@@ -77,10 +80,9 @@ export default function Home() {
       {/* UniQdata Section - Separated */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4">병원비, 이제 돌려받으세요</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            검진받으며 쓴 돈, 그냥 버리지 마세요.<br />
-            내 의료 데이터를 직접 판매하고 수익을 만드세요.
+          <h2 className="text-3xl font-bold text-center mb-4">{t('home.uniqdata.title')}</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto whitespace-pre-line">
+            {t('home.uniqdata.subtitle')}
           </p>
 
           <a href="https://uniqdata.io" target="_blank" rel="noopener noreferrer" className="block">
@@ -91,29 +93,29 @@ export default function Home() {
                     <circle cx="170" cy="170" r="170" fill="#23292F"/>
                     <path d="M267.5 137.5L232.5 102.5L170 165L107.5 102.5L72.5 137.5L135 200L72.5 262.5L107.5 297.5L170 235L232.5 297.5L267.5 262.5L205 200L267.5 137.5Z" fill="white"/>
                   </svg>
-                  <div className="text-sm text-purple-600 font-semibold">Powered by XRPL</div>
+                  <div className="text-sm text-purple-600 font-semibold">{t('home.uniqdata.powered')}</div>
                 </div>
                 <h3 className="text-3xl font-bold mb-3 text-purple-600">UniQdata</h3>
-                <p className="text-lg text-gray-700 mb-2">XRPL 기반 의료 데이터 직거래 플랫폼</p>
-                <p className="text-sm text-gray-600">블록체인으로 투명하고 안전하게 데이터를 거래합니다</p>
+                <p className="text-lg text-gray-700 mb-2">{t('home.uniqdata.platform')}</p>
+                <p className="text-sm text-gray-600">{t('home.uniqdata.desc')}</p>
               </div>
 
               <ul className="space-y-3 max-w-2xl mx-auto">
                 <li className="flex items-start text-gray-700">
                   <span className="text-purple-600 mr-3 mt-1">✓</span>
-                  <span>병원 검진 데이터를 XRPL 블록체인에 안전하게 보관</span>
+                  <span>{t('home.uniqdata.feature1')}</span>
                 </li>
                 <li className="flex items-start text-gray-700">
                   <span className="text-purple-600 mr-3 mt-1">✓</span>
-                  <span>익명화된 내 데이터를 제약사·연구소에 직접 판매</span>
+                  <span>{t('home.uniqdata.feature2')}</span>
                 </li>
                 <li className="flex items-start text-gray-700">
                   <span className="text-purple-600 mr-3 mt-1">✓</span>
-                  <span>XRP로 즉시 정산되는 투명한 수익 분배</span>
+                  <span>{t('home.uniqdata.feature3')}</span>
                 </li>
                 <li className="flex items-start text-gray-700">
                   <span className="text-purple-600 mr-3 mt-1">✓</span>
-                  <span>내 데이터는 내가 소유하고 내가 판매</span>
+                  <span>{t('home.uniqdata.feature4')}</span>
                 </li>
               </ul>
             </div>
@@ -125,11 +127,10 @@ export default function Home() {
       <section className="py-12 sm:py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 px-2">
-            생애 전주기 케어 플랫폼
+            {t('home.vision.title')}
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-2">
-            한 번 시작하면 평생 함께하는 가족 건강 파트너.<br className="hidden sm:block" />
-            각 세대가 필요한 순간에 가장 적절한 케어를 제공합니다.
+          <p className="text-base sm:text-lg text-gray-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-2 whitespace-pre-line">
+            {t('home.vision.subtitle')}
           </p>
 
           <div className="space-y-6 sm:space-y-8">
@@ -138,9 +139,9 @@ export default function Home() {
                 1
               </div>
               <div>
-                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">50-60대: 건강한 인생 2막</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{t('home.vision.step1.title')}</h3>
                 <p className="text-sm sm:text-base text-gray-600">
-                  어울림에서 또래와 함께 운동하며 건강한 노후를 준비합니다.
+                  {t('home.vision.step1.desc')}
                 </p>
               </div>
             </div>
@@ -150,9 +151,9 @@ export default function Home() {
                 2
               </div>
               <div>
-                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">60-70대: 자립적 건강 관리</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{t('home.vision.step2.title')}</h3>
                 <p className="text-sm sm:text-base text-gray-600">
-                  Bodab의 AI 헬스케어로 스스로 건강을 관리합니다.
+                  {t('home.vision.step2.desc')}
                 </p>
               </div>
             </div>
@@ -162,9 +163,9 @@ export default function Home() {
                 3
               </div>
               <div>
-                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">70대+: 전문적인 케어</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{t('home.vision.step3.title')}</h3>
                 <p className="text-sm sm:text-base text-gray-600">
-                  Nest에서 24시간 전문적인 케어를 받으며 편안한 노후를 보냅니다.
+                  {t('home.vision.step3.desc')}
                 </p>
               </div>
             </div>
@@ -174,9 +175,9 @@ export default function Home() {
                 ∞
               </div>
               <div>
-                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">전 연령: 데이터 가치 실현</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{t('home.vision.step4.title')}</h3>
                 <p className="text-sm sm:text-base text-gray-600">
-                  UniQdata로 의료 데이터를 안전하게 관리하고 수익을 창출합니다.
+                  {t('home.vision.step4.desc')}
                 </p>
               </div>
             </div>
