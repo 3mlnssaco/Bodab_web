@@ -97,12 +97,6 @@ export function Navigation() {
             >
               {t('nav.qtech')}
             </Link>
-            <Link
-              to="/scaleup"
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              {t('nav.vision')}
-            </Link>
 
             {/* Language Selector Dropdown */}
             <div className="relative" ref={dropdownRef}>
@@ -227,13 +221,6 @@ export function Navigation() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t('nav.qtech')}
-              </Link>
-              <Link
-                to="/scaleup"
-                className="text-foreground hover:text-primary transition-colors font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t('nav.vision')}
               </Link>
             </div>
           </div>

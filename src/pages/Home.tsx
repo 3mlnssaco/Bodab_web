@@ -117,20 +117,77 @@ export default function Home() {
       </section>
 
       {/* Vision Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">우리의 비전</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            한 번 시작하면 평생 함께하는 가족 건강 파트너<br />
-            30대에 우리집으로 가족 소통을 시작하고,<br />
-            70대에는 Nest로 전문 케어를 받으며,<br />
-            전 연령대에서 UniQdata로 의료비 부담을 줄입니다.
+      <section className="py-12 sm:py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 px-2">
+            생애 전주기 케어 플랫폼
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto px-2">
+            한 번 시작하면 평생 함께하는 가족 건강 파트너.<br className="hidden sm:block" />
+            각 세대가 필요한 순간에 가장 적절한 케어를 제공합니다.
           </p>
-          <Link to="/scaleup">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-              비전 자세히 보기
-            </button>
-          </Link>
+
+          <div className="space-y-6 sm:space-y-8">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0 text-base sm:text-lg font-bold">
+                1
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">30대: 가족 소통의 시작</h3>
+                <p className="text-sm sm:text-base text-gray-600">
+                  우리집으로 가족 간 소통을 시작하고, 부모님의 건강 데이터를 관리합니다.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center flex-shrink-0 text-base sm:text-lg font-bold">
+                2
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">50-60대: 건강한 인생 2막</h3>
+                <p className="text-sm sm:text-base text-gray-600">
+                  어울림에서 또래와 함께 운동하며 건강한 노후를 준비합니다.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center flex-shrink-0 text-base sm:text-lg font-bold">
+                3
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">60-70대: 자립적 건강 관리</h3>
+                <p className="text-sm sm:text-base text-gray-600">
+                  Bodab의 AI 헬스케어로 스스로 건강을 관리합니다.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center flex-shrink-0 text-base sm:text-lg font-bold">
+                4
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">70대+: 전문적인 케어</h3>
+                <p className="text-sm sm:text-base text-gray-600">
+                  Nest에서 24시간 전문적인 케어를 받으며 편안한 노후를 보냅니다.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-100 to-pink-100 text-purple-600 rounded-full flex items-center justify-center flex-shrink-0 text-base sm:text-lg font-bold">
+                ∞
+              </div>
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">전 연령: 데이터 가치 실현</h3>
+                <p className="text-sm sm:text-base text-gray-600">
+                  UniQdata로 의료 데이터를 안전하게 관리하고 수익을 창출합니다.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

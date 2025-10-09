@@ -22,16 +22,16 @@ export default function ScaleupPage() {
       </section>
 
       {/* Service Selector Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-12 sm:py-20 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center text-white mb-12">
-            <h2 className="text-3xl font-bold mb-6">{t('vision.cta')}</h2>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+          <div className="text-center text-white mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 px-2">{t('vision.cta')}</h2>
+            <p className="text-base sm:text-xl opacity-90 max-w-2xl mx-auto px-2">
               {t('vision.cta.desc')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
             <Link to="/woorijib" className="block">
               <div className="bg-white rounded-xl p-6 hover:shadow-xl transition-all hover:scale-105">
                 <div className="text-sm text-gray-500 mb-2">30대</div>
@@ -76,11 +76,13 @@ export default function ScaleupPage() {
       </section>
 
       {/* Vision Details */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">생애 전주기 케어 플랫폼</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 px-2">
+            생애 전주기 케어 플랫폼
+          </h2>
 
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                 1
@@ -145,15 +147,15 @@ export default function ScaleupPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">한 번 시작하면 평생 함께</h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 px-2">한 번 시작하면 평생 함께</h2>
+          <p className="text-base sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
             SportiQue는 가족의 모든 세대와 함께 성장하며,
             각 시기에 필요한 최적의 헬스케어 솔루션을 제공합니다.
           </p>
           <Link to="/">
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all">
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold hover:shadow-lg transition-all text-sm sm:text-base">
               서비스 둘러보기
             </button>
           </Link>
