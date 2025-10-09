@@ -77,9 +77,10 @@ export default function Home() {
       {/* UniQdata Section - Separated */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4">데이터로 수익 창출</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">병원비, 이제 돌려받으세요</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            모든 세대가 함께 사용할 수 있는 의료 데이터 관리 & 수익화 플랫폼
+            검진받으며 쓴 돈, 그냥 버리지 마세요.<br />
+            내 의료 데이터를 직접 판매하고 수익을 만드세요.
           </p>
 
           <a href="https://uniqdata.io" target="_blank" rel="noopener noreferrer" className="block">
@@ -88,19 +89,19 @@ export default function Home() {
                 <div className="flex-1 min-w-[250px]">
                   <div className="text-sm text-purple-600 font-semibold mb-2">전 연령</div>
                   <h3 className="text-3xl font-bold mb-3 text-purple-600">UniQdata</h3>
-                  <p className="text-lg text-gray-700 mb-6">데이터 보호 & 수익화</p>
+                  <p className="text-lg text-gray-700 mb-6">의료 데이터 직접 판매 플랫폼</p>
                   <ul className="space-y-3">
-                    <li className="flex items-center text-gray-700">
-                      <span className="text-purple-600 mr-3">✓</span>
-                      블록체인 데이터 보호
+                    <li className="flex items-start text-gray-700">
+                      <span className="text-purple-600 mr-3 mt-1">✓</span>
+                      <span>병원 검진 데이터를 블록체인으로 안전하게 보관</span>
                     </li>
-                    <li className="flex items-center text-gray-700">
-                      <span className="text-purple-600 mr-3">✓</span>
-                      데이터 판매 수익
+                    <li className="flex items-start text-gray-700">
+                      <span className="text-purple-600 mr-3 mt-1">✓</span>
+                      <span>익명화된 내 데이터를 제약사·연구소에 직접 판매</span>
                     </li>
-                    <li className="flex items-center text-gray-700">
-                      <span className="text-purple-600 mr-3">✓</span>
-                      의료비 30% 회수
+                    <li className="flex items-start text-gray-700">
+                      <span className="text-purple-600 mr-3 mt-1">✓</span>
+                      <span>병원비의 최대 30%를 수익으로 돌려받기</span>
                     </li>
                   </ul>
                 </div>
@@ -109,6 +110,7 @@ export default function Home() {
                   <div className="bg-white px-6 py-4 rounded-xl shadow-md">
                     <p className="text-sm text-gray-600 mb-1">연간 예상 수익</p>
                     <p className="text-2xl font-bold text-purple-600">₩ 1,200,000+</p>
+                    <p className="text-xs text-gray-500 mt-2">* 정기 검진 기준</p>
                   </div>
                 </div>
               </div>
