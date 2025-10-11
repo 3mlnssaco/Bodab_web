@@ -34,41 +34,41 @@ export default function ScaleupPage() {
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
             <Link to="/woorijib" className="block">
               <div className="bg-white rounded-xl p-6 hover:shadow-xl transition-all hover:scale-105">
-                <div className="text-sm text-gray-500 mb-2">30대</div>
-                <h3 className="text-lg font-bold text-blue-600 mb-1">우리집 알아보기</h3>
-                <p className="text-sm text-gray-600">접근성 연구 프로젝트</p>
+                <div className="text-sm text-gray-500 mb-2">{t('scaleup.cta.woorijib.age')}</div>
+                <h3 className="text-lg font-bold text-blue-600 mb-1">{t('scaleup.cta.woorijib.title')}</h3>
+                <p className="text-sm text-gray-600">{t('scaleup.cta.woorijib.desc')}</p>
               </div>
             </Link>
 
             <Link to="/eoullim" className="block">
               <div className="bg-white rounded-xl p-6 hover:shadow-xl transition-all hover:scale-105">
-                <div className="text-sm text-gray-500 mb-2">50-60대</div>
-                <h3 className="text-lg font-bold text-green-600 mb-1">어울림 가입하기</h3>
-                <p className="text-sm text-gray-600">건강한 인생 2막</p>
+                <div className="text-sm text-gray-500 mb-2">{t('scaleup.cta.eoullim.age')}</div>
+                <h3 className="text-lg font-bold text-green-600 mb-1">{t('scaleup.cta.eoullim.title')}</h3>
+                <p className="text-sm text-gray-600">{t('scaleup.cta.eoullim.desc')}</p>
               </div>
             </Link>
 
             <Link to="/bodab" className="block">
               <div className="bg-white rounded-xl p-6 hover:shadow-xl transition-all hover:scale-105">
-                <div className="text-sm text-gray-500 mb-2">60-70대</div>
-                <h3 className="text-lg font-bold text-orange-600 mb-1">Bodab 시작하기</h3>
-                <p className="text-sm text-gray-600">자립적 건강 관리</p>
+                <div className="text-sm text-gray-500 mb-2">{t('scaleup.cta.bodab.age')}</div>
+                <h3 className="text-lg font-bold text-orange-600 mb-1">{t('scaleup.cta.bodab.title')}</h3>
+                <p className="text-sm text-gray-600">{t('scaleup.cta.bodab.desc')}</p>
               </div>
             </Link>
 
             <Link to="/nest" className="block">
               <div className="bg-white rounded-xl p-6 hover:shadow-xl transition-all hover:scale-105">
-                <div className="text-sm text-gray-500 mb-2">70대+</div>
-                <h3 className="text-lg font-bold text-purple-600 mb-1">Nest 알아보기</h3>
-                <p className="text-sm text-gray-600">전문 케어 시스템</p>
+                <div className="text-sm text-gray-500 mb-2">{t('scaleup.cta.nest.age')}</div>
+                <h3 className="text-lg font-bold text-purple-600 mb-1">{t('scaleup.cta.nest.title')}</h3>
+                <p className="text-sm text-gray-600">{t('scaleup.cta.nest.desc')}</p>
               </div>
             </Link>
 
             <a href="https://uniqdata.io" target="_blank" rel="noopener noreferrer" className="block">
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 hover:shadow-xl transition-all hover:scale-105 border-2 border-purple-200">
-                <div className="text-sm text-gray-500 mb-2">전 연령</div>
-                <h3 className="text-lg font-bold text-purple-600 mb-1">UniQdata 시작하기</h3>
-                <p className="text-sm text-gray-600">데이터로 수익 창출</p>
+                <div className="text-sm text-gray-500 mb-2">{t('scaleup.cta.uniqdata.age')}</div>
+                <h3 className="text-lg font-bold text-purple-600 mb-1">{t('scaleup.cta.uniqdata.title')}</h3>
+                <p className="text-sm text-gray-600">{t('scaleup.cta.uniqdata.desc')}</p>
               </div>
             </a>
           </div>
@@ -79,7 +79,7 @@ export default function ScaleupPage() {
       <section className="py-12 sm:py-20">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 px-2">
-            생애 전주기 케어 플랫폼
+            {t('scaleup.lifecycle.title')}
           </h2>
 
           <div className="space-y-6 sm:space-y-8">
@@ -88,9 +88,9 @@ export default function ScaleupPage() {
                 1
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">30대: 가족 소통의 시작</h3>
+                <h3 className="text-xl font-bold mb-2">{t('scaleup.lifecycle.step1.title')}</h3>
                 <p className="text-gray-600">
-                  우리집으로 가족 간 소통을 시작하고, 부모님의 건강 데이터를 관리합니다.
+                  {t('scaleup.lifecycle.step1.desc')}
                 </p>
               </div>
             </div>
@@ -100,9 +100,9 @@ export default function ScaleupPage() {
                 2
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">50-60대: 건강한 인생 2막</h3>
+                <h3 className="text-xl font-bold mb-2">{t('scaleup.lifecycle.step2.title')}</h3>
                 <p className="text-gray-600">
-                  어울림에서 또래와 함께 운동하며 건강한 노후를 준비합니다.
+                  {t('scaleup.lifecycle.step2.desc')}
                 </p>
               </div>
             </div>
@@ -112,9 +112,9 @@ export default function ScaleupPage() {
                 3
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">60-70대: 자립적 건강 관리</h3>
+                <h3 className="text-xl font-bold mb-2">{t('scaleup.lifecycle.step3.title')}</h3>
                 <p className="text-gray-600">
-                  Bodab의 AI 헬스케어로 스스로 건강을 관리합니다.
+                  {t('scaleup.lifecycle.step3.desc')}
                 </p>
               </div>
             </div>
@@ -124,9 +124,9 @@ export default function ScaleupPage() {
                 4
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">70대+: 전문적인 케어</h3>
+                <h3 className="text-xl font-bold mb-2">{t('scaleup.lifecycle.step4.title')}</h3>
                 <p className="text-gray-600">
-                  Nest에서 24시간 전문적인 케어를 받으며 편안한 노후를 보냅니다.
+                  {t('scaleup.lifecycle.step4.desc')}
                 </p>
               </div>
             </div>
@@ -136,9 +136,9 @@ export default function ScaleupPage() {
                 ∞
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">전 연령: 데이터 가치 실현</h3>
+                <h3 className="text-xl font-bold mb-2">{t('scaleup.lifecycle.step5.title')}</h3>
                 <p className="text-gray-600">
-                  UniQdata로 의료 데이터를 안전하게 관리하고 수익을 창출합니다.
+                  {t('scaleup.lifecycle.step5.desc')}
                 </p>
               </div>
             </div>
@@ -149,14 +149,13 @@ export default function ScaleupPage() {
       {/* Final CTA */}
       <section className="py-12 sm:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 px-2">한 번 시작하면 평생 함께</h2>
-          <p className="text-base sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
-            SportiQue는 가족의 모든 세대와 함께 성장하며,
-            각 시기에 필요한 최적의 헬스케어 솔루션을 제공합니다.
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 px-2">{t('scaleup.final.title')}</h2>
+          <p className="text-base sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-2 whitespace-pre-line">
+            {t('scaleup.final.desc')}
           </p>
           <Link to="/">
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold hover:shadow-lg transition-all text-sm sm:text-base">
-              서비스 둘러보기
+              {t('scaleup.final.button')}
             </button>
           </Link>
         </div>

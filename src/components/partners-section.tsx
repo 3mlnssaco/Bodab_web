@@ -1,34 +1,38 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export function PartnersSection() {
+  const { t } = useLanguage();
+
   const partners = [
     {
-      name: "호서대학교",
-      type: "학술 파트너",
-      description: "AI 헬스케어 연구 협력"
+      name: t('partners.hoseo.name'),
+      type: t('partners.hoseo.type'),
+      description: t('partners.hoseo.desc')
     },
     {
-      name: "XRPL Foundation",
-      type: "기술 파트너", 
-      description: "블록체인 기술 지원"
+      name: t('partners.xrpl.name'),
+      type: t('partners.xrpl.type'),
+      description: t('partners.xrpl.desc')
     },
     {
-      name: "의료기관",
-      type: "의료 파트너",
-      description: "진료 데이터 연동"
+      name: t('partners.medical.name'),
+      type: t('partners.medical.type'),
+      description: t('partners.medical.desc')
     },
     {
-      name: "웨어러블 기업",
-      type: "하드웨어 파트너",
-      description: "IoT 기기 연동"
+      name: t('partners.wearable.name'),
+      type: t('partners.wearable.type'),
+      description: t('partners.wearable.desc')
     },
     {
-      name: "보험사",
-      type: "비즈니스 파트너",
-      description: "헬스케어 보험 연계"
+      name: t('partners.insurance.name'),
+      type: t('partners.insurance.type'),
+      description: t('partners.insurance.desc')
     },
     {
-      name: "정부기관",
-      type: "정책 파트너",
-      description: "디지털 헬스케어 정책"
+      name: t('partners.government.name'),
+      type: t('partners.government.type'),
+      description: t('partners.government.desc')
     }
   ];
 
@@ -37,10 +41,10 @@ export function PartnersSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            파트너십
+            {t('partners.title')}
           </h2>
           <p className="text-xl text-muted-foreground">
-            혁신적인 헬스케어 생태계를 함께 만들어갑니다
+            {t('partners.subtitle')}
           </p>
         </div>
 

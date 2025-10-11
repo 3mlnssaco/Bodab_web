@@ -1,15 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function XRPLSection() {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-
-  const features = [
-    "건강데이터 주권 실현",
-    "NFT 기반 데이터 소유권 증명",
-    "영지식 증명을 통한 익명화",
-    "데이터 이전 및 판매로 수익 창출",
-  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,6 +27,13 @@ export function XRPLSection() {
     };
   }, []);
 
+  const features = [
+    t('xrpl.feature1'),
+    t('xrpl.feature2'),
+    t('xrpl.feature3'),
+    t('xrpl.feature4'),
+  ];
+
   return (
     <section ref={sectionRef} id="uniqdata" className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
@@ -48,17 +50,14 @@ export function XRPLSection() {
               <span className="text-lg text-muted-foreground">Sportique</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              UniqData 글로벌 마켓플레이스
+              {t('xrpl.title')}
             </h2>
             <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              uniqdata.io에서 <span className="font-semibold text-foreground">보답에서 수집한</span> 건강데이터의 주권을 실현하고<br />
-              NFT와 영지식 증명을 통한 데이터 익명화, 이전 및 판매로<br />
-              나의 데이터로 수익을 만들 수 있습니다
+              {t('xrpl.desc')}
             </p>
             <div className="bg-primary/10 rounded-2xl p-6 mb-8 border border-primary/20">
               <p className="text-muted-foreground text-lg">
-                🔗 <span className="font-semibold">보답(Bodab)에서 생성된 건강 데이터가</span><br />
-                UniqData에서 안전하게 관리되고 수익화됩니다
+                🔗 <span className="font-semibold">{t('xrpl.connection')}</span>
               </p>
             </div>
             <ul className="space-y-4 mb-8">
@@ -80,7 +79,7 @@ export function XRPLSection() {
               rel="noopener noreferrer"
               className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 hover:shadow-xl transition-all duration-300"
             >
-              UniqData 방문하기 →
+              {t('xrpl.cta')} →
             </a>
           </div>
 
@@ -97,9 +96,9 @@ export function XRPLSection() {
                       <span className="text-primary font-bold text-4xl">U</span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">UniqData.io</h3>
+                  <h3 className="text-2xl font-bold mb-2">{t('xrpl.card.title')}</h3>
                   <p className="text-primary-foreground/80">
-                    글로벌 데이터 마켓플레이스
+                    {t('xrpl.card.subtitle')}
                   </p>
                 </div>
               </div>

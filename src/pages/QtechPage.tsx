@@ -47,15 +47,15 @@ export default function QtechPage() {
               <ul className="space-y-1.5 sm:space-y-2">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">대화형 AI 반려 로봇</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.robot.item1')}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">복약 알림 로봇</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.robot.item2')}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">긴급 상황 감지 및 알림</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.robot.item3')}</span>
                 </li>
               </ul>
             </div>
@@ -70,61 +70,61 @@ export default function QtechPage() {
               <ul className="space-y-1.5 sm:space-y-2">
                 <li className="flex items-start">
                   <span className="text-indigo-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">의료 데이터 익명화</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.blockchain.item1')}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-indigo-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">스마트 컨트랙트 기반 보험</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.blockchain.item2')}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-indigo-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">데이터 소유권 증명</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.blockchain.item3')}</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-5 sm:p-6 lg:p-8 rounded-xl shadow-lg">
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-purple-600">
-                📊 AI 헬스케어
+                📊 {t('qtech.research.ai.title')}
               </h3>
               <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
-                딥러닝 기반 건강 예측 및 진단 보조 시스템
+                {t('qtech.research.ai.desc')}
               </p>
               <ul className="space-y-1.5 sm:space-y-2">
                 <li className="flex items-start">
                   <span className="text-purple-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">질병 조기 진단 AI</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.ai.item1')}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-purple-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">맞춤형 건강 관리 추천</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.ai.item2')}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-purple-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">의료 영상 분석</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.ai.item3')}</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white p-5 sm:p-6 lg:p-8 rounded-xl shadow-lg">
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-green-600">
-                🏠 스마트 홈 IoT
+                🏠 {t('qtech.research.iot.title')}
               </h3>
               <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
-                고령자 친화적 스마트 홈 환경 구축
+                {t('qtech.research.iot.desc')}
               </p>
               <ul className="space-y-1.5 sm:space-y-2">
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">낙상 감지 시스템</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.iot.item1')}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">생활 패턴 분석</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.iot.item2')}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2 text-sm sm:text-base">▸</span>
-                  <span className="text-sm sm:text-base">환경 자동 제어</span>
+                  <span className="text-sm sm:text-base">{t('qtech.research.iot.item3')}</span>
                 </li>
               </ul>
             </div>
@@ -135,15 +135,15 @@ export default function QtechPage() {
       {/* Innovation Process */}
       <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">혁신 프로세스</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">{t('qtech.innovation.title')}</h2>
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 1
               </div>
-              <h3 className="font-semibold mb-2">연구 개발</h3>
-              <p className="text-gray-600">최신 기술 연구</p>
+              <h3 className="font-semibold mb-2">{t('qtech.innovation.research')}</h3>
+              <p className="text-gray-600">{t('qtech.innovation.research.desc')}</p>
             </div>
 
             <div className="hidden md:block text-3xl text-gray-400">→</div>
@@ -152,8 +152,8 @@ export default function QtechPage() {
               <div className="w-20 h-20 bg-indigo-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 2
               </div>
-              <h3 className="font-semibold mb-2">프로토타입</h3>
-              <p className="text-gray-600">실험 및 검증</p>
+              <h3 className="font-semibold mb-2">{t('qtech.innovation.prototype')}</h3>
+              <p className="text-gray-600">{t('qtech.innovation.prototype.desc')}</p>
             </div>
 
             <div className="hidden md:block text-3xl text-gray-400">→</div>
@@ -162,8 +162,8 @@ export default function QtechPage() {
               <div className="w-20 h-20 bg-purple-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 3
               </div>
-              <h3 className="font-semibold mb-2">상용화</h3>
-              <p className="text-gray-600">서비스 적용</p>
+              <h3 className="font-semibold mb-2">{t('qtech.innovation.commercial')}</h3>
+              <p className="text-gray-600">{t('qtech.innovation.commercial.desc')}</p>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function QtechPage() {
             {t('qtech.cta.desc')}
           </p>
           <button className="bg-white text-blue-600 px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors text-sm sm:text-base">
-            연구 파트너 되기
+            {t('qtech.cta.button')}
           </button>
         </div>
       </section>

@@ -1,14 +1,14 @@
 import type React from "react";
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function SimpleNavigation() {
-  const [language, setLanguage] = useState<"ko" | "en">("ko");
+  const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
 
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "ko" ? "en" : "ko"));
+    setLanguage(language === "ko" ? "en" : "ko");
   };
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

@@ -14,14 +14,14 @@ export default function Home() {
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900">
-            <span className="block sm:inline">가족의 모든 세대를 잇는</span>
+            <span className="block sm:inline">{t('home.hero.title.line1')}</span>
             <span className="block sm:inline sm:ml-2">
-              <span className="text-blue-600">건강한 연결고리</span>
+              <span className="text-blue-600">{t('home.hero.title.line2')}</span>
             </span>
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
-            <span className="block sm:inline">20대부터 80대까지, 각 세대가 필요한 순간에</span>
-            <span className="block sm:inline sm:ml-1">가장 적절한 케어를 제공하는 생애주기 맞춤 플랫폼</span>
+            <span className="block sm:inline">{t('home.hero.subtitle.line1')}</span>
+            <span className="block sm:inline sm:ml-1">{t('home.hero.subtitle.line2')}</span>
           </p>
         </div>
       </section>

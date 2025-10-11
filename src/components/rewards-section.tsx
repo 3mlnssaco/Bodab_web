@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function RewardsSection() {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -53,16 +55,13 @@ export function RewardsSection() {
             </div>
             <span className="text-lg text-primary-foreground/80">Sportique</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">보답 (Bodab)</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('rewards.title')}</h2>
           <p className="text-xl mb-8 text-primary-foreground/90 leading-relaxed">
-            AI 기반 실버 헬스케어 앱으로<br />
-            데이터 측정과 건강 분석을 통한<br />
-            맞춤형 시니어 케어를 제공합니다
+            {t('rewards.desc')}
           </p>
           <div className="bg-primary-foreground/10 rounded-2xl p-6 mb-8 border border-primary-foreground/20">
             <p className="text-primary-foreground/90 text-lg">
-              💡 <span className="font-semibold">수집된 건강 데이터는 UniqData로 전송되어</span><br />
-              데이터 주권과 수익화의 기반이 됩니다
+              💡 <span className="font-semibold">{t('rewards.connection')}</span>
             </p>
           </div>
 
@@ -70,18 +69,18 @@ export function RewardsSection() {
             {[
               {
                 icon: "🤖",
-                title: "AI 건강 분석",
-                description: "RAG 기반 의료 상담, 과거 진료기록 분석, 맞춤형 건강 추천",
+                title: t('rewards.feature1.title'),
+                description: t('rewards.feature1.desc'),
               },
               {
                 icon: "📊",
-                title: "실시간 데이터 측정",
-                description: "웨어러블 기기 연동, 24/7 생체신호 모니터링, 건강 상태 추적",
+                title: t('rewards.feature2.title'),
+                description: t('rewards.feature2.desc'),
               },
               {
                 icon: "👴",
-                title: "시니어 케어 솔루션",
-                description: "고령화 시대 맞춤 돌봄, 응급상황 대응, 가족 안심 서비스",
+                title: t('rewards.feature3.title'),
+                description: t('rewards.feature3.desc'),
               },
             ].map((reward, index) => (
               <div
@@ -101,7 +100,7 @@ export function RewardsSection() {
             to="/bodab"
             className="inline-block bg-primary-foreground text-primary px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 hover:shadow-xl transition-all duration-300"
           >
-            자세히 보기 →
+            {t('rewards.cta')} →
           </Link>
         </div>
       </div>

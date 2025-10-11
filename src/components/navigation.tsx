@@ -94,7 +94,7 @@ export function Navigation() {
                 className="hover:bg-secondary/20 font-medium text-sm px-3 flex items-center gap-1"
                 aria-label="Select language"
               >
-                <span>{language === "ko" ? "🇰🇷 한국어" : "🇺🇸 English"}</span>
+                <span>{language === "ko" ? "🇰🇷" : "🇺🇸"}</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -111,7 +111,7 @@ export function Navigation() {
                         language === "ko" ? "bg-blue-50 text-blue-600" : "text-gray-700"
                       }`}
                     >
-                      🇰🇷 한국어
+                      🇰🇷 Korean
                     </button>
                     <button
                       onClick={() => {
@@ -139,7 +139,7 @@ export function Navigation() {
               className="hover:bg-secondary/20 text-xs px-2 py-1"
               aria-label="Toggle language"
             >
-              {language === "ko" ? "EN" : "한"}
+              {language === "ko" ? "🇺🇸" : "🇰🇷"}
             </Button>
             <Button
               variant="ghost"

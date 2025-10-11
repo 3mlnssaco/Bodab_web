@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="container mx-auto px-4 lg:px-8">
@@ -13,19 +16,19 @@ export function Footer() {
               <span className="font-bold text-xl">Sportique</span>
             </Link>
             <p className="text-primary-foreground/80 text-sm">
-              XRPL 기반 블록체인 기술로 데이터주권을 되찾고, AI 기반 헬스케어 솔루션을 제공하는 플랫폼입니다.
+              {t('footer.description')}
             </p>
           </div>
 
           <div>
-            <h3 className="font-bold mb-4">서비스</h3>
+            <h3 className="font-bold mb-4">{t('footer.services')}</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
                 <Link
                   to="/bodab"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  보답 (Bodab)
+                  {t('footer.bodab')}
                 </Link>
               </li>
               <li>
@@ -35,7 +38,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  UniqData
+                  {t('footer.uniqdata')}
                 </a>
               </li>
               <li>
@@ -43,14 +46,14 @@ export function Footer() {
                   to="/xrpl"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  XRPL
+                  {t('footer.xrpl')}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold mb-4">회사</h3>
+            <h3 className="font-bold mb-4">{t('footer.company')}</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
                 <button
@@ -60,7 +63,7 @@ export function Footer() {
                   }}
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  소개
+                  {t('footer.about')}
                 </button>
               </li>
               <li>
@@ -68,7 +71,7 @@ export function Footer() {
                   href="mailto:contact@sportique.biz"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  채용
+                  {t('footer.careers')}
                 </a>
               </li>
               <li>
@@ -76,21 +79,21 @@ export function Footer() {
                   href="mailto:contact@sportique.biz"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  파트너십
+                  {t('footer.partnership')}
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold mb-4">지원</h3>
+            <h3 className="font-bold mb-4">{t('footer.support')}</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
                 <a
                   href="mailto:contact@sportique.biz"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  고객센터
+                  {t('footer.customer')}
                 </a>
               </li>
               <li>
@@ -98,7 +101,7 @@ export function Footer() {
                   href="mailto:contact@sportique.biz"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  FAQ
+                  {t('footer.faq')}
                 </a>
               </li>
               <li>
@@ -106,7 +109,7 @@ export function Footer() {
                   href="mailto:contact@sportique.biz"
                   className="hover:text-primary-foreground transition-colors"
                 >
-                  문의하기
+                  {t('footer.contact')}
                 </a>
               </li>
             </ul>
@@ -115,19 +118,19 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/80">
-            <p>© 2025 Sportique. All rights reserved.</p>
+            <p>{t('footer.copyright')}</p>
             <div className="flex gap-6">
               <a
                 href="mailto:contact@sportique.biz"
                 className="hover:text-primary-foreground transition-colors"
               >
-                개인정보처리방침
+                {t('footer.privacy')}
               </a>
               <a
                 href="mailto:contact@sportique.biz"
                 className="hover:text-primary-foreground transition-colors"
               >
-                이용약관
+                {t('footer.terms')}
               </a>
             </div>
           </div>

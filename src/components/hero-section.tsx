@@ -2,9 +2,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function HeroSection() {
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
+  const { t } = useLanguage();
 
   return (
     <section className="relative min-h-screen bg-primary overflow-hidden pt-16">
@@ -25,12 +27,12 @@ export function HeroSection() {
           {/* Hero Content */}
           <div className="text-center mb-8 md:mb-12 animate-fade-in-up">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight">
-              <span className="block sm:inline">Sportique의 두 가지 서비스로</span>{" "}
-              <span className="block sm:inline">건강한 미래를 만듭니다</span>
+              <span className="block sm:inline">{t('hero.title.line1')}</span>{" "}
+              <span className="block sm:inline">{t('hero.title.line2')}</span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/90 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
-              <span className="block sm:inline"><span className="font-semibold">보답(Bodab)</span>으로 AI 헬스케어를 경험하고</span>{" "}
-              <span className="block sm:inline"><span className="font-semibold">UniqData</span>에서 데이터 주권을 실현하세요</span>
+              <span className="block sm:inline">{t('hero.subtitle.line1')}</span>{" "}
+              <span className="block sm:inline">{t('hero.subtitle.line2')}</span>
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12">
@@ -44,7 +46,7 @@ export function HeroSection() {
                 onMouseEnter={() => setHoveredButton("start")}
                 onMouseLeave={() => setHoveredButton(null)}
               >
-                시작하기
+                {t('hero.cta.start')}
                 <ArrowRight
                   className={`ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform duration-300 ${
                     hoveredButton === "start" ? "translate-x-1" : ""
@@ -63,7 +65,7 @@ export function HeroSection() {
                   onMouseEnter={() => setHoveredButton("learn")}
                   onMouseLeave={() => setHoveredButton(null)}
                 >
-                  자세히 보기
+                  {t('hero.cta.learn')}
                 </Button>
               </Link>
             </div>

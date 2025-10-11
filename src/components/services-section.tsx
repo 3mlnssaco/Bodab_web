@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function ServicesSection() {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -35,10 +37,10 @@ export function ServicesSection() {
           }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our Services
+            {t('services.title')}
           </h2>
           <p className="text-xl text-muted-foreground">
-            Sportique가 제공하는 두 가지 독립적인 서비스
+            {t('services.subtitle')}
           </p>
         </div>
 
@@ -66,31 +68,29 @@ export function ServicesSection() {
                   </div>
                   <span className="text-sm text-primary-foreground/80">Sportique</span>
                 </div>
-                <h3 className="text-3xl font-bold mb-4">보답 (Bodab)</h3>
+                <h3 className="text-3xl font-bold mb-4">{t('services.bodab.title')}</h3>
                 <p className="text-lg text-primary-foreground/90 mb-6 leading-relaxed">
-                  <span className="block sm:inline">AI 기반 실버 헬스케어 앱으로</span>{" "}
-                  <span className="block sm:inline">데이터 측정과 건강 분석을 통한</span>{" "}
-                  <span className="block sm:inline">맞춤형 시니어 케어를 제공합니다</span>
+                  {t('services.bodab.desc')}
                 </p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">🤖</span>
-                    <span className="text-primary-foreground/90">AI 건강 분석</span>
+                    <span className="text-primary-foreground/90">{t('services.bodab.feature1')}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">📊</span>
-                    <span className="text-primary-foreground/90">실시간 데이터 측정</span>
+                    <span className="text-primary-foreground/90">{t('services.bodab.feature2')}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">👴</span>
-                    <span className="text-primary-foreground/90">시니어 케어 솔루션</span>
+                    <span className="text-primary-foreground/90">{t('services.bodab.feature3')}</span>
                   </div>
                 </div>
                 <Link
                   to="/bodab"
                   className="inline-block bg-primary-foreground text-primary px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-300"
                 >
-                  자세히 보기 →
+                  {t('services.bodab.cta')} →
                 </Link>
               </div>
             </div>
@@ -119,24 +119,22 @@ export function ServicesSection() {
                   </div>
                   <span className="text-sm text-secondary-foreground/80">Sportique</span>
                 </div>
-                <h3 className="text-3xl font-bold mb-4">UniqData</h3>
+                <h3 className="text-3xl font-bold mb-4">{t('services.uniqdata.title')}</h3>
                 <p className="text-lg text-secondary-foreground/90 mb-6 leading-relaxed">
-                  <span className="block sm:inline">글로벌 데이터 마켓플레이스로</span>{" "}
-                  <span className="block sm:inline">건강데이터 주권을 실현하고</span>{" "}
-                  <span className="block sm:inline">NFT와 영지식 증명으로 수익화합니다</span>
+                  {t('services.uniqdata.desc')}
                 </p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">🏛️</span>
-                    <span className="text-secondary-foreground/90">데이터 주권 실현</span>
+                    <span className="text-secondary-foreground/90">{t('services.uniqdata.feature1')}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">🎨</span>
-                    <span className="text-secondary-foreground/90">NFT 기반 소유권 증명</span>
+                    <span className="text-secondary-foreground/90">{t('services.uniqdata.feature2')}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">💰</span>
-                    <span className="text-secondary-foreground/90">데이터 수익화</span>
+                    <span className="text-secondary-foreground/90">{t('services.uniqdata.feature3')}</span>
                   </div>
                 </div>
                 <a
@@ -145,7 +143,7 @@ export function ServicesSection() {
                   rel="noopener noreferrer"
                   className="inline-block bg-secondary-foreground text-secondary px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-300"
                 >
-                  UniqData 방문하기 →
+                  {t('services.uniqdata.cta')} →
                 </a>
               </div>
             </div>
