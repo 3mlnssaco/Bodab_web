@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build all public pages
+        run: node scripts/build-site.mjs
+
       - name: Validate landing and retained routes
         run: node --test tests/landing.test.mjs
 
