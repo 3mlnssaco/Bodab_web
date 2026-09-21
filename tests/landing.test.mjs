@@ -21,3 +21,21 @@ test('atlas includes independently selectable sites and a full world outline',()
  for(const code of ['KR','MN','US'])assert.ok(atlas.countries.find(c=>c.code===code)?.path.startsWith('M'));
  assert.equal(atlas.license,'Public domain');
 });
+const pageFiles=['index.html','products/index.html','about/index.html','founder/index.html','awards/index.html','contact/index.html','institutions/index.html','404.html'];
+const publicRecords=JSON.parse(readFileSync('assets/public-records.json','utf8'));
+const escapeHtml=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+test('every public page has the same original-logo neon shell and real institution login destination',()=>{
+ for(const file of pageFiles){const page=readFileSync(file,'utf8');assert.ok(page.includes('/assets/neon-site-20260921.css'),file);assert.ok(page.includes('/assets/neon-site-20260921.js'),file);assert.ok(page.includes('class="brand original-brand"'),file);assert.ok(page.includes('https://org.sportique.biz/products/uniqlab'),file);assert.ok(page.includes('aria-label="모바일 메뉴"'),file);assert.ok(!page.includes('src="/assets/index-org-20260817.js"'),file);assert.ok(!page.includes('admin.sportique.biz'),file);assert.equal((page.match(/<h1(?:\s|>)/g)||[]).length,1,file);}
+});
+test('redesign preserves each founder and award record, date and metadata without promoting its status',()=>{
+ for(const [key,file] of [['founder','founder/index.html'],['awards','awards/index.html']]){const page=readFileSync(file,'utf8');for(const record of publicRecords[key])for(const value of Object.values(record))assert.ok(page.includes(escapeHtml(value)),file+': '+value);}
+ assert.equal(publicRecords.founder.length,14);assert.equal(publicRecords.awards.length,11);
+});
+test('all four product anchors, original destinations and feature descriptions remain usable',()=>{
+ const page=readFileSync('products/index.html','utf8');for(const product of publicRecords.products){assert.ok(page.includes(`id="${product.id}"`));assert.ok(page.includes(`href="${escapeHtml(product.href)}"`));for(const value of [product.description,product.detail,...product.features,...product.modules])assert.ok(page.includes(escapeHtml(value)),value);}
+ const institution=readFileSync('institutions/index.html','utf8');assert.ok(institution.includes('https://org.sportique.biz/onboarding'));assert.ok(institution.includes('https://web.uniqlab.io/'));assert.ok(!/<input[^>]+type="password"/.test(institution));
+});
+test('3D is progressive enhancement; original map controls survive reduced-motion or renderer failure',()=>{
+ const script=readFileSync('assets/neon-site-20260921.js','utf8');assert.ok(script.includes('prefers-reduced-motion'));assert.ok(script.includes('hologram-fallback'));assert.ok(existsSync('assets/vendor/LICENSE'));assert.ok(existsSync('assets/vendor/three.core.js'));assert.ok(existsSync('assets/vendor/three.module.js'));
+ const renderer=readFileSync('assets/world-hologram-20260921.js','utf8');assert.ok(renderer.includes('IntersectionObserver'));assert.ok(renderer.includes('visibilitychange'));assert.ok(renderer.includes('renderer.dispose()'));
+});
