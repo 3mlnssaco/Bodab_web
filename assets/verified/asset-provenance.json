@@ -1,0 +1,74 @@
+{
+  "schema": "sportique.public-asset-provenance.v1",
+  "reviewed_at": "2026-09-22",
+  "assets": [
+    {
+      "public_path": "/assets/sportique-icon.jpg",
+      "type": "original brand asset",
+      "source": "existing SportiQue repository brand mark",
+      "sha256": "fe04aa8dce83345d9f1763e20fdae3eb43627b68c83dd7604c8650b8e2e99213",
+      "publication_note": "Original pixel speech-bubble mark and wordmark. The 3D emblem is a deterministic geometry trace of this mark."
+    },
+    {
+      "public_path": "/assets/verified/founder-portrait-20260922.jpg",
+      "type": "actual founder portrait, web derivative",
+      "source": "Hoseo WinningAction studio retouched portrait 1",
+      "source_sha256": "effab3a6d72e27ea7d94b91e97e5e08fa85cdb3abb8a44e2d94d2da58429fa2e",
+      "sha256": "7ef4c48b59c747f1d4ef6ce4bfd19b6e9ba8fdee0914f58b3b1d60e073bf904b",
+      "transformation": "Resized to 1200x1800, JPEG quality 88, metadata stripped; face and scene unchanged."
+    },
+    {
+      "public_path": "/assets/verified/uniqdata-screen-20260922.webp",
+      "type": "verified product UI capture",
+      "source": "UniQdata UI QA safe UI evidence, routine recommendation registered detail",
+      "source_sha256": "10ffba81b522c8b0a0ed4571b36fc2be4401f5c2a3c22c3851051ed4393ad12e",
+      "sha256": "10ffba81b522c8b0a0ed4571b36fc2be4401f5c2a3c22c3851051ed4393ad12e",
+      "privacy_review": "No account identifier, credential, or personal health record visible."
+    },
+    {
+      "public_path": "/assets/verified/uniqlab-screen-20260922.png",
+      "type": "verified demo product UI capture, privacy crop",
+      "source": "UniQdata KFIP 2026 proof research hub capture",
+      "source_sha256": "13d38d063fbbec3da21500bd6d9b2244af65104221512a200f1abca70744bef6",
+      "sha256": "5a9c010c2f5bd44b5586aee017d9d2029767e0bf77820d4f7c12140e452d354c",
+      "transformation": "Cropped to the research-hub product surface and stripped metadata; no UI content was synthesized.",
+      "publication_note": "Shown as a demo UI, not as evidence of a live customer study."
+    },
+    {
+      "public_path": "/assets/verified/bodab-screen-20260922.png",
+      "type": "verified native app capture",
+      "source": "Bodab Build 6 App Store screenshot set, today home",
+      "source_sha256": "e2ae299e9254b6111e127cfc35d385270a44ddb0afa11d92a05089064157a342",
+      "sha256": "e2ae299e9254b6111e127cfc35d385270a44ddb0afa11d92a05089064157a342",
+      "publication_note": "Synthetic review persona shown in the submitted app UI."
+    },
+    {
+      "public_path": "/assets/verified/yakson-designer-exterior-20260922.png",
+      "type": "designer exterior reference render",
+      "source": "YAKSON clean-roll-stepper-v1, designer exterior scene",
+      "source_sha256": "be175158cab91f42a4465aa4181f96365062945147599403b5b0d80874bcc8de",
+      "sha256": "be175158cab91f42a4465aa4181f96365062945147599403b5b0d80874bcc8de",
+      "publication_note": "Original designer-proportioned exterior reference; not a fabrication drawing or physical validation."
+    },
+    {
+      "public_path": "/assets/verified/yakson-designer-motion-20260922.mp4",
+      "type": "digital design motion preview",
+      "source": "YAKSON clean-roll-stepper-v1 design-cycle preview",
+      "source_sha256": "7fce453f8386d58fdfb936ae4127960d129d1071367e55ab13fd2be7eebd85be",
+      "sha256": "7fce453f8386d58fdfb936ae4127960d129d1071367e55ab13fd2be7eebd85be",
+      "publication_note": "Digital review of the top roll, downward feed, isolation shutter, and receiving door; not physical test evidence."
+    }
+  ],
+  "blocked_assets": [
+    {
+      "former_path": "/assets/uniqdata-phone-1.png",
+      "sha256": "934864ba68c485a9adf4470280316ab4b8cf84277cc4eedb783cd97d748800d6",
+      "reason": "Fabricated English phone mockup; removed from the public site."
+    },
+    {
+      "former_path": "/assets/uniqdata-phone-2.png",
+      "sha256": "c11ead23eb8407fc8b98034ab5ffdd7dfa5426218f723a4d99b27df7cdc35952",
+      "reason": "Fabricated English phone mockup; removed from the public site."
+    }
+  ]
+}
