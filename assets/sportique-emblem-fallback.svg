@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="120 35 260 330" fill="none">
+  <title>SportiQue 말풍선 심벌</title>
+  <desc>기존 SportiQue 로고의 흰 말풍선, 녹색 S, 청록색과 보라색 가장자리.</desc>
+  <defs>
+    <linearGradient id="edge" x1="350" y1="70" x2="230" y2="335" gradientUnits="userSpaceOnUse"><stop stop-color="#74ddba"/><stop offset=".55" stop-color="#6fcce0"/><stop offset="1" stop-color="#a788e5"/></linearGradient>
+    <path id="frame" fill-rule="evenodd" d="M162 55H338V65H348V299H275V309H265V319H255V329H245V319H235V309H225V299H162V289H152V65H162ZM162 65V289H235V299H245V309H255V299H265V289H338V65Z"/>
+  </defs>
+  <use href="#frame" fill="#a68ce9" transform="translate(10.5 10.5)"/>
+  <use href="#frame" fill="url(#edge)" transform="translate(5.5 5.2)"/>
+  <use href="#frame" fill="#f2fffb"/>
+  <path fill="#72d59a" d="M234 121H268L282 136V153H267V137H235V169H268L283 184V218L268 234H234L218 218V201H234V218H267V185H234L219 170V136Z"/>
+</svg>

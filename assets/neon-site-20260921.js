@@ -1,4 +1,10 @@
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+try{
+ const {mountEmblems}=await import('./sportique-emblem-3d.js?v=20260922');
+ mountEmblems();
+}catch{
+ for(const emblem of document.querySelectorAll('[data-brand-emblem]'))emblem.classList.add('emblem-fallback');
+}
 for(const menu of document.querySelectorAll('.mobile-menu')){
  menu.addEventListener('keydown',event=>{if(event.key==='Escape'){menu.open=false;menu.querySelector('summary').focus();}});
  menu.addEventListener('click',event=>{if(event.target.closest('a'))menu.open=false;});
