@@ -83,7 +83,7 @@ test('product page uses provenance-reviewed media and contains no fabricated pro
 });
 test('founder page uses the requested retouch, retains the original portrait, and keeps institution login out of contact content',()=>{
  const founder=readFileSync('founder/index.html','utf8');assert.ok(founder.includes('/assets/verified/founder-portrait-retouched-20260923.jpg'));assert.ok(existsSync('assets/verified/founder-portrait-retouched-20260923.jpg'));assert.ok(existsSync('assets/verified/founder-portrait-20260922.jpg'));assert.ok(!founder.includes('class="founder-symbol"'));
- assert.ok(founder.includes('제품을 직접 <em>만듭니다.</em>'));
+ assert.ok(founder.includes('제품을 직접<br><em>만듭니다.</em>'));
  assert.ok(!founder.includes('직접 <em>만드는 사람.</em>'));
  assert.ok(!founder.includes('UCL TIDH 2026 확장초록 제출'));
  assert.ok(!founder.includes('몽골 현장 조사와 기관 후속 협의'));
@@ -96,6 +96,11 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.ok(founder.indexOf('2026.08 초')<founder.indexOf('2026.07.27-07.31'));
  assert.ok(founder.includes('벤처프런티어 창업 활동'));
  assert.deepEqual([...founder.matchAll(/<div class="record-date">([^<]+)<\/div>/g)].slice(0,2).map(match=>match[1]),['현재','현재']);
+ const featured=publicRecords.awards.filter(record=>record.founderHighlight);
+ assert.equal(featured.length,3);
+ assert.equal((founder.match(/class="founder-award"/g)||[]).length,featured.length);
+ for(const record of featured){assert.ok(founder.includes(escapeHtml(record.title)));assert.ok(founder.includes(escapeHtml(record.founderHighlight)));}
+ assert.ok(!founder.includes('2025 학생 창업유망팀 300+ 성장트랙 최종선정'));
  assert.ok(founder.includes('2026 적정기술 기반 청년 창업 글로벌 실증 지원사업 몽골팀'));
  assert.ok(founder.includes('산학협동재단 / 대학산업기술지원단 / 적정기술학회'));
  const contact=readFileSync('contact/index.html','utf8');const main=contact.slice(contact.indexOf('<main'),contact.indexOf('</main>'));
