@@ -126,6 +126,9 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.ok(!founder.includes('몽골 현장 조사와 기관 후속 협의'));
  assert.ok(founder.includes('2026.08 초'));
  assert.ok(founder.includes('베이징 PKU 창업·AI 교육 및 IR 캠프 참여'));
+ assert.ok(founder.includes('ZeroBase SF Camp 참여'));
+ assert.ok(!founder.includes('샌프란시스코 SF Camp 참여'));
+ assert.ok(readFileSync('awards/index.html','utf8').includes('ZeroBase SF Camp 참가'));
  assert.ok(founder.includes('2026.02.03-02.05'));
  assert.equal(publicRecords.founder.filter(record=>record.title==='북경대 창업훈련캠프').length,1);
  assert.ok(!founder.includes('한중 청년 창업훈련캠프 참가·수료'));
