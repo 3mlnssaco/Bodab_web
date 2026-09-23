@@ -1,6 +1,6 @@
 {
   "schema": "sportique.public-asset-provenance.v1",
-  "reviewed_at": "2026-09-22",
+  "reviewed_at": "2026-09-23",
   "assets": [
     {
       "public_path": "/assets/sportique-icon.jpg",
@@ -24,6 +24,14 @@
       "source_sha256": "10ffba81b522c8b0a0ed4571b36fc2be4401f5c2a3c22c3851051ed4393ad12e",
       "sha256": "10ffba81b522c8b0a0ed4571b36fc2be4401f5c2a3c22c3851051ed4393ad12e",
       "privacy_review": "No account identifier, credential, or personal health record visible."
+    },
+    {
+      "public_path": "/assets/verified/uniqdata-home-dev-20260916.png",
+      "type": "development product UI capture",
+      "source": "outputs/zerobase-office-hour-20260910/visual-assets-20260916/real-uniqdata-home.png",
+      "source_sha256": "77b4b657d2d4b259d3476b2f4ee4ed85be6b3379baf65dc35a57c3c1f68ee6f6",
+      "sha256": "77b4b657d2d4b259d3476b2f4ee4ed85be6b3379baf65dc35a57c3c1f68ee6f6",
+      "publication_note": "Actual UniQdata development capture with test data; shows personal data entry and health-data connection, not live user records."
     },
     {
       "public_path": "/assets/verified/uniqlab-screen-20260922.png",
@@ -64,6 +72,16 @@
       "former_path": "/assets/uniqdata-phone-1.png",
       "sha256": "934864ba68c485a9adf4470280316ab4b8cf84277cc4eedb783cd97d748800d6",
       "reason": "Fabricated English phone mockup; removed from the public site."
+    },
+    {
+      "former_path": "/assets/generated/personal-data-vault-v1.png",
+      "sha256": "f4db41857b81b5ac42d35140d22601acf512ad7291003d424309921185a812c9",
+      "reason": "Static conceptual focal image rejected for the homepage; not published."
+    },
+    {
+      "former_path": "/assets/generated/personal-data-atmosphere-v1.webp",
+      "sha256": "ec8a1752a1c4128677de07c65bb3f84f497dff458e3fddc067f27a4772b9c67f",
+      "reason": "Generated background for a rejected hero animation; not published."
     },
     {
       "former_path": "/assets/uniqdata-phone-2.png",

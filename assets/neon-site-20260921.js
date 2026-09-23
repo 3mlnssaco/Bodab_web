@@ -15,17 +15,28 @@ for(const filter of document.querySelectorAll('[data-filter]'))filter.addEventLi
  for(const card of document.querySelectorAll('[data-category]')){card.hidden=value!=='all'&&card.dataset.category!==value;if(!card.hidden)count++;}
  document.querySelector('#record-count').textContent=`공개 기록 ${count}건`;
 });
-const stage=document.querySelector('.holo-stage');
-if(stage){
- await import('./world-home-20260921.js');
- if(!reduced.matches&&matchMedia('(pointer:fine)').matches){
-  stage.addEventListener('pointermove',event=>{const box=stage.getBoundingClientRect();stage.style.setProperty('--tilt-x',`${((event.clientX-box.left)/box.width-.5)*4}deg`);stage.style.setProperty('--tilt-y',`${-((event.clientY-box.top)/box.height-.5)*3}deg`);});
-  stage.addEventListener('pointerleave',()=>{stage.style.setProperty('--tilt-x','0deg');stage.style.setProperty('--tilt-y','0deg');});
- }
- if(!reduced.matches){
-  try{
-   const {startHologram}=await import('./world-hologram-20260921.js');
-   await startHologram(stage);
-  }catch{stage.classList.add('hologram-fallback');}
- }
+const svgNS='http://www.w3.org/2000/svg';
+async function mountPersonalWorld(){
+ const stage=document.querySelector('[data-personal-world]');
+ const layer=stage?.querySelector('[data-personal-world-countries]');
+ if(!stage||!layer)return;
+ try{
+  const response=await fetch('/assets/world-countries-20260921.json');
+  const atlas=await response.json();
+  if(!response.ok||!Array.isArray(atlas.countries)||atlas.countries.length<150)throw new Error('world atlas unavailable');
+  for(const country of atlas.countries){
+   const path=document.createElementNS(svgNS,'path');
+   path.setAttribute('d',country.path);path.classList.add('world-continent');
+   if(['KR','MN','US'].includes(country.code))path.classList.add('world-continent--context');
+   layer.append(path);
+  }
+ }catch{stage.dataset.worldMap='unavailable';}
+ if(reduced.matches||!('IntersectionObserver'in window))return;
+ const observer=new IntersectionObserver(entries=>{if(entries[0].isIntersecting){stage.classList.add('world-animated');observer.disconnect();}},{threshold:.2});
+ observer.observe(stage);
+}
+mountPersonalWorld();
+if(!reduced.matches&&'IntersectionObserver' in window){
+ const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}},{threshold:.12});
+ for(const element of document.querySelectorAll('[data-reveal]')){element.classList.add('reveal-ready');observer.observe(element);}
 }

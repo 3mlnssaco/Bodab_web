@@ -2,156 +2,295 @@
   "founder": [
     {
       "date": "현재",
+      "sortDate": 99999999,
       "title": "호서대학교 컴퓨터공학부",
       "meta": "AI·데이터 / 컴퓨터공학 기반, 반도체 패키지 신뢰성 복수전공 이력",
       "body": "AI와 데이터 기반 제품을 직접 설계하고 구현하는 학업 기반을 갖추고 있습니다."
     },
     {
-      "date": "2022.12.29",
-      "title": "인공지능 자격(전문가) 취득",
-      "meta": "한국표준협회 / 제 C-2022-0004443 호",
-      "body": "AI 기반 제품을 만들기 위한 기초 역량을 공식 자격으로 갖췄습니다."
+      "date": "2026.09.10",
+      "sortDate": 20260910,
+      "title": "ZeroBase Season 5 멘토링 참여",
+      "meta": "ZeroBase / 오피스아워·피치 피드백",
+      "body": "고객 문제와 초기 영업, 창업 과정을 멘토와 검토하고, 개인 건강기록 제품을 글로벌 청중에게 설명하는 소개 문장과 피치 자료를 다듬었습니다."
     },
     {
-      "date": "2024",
-      "title": "K-SW Square Winter 수료",
-      "meta": "과학기술정보통신부 / IITP / Purdue University",
-      "body": "글로벌 소프트웨어 교육 경험을 통해 제품과 기술을 함께 보는 관점을 넓혔습니다."
+      "date": "2026.09.09",
+      "sortDate": 20260909,
+      "title": "ACK 2026 약손 단독저자 논문 제출",
+      "meta": "한이음 드림업 약손 / 논문 접수",
+      "body": "복약 보조 장치와 앱 사이의 안전 설계, 기기에서 관찰한 사건과 실제 복용의 구분을 연구해 단독저자 논문으로 제출했습니다."
     },
     {
-      "date": "2024.09.19",
-      "title": "AI 커리어스쿨 대전충남세종 교육 수료",
-      "meta": "Google.org 지원 / Root Impact / ABLEARN",
-      "body": "AI 기술의 사회적 활용과 실무 적용 흐름을 학습한 지역 기반 AI 교육 과정입니다."
+      "date": "2026.09.09",
+      "sortDate": 20260909,
+      "title": "UCL TIDH 2026 확장초록 제출",
+      "meta": "개인 건강기록 AI / 초록 접수",
+      "body": "AI가 개인 건강기록을 설명할 때 동의와 접근 권한의 범위를 지키는 구조를 연구하고 확장초록을 제출했습니다."
     },
     {
-      "date": "2024.10.29",
-      "title": "ICCAS 2024 논문 포스터 발표",
-      "meta": "The 24th International Conference on Control, Automation and Systems / TuPos.22 / pp. 67-72",
-      "body": "IoT-based Automated Theft Detection in Vehicles 논문을 제1저자로 발표하며 YOLO, MediaPipe, IoT 센서 기반 실시간 탐지 구조를 검증했습니다."
+      "date": "2026.07-09",
+      "sortDate": 20260900,
+      "title": "몽골 현장 조사와 기관 후속 협의",
+      "meta": "글로벌 실증 지원사업 / 울란바토르",
+      "body": "현지 체육·교육기관을 방문해 측정 자료의 수집과 정리 과정을 조사하고, 한국어·몽골어 설문과 기관별 제안 자료를 준비했습니다."
     },
     {
-      "date": "2025.03.23",
-      "title": "LangChain Professional 취득",
-      "meta": "CODE PRESSO Inc.",
-      "body": "건강기록 요약, 질문 생성, RAG 흐름을 제품에 적용하기 위한 AI 개발 역량입니다."
+      "date": "2026.08 초",
+      "sortDate": 20260800,
+      "title": "베이징 창업·AI 교육 참여",
+      "meta": "PKU 연계 창업 프로그램 / IR 교육",
+      "body": "창업·AI 강의와 네트워킹, IR 피칭·보이스 코칭 교육에 참여하고 현지 참가자들과 건강기록 활용과 데이터 신뢰성에 관해 대화했습니다."
     },
     {
-      "date": "2025.03-11",
-      "title": "한이음 드림업 2025 프로젝트 참가",
-      "meta": "과학기술정보통신부 ICT 한이음 / 한국정보산업연합회 / AI·통신·앱 개발 담당",
-      "body": "디지털 홈 케어 서비스와 AI 메디컬 어시스턴트 프로젝트에서 자율주행 홈케어 로봇과 보호자 앱을 연결하는 AI, 통신, 앱 개발 역할을 맡았습니다."
+      "date": "2026.06",
+      "sortDate": 20260600,
+      "title": "샌프란시스코 SF Camp 참여",
+      "meta": "SF Camp / 창업자·투자자 커뮤니티 교류",
+      "body": "미국 창업자·투자자 커뮤니티와 교류하며 제품을 설명하고, 고객 문제와 유료 파일럿을 검증하는 방법에 관한 피드백을 받았습니다."
+    },
+    {
+      "date": "2025.03.01-2026.02.28",
+      "sortDate": 20260228,
+      "title": "2025학년도 벤처프런티어 창업 활동",
+      "meta": "호서대학교 벤처프런티어교육원 / 활동 인증",
+      "body": "선발 후 제품 개발과 사업계획, 대외활동을 수행하고 월별 보고서와 실제 산출물로 활동 내용을 정리했습니다."
+    },
+    {
+      "date": "2026.02.05",
+      "sortDate": 20260205,
+      "title": "한중 청년 창업훈련캠프 참가·수료",
+      "meta": "Korea-China Startup Training Camp",
+      "body": "한중 청년 창업훈련캠프에 참가하고 교육·참가 내용을 증서로 확인받았습니다."
+    },
+    {
+      "date": "2026.02.03",
+      "sortDate": 20260203,
+      "title": "북경대 창업훈련캠프 한국 교류일 참여",
+      "meta": "Peking University Entrepreneurship Training Camp",
+      "body": "북경대 창업훈련캠프 한국 교류일의 학습 활동에 참가했습니다."
+    },
+    {
+      "date": "2025.09.10-11.26",
+      "sortDate": 20251126,
+      "title": "SNU-SH BM 인큐베이팅 프로그램 수료",
+      "meta": "서울대학교 시흥캠퍼스본부 / BM·사업계획서·IR 피칭",
+      "body": "사업모델 수립과 사업계획서 작성, IR 피칭 지원 과정을 수료하며 SportiQue의 문제 정의와 사업 설명을 구체화했습니다."
     },
     {
       "date": "2025.08.05-11.01",
+      "sortDate": 20251101,
       "title": "로컬 장인학교 커뮤니티 기획자 과정 수료",
       "meta": "중소벤처기업부 / 소상공인시장진흥공단 / 무브컬쳐",
       "body": "지역 활동 기획, 참여자 모집, 신청과 참여 운영 흐름을 현장형 교육으로 경험했습니다."
     },
     {
-      "date": "2025.08.19-08.21",
-      "title": "융합보안 인력양성 교육 블록체인 보안 3차 수료",
-      "meta": "과학기술정보통신부 / 한국정보보호산업협회·한국정보보호교육원",
-      "body": "블록체인 보안과 데이터 무결성, 분산원장 기반 서비스의 보안 관점을 21시간 과정으로 학습했습니다."
-    },
-    {
-      "date": "2025.08.25-08.27",
-      "title": "제5회 Smart Semiconductor Academy 수료",
-      "meta": "Smart Semiconductor Campus / CHIPS / Hanyang University / Inha University",
-      "body": "Advanced Packaging, HBM, 반도체 AI 기술을 다루는 3일 22.5시간 교육 과정을 이수했습니다."
-    },
-    {
-      "date": "2025.08.30",
-      "title": "호서대학교·LG CNS 블록체인 융합과정 수료",
-      "meta": "호서대학교 / LG CNS",
-      "body": "블록체인 기술을 실제 서비스 구조와 연결해 이해하는 융합 교육 과정을 수료했습니다."
+      "date": "2025.03-11",
+      "sortDate": 20251100,
+      "title": "한이음 드림업 2025 프로젝트 참가",
+      "meta": "과학기술정보통신부 ICT 한이음 / 한국정보산업연합회 / AI·통신·앱 개발 담당",
+      "body": "디지털 홈 케어 서비스와 AI 메디컬 어시스턴트 프로젝트에서 자율주행 홈케어 로봇과 보호자 앱을 연결하는 AI, 통신, 앱 개발 역할을 맡았습니다."
     },
     {
       "date": "2025.09.12-09.23",
+      "sortDate": 20250923,
       "title": "2025 UN SDGs IDEATHON 참가",
       "meta": "성균관대학교 창업지원단 / Suwon Convention Center / WFUNA",
       "body": "SDG 기반 문제정의와 영어 피칭을 경험하며 AI 헬스케어와 사회문제 해결 관점을 넓혔습니다."
     },
     {
       "date": "2025.09.14",
+      "sortDate": 20250914,
       "title": "CITI Program Human Research 교육 이수",
       "meta": "CITI Program / MIT Affiliates / Data or Specimens Only Research",
       "body": "사람 대상 연구와 데이터·검체 기반 연구에서 필요한 윤리, 동의, 연구자 책임 기준을 학습했습니다."
     },
     {
-      "date": "2025.10.20",
-      "title": "SNU-SH BM 인큐베이팅 IR 덱 작성 멘토링",
-      "meta": "서울대학교 시흥캠퍼스 / 2025 예비창업패키지 SNU-SH BM 인큐베이팅 프로그램",
-      "body": "SportiQue의 IR 덱을 문제 정의, 시장 분석, 경쟁 우위, 수익모델, 성장 전략 중심으로 점검하고 투자자 관점의 발표 구조로 다듬었습니다."
+      "date": "2025.08.30",
+      "sortDate": 20250830,
+      "title": "호서대학교·LG CNS 블록체인 융합과정 수료",
+      "meta": "호서대학교 / LG CNS",
+      "body": "블록체인 기술을 실제 서비스 구조와 연결해 이해하는 융합 교육 과정을 수료했습니다."
+    },
+    {
+      "date": "2025.08.25-08.27",
+      "sortDate": 20250827,
+      "title": "제5회 Smart Semiconductor Academy 수료",
+      "meta": "Smart Semiconductor Campus / CHIPS / Hanyang University / Inha University",
+      "body": "Advanced Packaging, HBM, 반도체 AI 기술을 다루는 3일 22.5시간 교육 과정을 이수했습니다."
+    },
+    {
+      "date": "2025.08.19-08.21",
+      "sortDate": 20250821,
+      "title": "융합보안 인력양성 교육 블록체인 보안 3차 수료",
+      "meta": "과학기술정보통신부 / 한국정보보호산업협회·한국정보보호교육원",
+      "body": "블록체인 보안과 데이터 무결성, 분산원장 기반 서비스의 보안 관점을 21시간 과정으로 학습했습니다."
+    },
+    {
+      "date": "2025.06.24",
+      "sortDate": 20250624,
+      "title": "반도체·디스플레이 기술교육 심화과정 수료",
+      "meta": "호서대학교·국립공주대학교 공학교육혁신센터",
+      "body": "디스플레이 기초와 포토공정을 학습하고 LC cell 제작 실습을 이수했습니다."
+    },
+    {
+      "date": "2025.03.23",
+      "sortDate": 20250323,
+      "title": "LangChain Professional 취득",
+      "meta": "CODE PRESSO Inc.",
+      "body": "건강기록 요약, 질문 생성, RAG 흐름을 제품에 적용하기 위한 AI 개발 역량입니다."
+    },
+    {
+      "date": "2024.05.01-2025.02.28",
+      "sortDate": 20250228,
+      "title": "2024학년도 벤처프런티어 창업 활동",
+      "meta": "호서대학교 벤처프런티어교육원 / 활동 인증",
+      "body": "벤처프런티어에 선발되어 창업 활동을 수행하고 활동 인증을 받았습니다."
+    },
+    {
+      "date": "2024.10.29",
+      "sortDate": 20241029,
+      "title": "ICCAS 2024 논문 포스터 발표",
+      "meta": "The 24th International Conference on Control, Automation and Systems / TuPos.22 / pp. 67-72",
+      "body": "IoT-based Automated Theft Detection in Vehicles 논문을 제1저자로 발표하며 YOLO, MediaPipe, IoT 센서 기반 실시간 탐지 구조를 검증했습니다."
+    },
+    {
+      "date": "2024.09.19",
+      "sortDate": 20240919,
+      "title": "AI 커리어스쿨 대전충남세종 교육 수료",
+      "meta": "Google.org 지원 / Root Impact / ABLEARN",
+      "body": "AI 기술의 사회적 활용과 실무 적용 흐름을 학습한 지역 기반 AI 교육 과정입니다."
+    },
+    {
+      "date": "2023.12-2024.02",
+      "sortDate": 20240200,
+      "title": "K-SW Square Winter 수료",
+      "meta": "과학기술정보통신부 / IITP / Purdue University",
+      "body": "글로벌 소프트웨어 교육 경험을 통해 제품과 기술을 함께 보는 관점을 넓혔습니다."
+    },
+    {
+      "date": "2022.12.29",
+      "sortDate": 20221229,
+      "title": "인공지능 자격(전문가) 취득",
+      "meta": "한국표준협회",
+      "body": "AI 기반 제품을 만들기 위한 기초 역량을 공식 자격으로 갖췄습니다."
     }
   ],
   "awards": [
     {
-      "date": "2024.11.29",
-      "title": "2024 글로벌청년창업대전 아이디어 대회 최우수상",
-      "organizer": "한중 글로벌 청년창업대전 운영기관",
-      "venue": "Tencent Startup Space, Shenzhen",
-      "body": "고령자 맞춤 운동 추천과 지역 참여 아이디어로 초기 SportiQue의 가능성을 인정받았습니다."
+      "date": "2026.08.05",
+      "sortDate": 20260805,
+      "category": "selected",
+      "title": "2026 AI·데이터 문제해결은행 DX 적용지원 선정",
+      "organizer": "과학기술정보통신부 / 한국데이터산업진흥원",
+      "body": "기업의 데이터 활용 역량을 진단하고 맞춤형 분석·활용을 지원하는 DX 적용지원 트랙에 선정됐습니다."
     },
     {
-      "date": "2025.08.06",
-      "title": "2025 학생 창업유망팀 300+ 성장트랙 최종선정",
-      "organizer": "교육부 / 과학기술정보통신부 / 한국연구재단 / 한국청년기업가정신재단",
-      "body": "SportiQue 팀이 성장트랙 A 최종선발팀으로 선정되어 창업 역량 강화 프로그램과 후속 성장 기회를 확보했습니다."
+      "date": "2026.07.27-07.31",
+      "sortDate": 20260731,
+      "category": "fieldwork",
+      "title": "몽골 글로벌 실증 프로그램 수행",
+      "organizer": "산학협동재단",
+      "venue": "몽골 울란바토르",
+      "body": "적정기술 기반 청년창업 글로벌 실증 지원사업의 몽골팀으로 현지 기관을 방문하고, 건강·운동 기록의 수집과 연구 활용에 필요한 현장 요구를 확인했습니다."
     },
     {
-      "date": "2025.09.27",
-      "title": "XRPL Hackathon 2025 Seoul 최우수상",
-      "organizer": "XRPL / Ripple / Seoul Fintech Lab",
-      "body": "가족 간 건강 데이터 공유와 접근 이력 아이디어를 기술 데모로 선보였습니다."
+      "date": "2026.06.01",
+      "sortDate": 20260601,
+      "category": "company",
+      "title": "스포티큐 주식회사 설립",
+      "organizer": "SportiQue",
+      "body": "개인의 건강데이터 관리·활용·공유를 위한 제품 개발을 이어가기 위해 스포티큐 주식회사를 설립했습니다."
     },
     {
-      "date": "2025.10",
-      "title": "XRPL Hackathon Seoul 2025 Demo Day 발표",
-      "organizer": "XRPL Hackathon Seoul 2025 연계 프로그램",
-      "body": "SportiQue의 데이터 공유 경험을 사업화 관점에서 소개했습니다."
-    },
-    {
-      "date": "2025.11.07",
-      "title": "2025 호서대학교 창업동아리 부문 대상",
-      "organizer": "호서대학교 RISE 사업단",
-      "body": "교내 창업팀으로서 제품 실행력과 발표 역량을 인정받았습니다."
-    },
-    {
-      "date": "2025.11.13",
-      "title": "제3회 대학창업대전 학생창업 IR 교육부장관상",
-      "organizer": "전국 RISE, 창업중심대학, 엔젤투자허브 등",
-      "body": "전국 단위 학생창업 IR에서 SportiQue의 사업화 방향을 인정받았습니다."
-    },
-    {
-      "date": "2026.03.14",
-      "title": "테트라포드 데모데이 발표",
-      "organizer": "TETRAPOD",
-      "body": "UniQdata가 풀고자 하는 건강기록 이해 문제를 현장에서 소개했습니다."
-    },
-    {
-      "date": "2026.04",
-      "title": "한이음 드림업 2026 약손 프로젝트 선정",
-      "organizer": "과학기술정보통신부 ICT 한이음 / 한국정보산업연합회",
-      "body": "복약 보조 디바이스 YAKSON을 통해 가족 돌봄 경험을 하드웨어까지 확장합니다."
+      "date": "2026.06",
+      "sortDate": 20260600,
+      "category": "fieldwork",
+      "title": "샌프란시스코 SF Camp 참가",
+      "organizer": "ZeroBase",
+      "venue": "미국 샌프란시스코",
+      "body": "현지 창업자·투자자 커뮤니티와 교류하며 SportiQue의 제품 설명과 글로벌 사업 방향에 대한 피드백을 받았습니다."
     },
     {
       "date": "2026.05",
+      "sortDate": 20260500,
+      "category": "selected",
       "title": "2026 창업중심대학 권역 내 일반 트랙 선정",
       "organizer": "중소벤처기업부 / 창업진흥원 / 창업중심대학 주관기관",
       "body": "UniQdata 베타 출시, 국내 현장 적용, 기관 제안을 위한 사업화 기반을 확보했습니다."
     },
     {
       "date": "2026.05",
+      "sortDate": 20260500,
+      "category": "selected",
       "title": "2026 적정기술 기반 청년 창업 글로벌 실증 지원사업 몽골팀 선정",
       "organizer": "재단법인 산학협동재단",
       "body": "몽골 현지에서 만성질환 자기관리와 기관 협업 가능성을 확인하는 해외 실증 기회를 확보했습니다."
     },
     {
-      "date": "2026.05.22",
-      "title": "2026 글로벌 피우다프로젝트 본선 진출팀 선정",
-      "organizer": "과학기술정보통신부 / 정보통신산업진흥원 / 전국 ICT콤플렉스 운영기관",
-      "body": "Bodab 돌봄 앱과 고령자 돌봄 문제의식으로 본선 진출팀에 선정되었습니다."
+      "date": "2026.04",
+      "sortDate": 20260400,
+      "category": "selected",
+      "title": "한이음 드림업 2026 약손 프로젝트 선정",
+      "organizer": "과학기술정보통신부 ICT 한이음 / 한국정보산업연합회",
+      "body": "복약 보조 디바이스 YAKSON을 통해 가족 돌봄 경험을 하드웨어까지 확장합니다."
+    },
+    {
+      "date": "2026.03.14",
+      "sortDate": 20260314,
+      "category": "presentation",
+      "title": "테트라포드 데모데이 발표",
+      "organizer": "TETRAPOD",
+      "body": "UniQdata가 풀고자 하는 건강기록 이해 문제를 현장에서 소개했습니다."
+    },
+    {
+      "date": "2025.11.13",
+      "sortDate": 20251113,
+      "category": "award",
+      "title": "2025학년도 산학협력 페스티벌 창업동아리 교내경진대회 대상",
+      "organizer": "호서대학교 RISE사업단 / 호서대학교 총장",
+      "body": "SportiQue 팀이 교내 창업동아리 경진대회에서 대상을 받았습니다."
+    },
+    {
+      "date": "2025.11.07",
+      "sortDate": 20251107,
+      "category": "award",
+      "title": "제3회 대학창업대전 학생창업 IR 교육부장관상",
+      "organizer": "교육부장관",
+      "body": "이승헌 대표가 SportiQue의 사업을 발표해 학생창업 IR 교육부장관상을 받았습니다."
+    },
+    {
+      "date": "2025.10.17",
+      "sortDate": 20251017,
+      "category": "selected",
+      "title": "2025 학생 창업유망팀 300+ 성장트랙 최종선정",
+      "organizer": "교육부 / 과학기술정보통신부 / 한국연구재단 / 한국청년기업가정신재단",
+      "body": "SportiQue 팀이 성장트랙 최종 선정 인증서를 받았습니다."
+    },
+    {
+      "date": "2025.10",
+      "sortDate": 20251000,
+      "category": "presentation",
+      "title": "XRPL Hackathon Seoul 2025 Demo Day 발표",
+      "organizer": "XRPL Hackathon Seoul 2025 연계 프로그램",
+      "body": "SportiQue의 데이터 공유 경험을 사업화 관점에서 소개했습니다."
+    },
+    {
+      "date": "2025.09",
+      "sortDate": 20250900,
+      "category": "award",
+      "title": "XRPL Hackathon 2025 Seoul 최우수상",
+      "organizer": "XRPL / Ripple / Seoul Fintech Lab",
+      "body": "가족 간 건강 데이터 공유와 접근 이력 아이디어를 기술 데모로 선보였습니다."
+    },
+    {
+      "date": "2024.11.29",
+      "sortDate": 20241129,
+      "category": "award",
+      "title": "2024 한중 글로벌 청년 창업대전 최우수상(2등)",
+      "organizer": "Tencent WeStart(Shenzhen) / 호서대학교 창업중심대학사업단",
+      "venue": "Tencent Startup Space, Shenzhen",
+      "body": "SportiQue 팀이 시니어 운동과 지역 활동 연결 아이디어를 발표해 최우수상(2등)을 받았습니다."
     }
   ],
   "products": [
