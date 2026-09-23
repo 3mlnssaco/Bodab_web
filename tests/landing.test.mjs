@@ -71,9 +71,21 @@ test('redesign preserves each founder and award record, date and metadata withou
  assert.ok(!JSON.stringify(publicRecords).includes('피우다'));
  for(const file of pageFiles)assert.ok(!readFileSync(file,'utf8').includes('피우다'),file);
 });
-test('all four product anchors, original destinations and feature descriptions remain usable',()=>{
+test('featured product anchors, original destinations and feature descriptions remain usable',()=>{
  const page=readFileSync('products/index.html','utf8');for(const product of publicRecords.products){assert.ok(page.includes(`id="${product.id}"`));assert.ok(page.includes(`href="${escapeHtml(product.href)}"`));for(const value of [product.description,product.detail,...product.features,...product.modules])assert.ok(page.includes(escapeHtml(value)),value);}
  const institution=readFileSync('institutions/index.html','utf8');assert.ok(institution.includes('https://org.sportique.biz/onboarding'));assert.ok(institution.includes('https://web.uniqlab.io/'));assert.ok(!/<input[^>]+type="password"/.test(institution));
+});
+test('product page states each role and stage without presenting four equal products',()=>{
+ const page=readFileSync('products/index.html','utf8');
+ assert.ok(page.includes('<h1>개인이 기록을 모으고,<br><em>활용을 선택합니다.</em></h1>'));
+ assert.ok(page.includes('UniQdata에서 개인이 건강기록을 모아 확인합니다.'));
+ assert.ok(page.includes('주요 접점과 프로젝트를 소개합니다.'));
+ assert.ok(page.includes('DataQ는 원본과 출처를 보존하면서 반입·표준화 후보를 만드는 내부 단계입니다.'));
+ assert.ok(page.includes('Bodab은 어르신이 큰 글씨와 짧은 단계로'));
+ assert.ok(page.includes('FamilyCare에서 동의 범위 안에서 확인할 수 있습니다.'));
+ assert.ok(page.includes('UniQLab은 연구자와 기관이 연구 준비'));
+ assert.ok(page.includes('개발 중인 복약 보조 장치 PoC'));
+ for(const rejected of ['연결되는 네 가지 제품','가족의 하루를 챙기는 일까지','고령자와 가족이 복약, 일정, 생활 상태를 함께 챙기는 가족 돌봄 앱'])assert.ok(!page.includes(rejected),rejected);
 });
 test('brand rendering and the personal-world layer remain progressive enhancement without the retired server-footprint runtime',()=>{
  const script=readFileSync('assets/neon-site-20260921.js','utf8');const css=readFileSync('assets/neon-site-20260921.css','utf8');assert.ok(script.includes('prefers-reduced-motion'));assert.ok(script.includes('mountEmblems'));assert.ok(script.includes('IntersectionObserver'));assert.ok(script.includes('[data-reveal]'));assert.ok(css.includes('reveal-sweep-left'));assert.ok(css.includes('reveal-sweep-right'));assert.ok(css.includes('prefers-reduced-motion:reduce'));assert.ok(existsSync('assets/vendor/LICENSE'));assert.ok(existsSync('assets/vendor/three.core.js'));assert.ok(existsSync('assets/vendor/three.module.js'));
