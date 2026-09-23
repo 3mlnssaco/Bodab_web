@@ -117,7 +117,9 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.ok(founder.includes('2026 적정기술 기반 청년 창업 글로벌 실증 지원사업 몽골팀'));
  assert.ok(founder.includes('산학협동재단 / 대학산업기술지원단 / 적정기술학회'));
  const contact=readFileSync('contact/index.html','utf8');const main=contact.slice(contact.indexOf('<main'),contact.indexOf('</main>'));
- assert.ok(!main.includes('기관 계정 로그인'));assert.ok(!main.includes('https://org.sportique.biz/products/uniqlab'));assert.ok(main.includes('https://org.sportique.biz/onboarding'));assert.ok(main.includes('mailto:daniel@sportique.biz'));
+ assert.ok(!main.includes('기관 계정 로그인'));assert.ok(!main.includes('https://org.sportique.biz/products/uniqlab'));assert.ok(main.includes('https://org.sportique.biz/onboarding'));assert.ok(main.includes('mailto:hello@sportique.biz'));assert.ok(!main.includes('mailto:daniel@sportique.biz'));
+ assert.ok(contact.includes('mailto:hello@sportique.biz">hello@sportique.biz</a>'));
+ assert.ok(founder.includes('mailto:daniel@sportique.biz'));
 });
 test('awards render as a latest-first vertical timeline while preserving source date precision',()=>{
  const page=readFileSync('awards/index.html','utf8');assert.ok(page.includes('class="awards-timeline"'));assert.ok(!page.includes('class="awards-grid"'));
