@@ -120,6 +120,9 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.ok(founder.includes('제품을 직접<br><em>만듭니다.</em>'));
  assert.ok(!founder.includes('직접 <em>만드는 사람.</em>'));
  assert.ok(!founder.includes('UCL TIDH 2026 확장초록 제출'));
+ assert.ok(founder.includes('User-Journey and Information-Processing Design of an App–Server–Device Medication Platform for Older Adults'));
+ assert.ok(founder.includes('처방 검토부터 약포 수령과 복용 자기보고까지의 사용자 여정'));
+ assert.ok(!founder.includes('ACK 2026 약손 단독저자 논문 제출'));
  assert.ok(!founder.includes('몽골 현장 조사와 기관 후속 협의'));
  assert.ok(founder.includes('2026.08 초'));
  assert.ok(founder.includes('베이징 PKU 창업·AI 교육 및 IR 캠프 참여'));

@@ -24,9 +24,9 @@
     {
       "date": "2026.09.09",
       "sortDate": 20260909,
-      "title": "ACK 2026 약손 단독저자 논문 제출",
-      "meta": "한이음 드림업 약손 / 논문 접수",
-      "body": "복약 보조 장치와 앱 사이의 안전 설계, 기기에서 관찰한 사건과 실제 복용의 구분을 연구해 단독저자 논문으로 제출했습니다."
+      "title": "User-Journey and Information-Processing Design of an App–Server–Device Medication Platform for Older Adults",
+      "meta": "ACK 2026 / 한이음 드림업 논문 접수",
+      "body": "고령자의 복약 과정에서 Bodab 앱·UniQdata Core·YAKSON 장치가 각각 어떤 정보와 동작을 맡는지 설계한 연구입니다. 처방 검토부터 약포 수령과 복용 자기보고까지의 사용자 여정과 정보 처리 구조를 다뤘으며, ACK 2026에 제출했습니다."
     },
     {
       "date": "2026.07.27-07.31",
