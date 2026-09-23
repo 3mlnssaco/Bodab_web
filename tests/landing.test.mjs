@@ -48,6 +48,8 @@ test('home defines data fragmentation as the problem and preserves individual AI
  const system=html.slice(html.indexOf('<section class="data-system"'),html.indexOf('<section class="world-continuity"'));
  assert.deepEqual([...system.matchAll(/<li data-reveal><span>\d+<\/span><small>([^<]+)<\/small>/g)].map(match=>match[1]),['DATAQ','UNIQDATA','CHOOSE']);
  assert.ok(!html.includes('<small>CONFIRM</small>'));
+ assert.ok(html.includes('나라가 달라도 이어지도록.'));
+ assert.ok(!html.includes('다시 입력하지'));
  assert.match(html,/<h2 id="routes-title">(?:(?!<\/h2>)[\s\S])*자유/);
  for(const rejected of ['한 사람의 이야기','이야기의 시작','돌봄이었습니다.','정리할 후보','정리 후보','내 기준은','기록의 기준점','세계는 서버의 지도','NOT A COVERAGE MAP','보호자와 함께 봅니다.','문제를 먼저 봤습니다.','문제를 먼저 만났습니다.','상단 롤에서 약포를 아래 수령부로'])assert.ok(!html.includes(rejected),rejected);
 });
