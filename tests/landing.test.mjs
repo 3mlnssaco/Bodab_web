@@ -54,7 +54,10 @@ const escapeHtml=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&l
 test('every public page has the same original-logo neon shell and real institution login destination',()=>{
  const version=createHash('sha256').update(readFileSync('assets/neon-site-20260921.css')).update(readFileSync('assets/neon-site-20260921.js')).digest('hex').slice(0,12);
  for(const file of pageFiles){const page=readFileSync(file,'utf8');assert.ok(page.includes(`/assets/neon-site-20260921.css?v=${version}`),file);assert.ok(page.includes(`/assets/neon-site-20260921.js?v=${version}`),file);assert.ok(page.includes('class="brand original-brand"'),file);assert.ok(page.includes('https://org.sportique.biz/products/uniqlab'),file);assert.ok(page.includes('aria-label="모바일 메뉴"'),file);assert.ok(!page.includes('src="/assets/index-org-20260817.js"'),file);assert.ok(!page.includes('admin.sportique.biz'),file);assert.ok(!page.includes('정리할 후보'),file);assert.ok(!page.includes('정리 후보'),file);assert.equal((page.match(/<h1(?:\s|>)/g)||[]).length,1,file);}
- assert.ok(readFileSync('about/index.html','utf8').includes('DataQ가 원본과 출처를 보존하면서 형식·항목·단위를 표준화하고'));
+ const about=readFileSync('about/index.html','utf8');
+ assert.ok(about.includes('DataQ가 원본과 출처를 보존하면서 형식·항목·단위를 표준화하고'));
+ assert.ok(about.includes('주도권을<br><em>기업에서 개인으로.</em>'));
+ assert.ok(!about.includes('주도권의 방향을'));
 });
 test('redesign preserves each founder and award record, date and metadata without promoting its status',()=>{
  for(const [key,file,card] of [['founder','founder/index.html','record-item'],['awards','awards/index.html','timeline-event']]){const page=readFileSync(file,'utf8');assert.equal((page.match(new RegExp(`class="${card}"`,'g'))||[]).length,publicRecords[key].length,file+' count');for(const record of publicRecords[key])for(const field of ['date','title','meta','organizer','venue','body'])if(record[field])assert.ok(page.includes(escapeHtml(record[field])),file+': '+record[field]);}
@@ -83,6 +86,8 @@ test('product page uses provenance-reviewed media and contains no fabricated pro
 });
 test('founder page uses the requested retouch, retains the original portrait, and keeps institution login out of contact content',()=>{
  const founder=readFileSync('founder/index.html','utf8');assert.ok(founder.includes('/assets/verified/founder-portrait-retouched-20260923.jpg'));assert.ok(existsSync('assets/verified/founder-portrait-retouched-20260923.jpg'));assert.ok(existsSync('assets/verified/founder-portrait-20260922.jpg'));assert.ok(!founder.includes('class="founder-symbol"'));
+ assert.ok(founder.includes('이승헌 · Founder, CEO &amp; CTO'));
+ assert.ok(!founder.includes('Founder &amp; Representative'));
  assert.ok(founder.includes('제품을 직접<br><em>만듭니다.</em>'));
  assert.ok(!founder.includes('직접 <em>만드는 사람.</em>'));
  assert.ok(!founder.includes('UCL TIDH 2026 확장초록 제출'));
