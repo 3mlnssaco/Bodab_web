@@ -21,7 +21,7 @@ const media={
 const productCards=data.products.map((p,i)=>`<article class="product-panel product-${p.id}" id="${p.id}"><div class="product-panel-copy"><span class="index-number">0${i+1} / ${esc(p.label)}</span><h2>${esc(p.name)}</h2><p class="product-description">${esc(p.description)}</p><p>${esc(p.detail)}</p><ul class="feature-list">${p.features.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>${p.modules.length?`<p class="product-modules">${p.modules.map(esc).join(' · ')}</p>`:''}<a class="text-link" href="${esc(p.href)}">${p.href==='/contact'?'제품 문의하기':p.name+' 알아보기'} ${arrow}</a>${p.id==='uniqlab'?'<p class="product-consent">개인이 연구 참여와 공유 범위를 선택한 뒤 연결되는 활용처입니다.</p>':''}</div>${media[p.id]}</article>`).join('');
 // Unknown days remain unknown in the display; ranges sort by their ending date.
 function dateKey({date,sortDate}){
- if(date==='현재')return Infinity;
+ if(date==='현재')return sortDate??Infinity;
  const value=String(sortDate??date);
  if(/^\d{8}$/.test(value))return Number(value);
  const range=value.split(value.includes('.')?/[-~–—]/:/[~–—]/);
@@ -37,7 +37,13 @@ const awardCategory=r=>r.category||(/수상|상$/.test(r.title)?'award':/선정/
 const awardsRecords=[...data.awards].sort(latestFirst);
 const awardCategories=[...new Set(awardsRecords.map(awardCategory))];
 const awardFilters=awardCategories.map(category=>`<button type="button" data-filter="${esc(category)}" aria-pressed="false">${esc(awardLabels[category]??category)} ${awardsRecords.filter(r=>awardCategory(r)===category).length}</button>`).join('');
-const awardsItems=awardsRecords.map((r,i)=>{const category=awardCategory(r);const datetime=r.date.replaceAll('.','-');return `<article class="timeline-event" data-category="${esc(category)}" id="award-${i}"><time${/^\d{4}-\d{2}(?:-\d{2})?$/.test(datetime)?` datetime="${datetime}"`:''}>${esc(r.date)}</time><div class="timeline-body"><span class="award-kind">${esc(awardLabels[category]??category)}</span><h3>${esc(r.title)}</h3><p class="record-meta">${esc(r.organizer)}</p>${r.venue?`<p class="award-venue">${esc(r.venue)}</p>`:''}<p>${esc(r.body)}</p></div></article>`;}).join('');
+function awardEvidence(record){
+ const evidence=record.evidence;if(!evidence)return '';
+ const image=evidence.image?`<a class="award-proof-image" href="${esc(evidence.image)}" target="_blank" rel="noopener noreferrer"><img src="${esc(evidence.image)}" alt="${esc(evidence.imageAlt)}" loading="lazy" decoding="async"><span>${esc(evidence.imageLabel)}</span></a>`:'';
+ const links=(evidence.links??[]).map(link=>`<a class="award-proof-link" href="${esc(link.href)}" target="_blank" rel="noopener noreferrer">${esc(link.label)} ${arrow}</a>`).join('');
+ return `<div class="award-evidence">${image}${links?`<div class="award-proof-links">${links}</div>`:''}</div>`;
+}
+const awardsItems=awardsRecords.map((r,i)=>{const category=awardCategory(r);const datetime=r.date.replaceAll('.','-');return `<article class="timeline-event" data-category="${esc(category)}" id="award-${i}"><time${/^\d{4}-\d{2}(?:-\d{2})?$/.test(datetime)?` datetime="${datetime}"`:''}>${esc(r.date)}</time><div class="timeline-body${r.evidence?' has-evidence':''}"><div class="award-copy"><span class="award-kind">${esc(awardLabels[category]??category)}</span><h3>${esc(r.title)}</h3><p class="record-meta">${esc(r.organizer)}</p>${r.venue?`<p class="award-venue">${esc(r.venue)}</p>`:''}<p>${esc(r.body)}</p></div>${awardEvidence(r)}</div></article>`;}).join('');
 const pages=[
  {path:'/',title:'파편화된 건강데이터를 개인의 데이터베이스로',description:'파편화된 건강데이터를 개인이 직접 관리하고, 공유 범위와 AI 모델·플랫폼을 선택할 수 있는 기반. SportiQue.',body:readFileSync('scripts/home-content.html','utf8').replaceAll('{{EMBLEM}}',emblem)},
  {path:'/products/',title:'Products — 기록이 일상이 되는 곳',description:'UniQdata, UniQLab, Bodab, YAKSON. 개인의 건강기록에서 일상과 돌봄, 동의한 연구로 이어지는 제품.',body:pageHero('THE THINGS WE BUILD','기록이<br><em>일상이 되는 곳.</em>','개인의 기록을 모으는 일부터, 가족의 하루를 챙기는 일까지.<br>각자의 자리에서 연결되는 네 가지 제품.','PRODUCTS')+`<section class="product-universe">${productCards}</section>`+cta},

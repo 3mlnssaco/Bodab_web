@@ -8,6 +8,13 @@
       "body": "AI와 데이터 기반 제품을 직접 설계하고 구현하는 학업 기반을 갖추고 있습니다."
     },
     {
+      "date": "현재",
+      "sortDate": 99999998,
+      "title": "벤처프런티어 창업 활동",
+      "meta": "호서대학교 벤처프런티어교육원 / 2026년 활동 중",
+      "body": "UniQdata 제품 개발과 사업계획, 대외활동을 월별 활동자료로 정리하며 벤처프런티어 활동을 이어가고 있습니다."
+    },
+    {
       "date": "2026.09.10",
       "sortDate": 20260910,
       "title": "ZeroBase Season 5 멘토링 참여",
@@ -31,9 +38,9 @@
     {
       "date": "2026.08 초",
       "sortDate": 20260800,
-      "title": "베이징 창업·AI 교육 참여",
-      "meta": "PKU 연계 창업 프로그램 / IR 교육",
-      "body": "창업·AI 강의와 네트워킹, IR 피칭·보이스 코칭 교육에 참여하고 현지 참가자들과 건강기록 활용과 데이터 신뢰성에 관해 대화했습니다."
+      "title": "베이징 PKU 창업·AI 교육 및 IR 캠프 참여",
+      "meta": "PKU 연계 창업 프로그램 / 4일 교육·IR 캠프",
+      "body": "PKU 연계 창업·AI 교육에 참여하고, 8월 4일 IR 피칭 캠프에서 강의와 보이스 코칭을 받았습니다. 현지 참가자들과 건강기록 활용과 데이터 신뢰성에 관해 대화했습니다."
     },
     {
       "date": "2026.06",
@@ -50,18 +57,11 @@
       "body": "선발 후 제품 개발과 사업계획, 대외활동을 수행하고 월별 보고서와 실제 산출물로 활동 내용을 정리했습니다."
     },
     {
-      "date": "2026.02.05",
+      "date": "2026.02.03-02.05",
       "sortDate": 20260205,
-      "title": "한중 청년 창업훈련캠프 참가·수료",
-      "meta": "Korea-China Startup Training Camp",
-      "body": "한중 청년 창업훈련캠프에 참가하고 교육·참가 내용을 증서로 확인받았습니다."
-    },
-    {
-      "date": "2026.02.03",
-      "sortDate": 20260203,
-      "title": "북경대 창업훈련캠프 한국 교류일 참여",
+      "title": "북경대 창업훈련캠프",
       "meta": "Peking University Entrepreneurship Training Camp",
-      "body": "북경대 창업훈련캠프 한국 교류일의 학습 활동에 참가했습니다."
+      "body": "2월 3~5일 북경대 창업훈련캠프에 참여하고 수료했습니다."
     },
     {
       "date": "2025.09.10-11.26",
@@ -250,7 +250,13 @@
       "category": "award",
       "title": "제3회 대학창업대전 학생창업 IR 교육부장관상",
       "organizer": "교육부장관",
-      "body": "이승헌 대표가 SportiQue의 사업을 발표해 학생창업 IR 교육부장관상을 받았습니다."
+      "body": "이승헌 대표가 SportiQue의 사업을 발표해 학생창업 IR 교육부장관상을 받았습니다.",
+      "evidence": {
+        "image": "/assets/verified/awards/minister-award-20251107.webp",
+        "imageAlt": "제3회 대학창업대전 학생창업 IR 교육부장관상 상장",
+        "imageLabel": "상장 보기",
+        "links": [{"label": "보도 기사·현장 사진", "href": "https://magazine.hankyung.com/job-joy/article/202511117991d"}]
+      }
     },
     {
       "date": "2025.10.17",
@@ -258,7 +264,12 @@
       "category": "selected",
       "title": "2025 학생 창업유망팀 300+ 성장트랙 최종선정",
       "organizer": "교육부 / 과학기술정보통신부 / 한국연구재단 / 한국청년기업가정신재단",
-      "body": "SportiQue 팀이 성장트랙 최종 선정 인증서를 받았습니다."
+      "body": "SportiQue 팀이 성장트랙 최종 선정 인증서를 받았습니다.",
+      "evidence": {
+        "image": "/assets/verified/awards/student-300plus-20251017.webp",
+        "imageAlt": "2025 학생 창업유망팀 300+ 성장트랙 최종 선정 인증서",
+        "imageLabel": "선정 인증서 보기"
+      }
     },
     {
       "date": "2025.10",
@@ -274,7 +285,13 @@
       "category": "award",
       "title": "XRPL Hackathon 2025 Seoul 최우수상",
       "organizer": "XRPL / Ripple / Seoul Fintech Lab",
-      "body": "가족 간 건강 데이터 공유와 접근 이력 아이디어를 기술 데모로 선보였습니다."
+      "body": "가족 간 건강 데이터 공유와 접근 이력 아이디어를 기술 데모로 선보였습니다.",
+      "evidence": {
+        "image": "/assets/verified/awards/xrpl-stage-202509.webp",
+        "imageAlt": "XRPL Hackathon Seoul 2025 최우수상 수상 현장 사진",
+        "imageLabel": "수상 현장 보기",
+        "links": [{"label": "수상 보도 기사", "href": "https://www.tokenpost.kr/amp/news/blockchain/290321"}]
+      }
     },
     {
       "date": "2024.11.29",
@@ -283,7 +300,12 @@
       "title": "2024 한중 글로벌 청년 창업대전 최우수상(2등)",
       "organizer": "Tencent WeStart(Shenzhen) / 호서대학교 창업중심대학사업단",
       "venue": "Tencent Startup Space, Shenzhen",
-      "body": "SportiQue 팀이 시니어 운동과 지역 활동 연결 아이디어를 발표해 최우수상(2등)을 받았습니다."
+      "body": "SportiQue 팀이 시니어 운동과 지역 활동 연결 아이디어를 발표해 최우수상(2등)을 받았습니다.",
+      "evidence": {
+        "image": "/assets/verified/awards/china-startup-20241129.webp",
+        "imageAlt": "2024 한중 글로벌 청년 창업대전 최우수상 상장",
+        "imageLabel": "상장 보기"
+      }
     }
   ],
   "products": [

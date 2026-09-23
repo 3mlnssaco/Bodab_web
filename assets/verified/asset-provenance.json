@@ -74,6 +74,39 @@
       "source_sha256": "7fce453f8386d58fdfb936ae4127960d129d1071367e55ab13fd2be7eebd85be",
       "sha256": "7fce453f8386d58fdfb936ae4127960d129d1071367e55ab13fd2be7eebd85be",
       "publication_note": "Digital review of the top roll, downward feed, isolation shutter, and receiving door; not physical test evidence."
+    },
+    {
+      "public_path": "/assets/verified/awards/student-300plus-20251017.webp",
+      "type": "masked selection certificate web derivative",
+      "source": "docs/evidence/awards-certificates/project/cert_300plus_masked.png",
+      "source_sha256": "ef399fdc20a9d9d57d07d66235f77bcc1ef0a351b8b47b1be89536dc123f0d81",
+      "sha256": "e3516b773cc22d66436d751dba158cdc02f04f100fe7cc34cba900e1e0df0762",
+      "transformation": "Resized within 1600x2200, WebP quality 88, metadata stripped; existing privacy mask retained."
+    },
+    {
+      "public_path": "/assets/verified/awards/minister-award-20251107.webp",
+      "type": "masked award certificate web derivative",
+      "source": "docs/evidence/awards-certificates/project/cert_교육부장관상_masked.jpeg",
+      "source_sha256": "4e4fc504468132463169c299fe05eaf660b81617adfb044523c472e011452680",
+      "sha256": "78d3165b2bdfef7a795fec5a334cf3d343c46957b0cc5222771f0faa3b1ec666",
+      "transformation": "Resized within 1600x2200, WebP quality 88, metadata stripped; existing privacy mask retained."
+    },
+    {
+      "public_path": "/assets/verified/awards/china-startup-20241129.webp",
+      "type": "masked award certificate web derivative",
+      "source": "docs/evidence/awards-certificates/project/cert_한중창업대전_masked.png",
+      "source_sha256": "caf33314a466f7e9a3872d50d61216ed4d090a5f76ef15f35c9bbb4423afd60a",
+      "sha256": "a4c6f2d0e0f8aa1ed22a5b901a7b0ae7f097ece7065eb964a9cc834ccbc93c25",
+      "transformation": "Resized within 1600x2200, WebP quality 88, metadata stripped; existing privacy mask retained."
+    },
+    {
+      "public_path": "/assets/verified/awards/xrpl-stage-202509.webp",
+      "type": "public organizer award-stage photo crop",
+      "source": "docs/evidence/awards-certificates/project/cert_xrpl_hackathon.png",
+      "source_sha256": "4d03a7cc4ac0b8205f7f68af90198e8fb0ca3701c9d1f4ac8d6de94b9871a5da",
+      "sha256": "b6949e0ef23f3d3cd01ef3f77dd13d0dbe135b94f70b50d6aa6d78af3e6b4567",
+      "transformation": "Cropped the award-stage photo from the public 2025 organizer post screenshot; WebP quality 88, metadata stripped.",
+      "publication_note": "Historical organizer event photo, not evidence of any current product capability."
     }
   ],
   "blocked_assets": [

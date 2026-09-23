@@ -87,6 +87,15 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.ok(!founder.includes('직접 <em>만드는 사람.</em>'));
  assert.ok(!founder.includes('UCL TIDH 2026 확장초록 제출'));
  assert.ok(!founder.includes('몽골 현장 조사와 기관 후속 협의'));
+ assert.ok(founder.includes('2026.08 초'));
+ assert.ok(founder.includes('베이징 PKU 창업·AI 교육 및 IR 캠프 참여'));
+ assert.ok(founder.includes('2026.02.03-02.05'));
+ assert.equal(publicRecords.founder.filter(record=>record.title==='북경대 창업훈련캠프').length,1);
+ assert.ok(!founder.includes('한중 청년 창업훈련캠프 참가·수료'));
+ assert.ok(!founder.includes('북경대 창업훈련캠프 한국 교류일 참여'));
+ assert.ok(founder.indexOf('2026.08 초')<founder.indexOf('2026.07.27-07.31'));
+ assert.ok(founder.includes('벤처프런티어 창업 활동'));
+ assert.deepEqual([...founder.matchAll(/<div class="record-date">([^<]+)<\/div>/g)].slice(0,2).map(match=>match[1]),['현재','현재']);
  assert.ok(founder.includes('2026 적정기술 기반 청년 창업 글로벌 실증 지원사업 몽골팀'));
  assert.ok(founder.includes('산학협동재단 / 대학산업기술지원단 / 적정기술학회'));
  const contact=readFileSync('contact/index.html','utf8');const main=contact.slice(contact.indexOf('<main'),contact.indexOf('</main>'));
@@ -102,6 +111,11 @@ test('awards render as a latest-first vertical timeline while preserving source 
  for(const category of new Set(categories))assert.ok(page.includes(`data-filter="${category}"`),category+' filter');
  assert.equal(categories.length,publicRecords.awards.length);
  assert.ok(page.includes('id="record-count" aria-live="polite"'));
+ const evidence=publicRecords.awards.filter(record=>record.evidence);
+ assert.equal(evidence.length,4);
+ assert.equal((page.match(/class="timeline-body has-evidence"/g)||[]).length,evidence.length);
+ assert.match(readFileSync('assets/neon-site-20260921.css','utf8'),/\.award-proof-image img\{[^}]*object-fit:cover/);
+ for(const record of evidence){assert.ok(page.includes(`src="${record.evidence.image}"`),record.title);assert.ok(page.includes(`href="${record.evidence.image}"`),record.title+' full image');assert.ok(existsSync(record.evidence.image.slice(1)));for(const link of record.evidence.links??[]){assert.ok(link.href.startsWith('https://'));assert.ok(page.includes(`href="${link.href}"`),link.href);}}
 });
 test('published media hashes match the provenance manifest and rejected mocks remain recorded',()=>{
  const manifest=JSON.parse(readFileSync('assets/verified/asset-provenance.json','utf8'));
