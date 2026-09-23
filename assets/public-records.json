@@ -312,7 +312,7 @@
       "name": "UniQdata",
       "href": "https://uniqdata.io",
       "label": "개인 건강관리 · 기록의 출발점",
-      "description": "UniQdata는 개인이 흩어진 건강기록을 모아 원본과 대조하고, 확인한 기록을 개인 DB에 쌓아 일상에서 활용하는 건강관리 서비스입니다.",
+      "description": "UniQdata는 흩어진 건강기록을 개인 DB에 모아 관리하고, 일상에서 활용하는 개인 건강관리 서비스입니다.",
       "detail": "DataQ는 원본과 출처를 보존하면서 반입·표준화 후보를 만드는 내부 단계입니다. MediQ와 MindQ는 UniQdata 안에서 열리는 인앱 경험입니다.",
       "modules": [
         "MediQ: 진료 전후 기록",
