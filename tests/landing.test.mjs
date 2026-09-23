@@ -24,8 +24,11 @@ test('product-led home uses the verified UniQdata screen and preserves navigatio
 test('hero explains the concrete record flow without a canvas or scroll runway',()=>{
  const hero=html.match(/<section class="product-hero"[\s\S]*?<\/section>/)?.[0];
  assert.ok(hero,'product hero');
- let last=-1;for(const text of ['01 / 흩어진 원본','02 / DATAQ','03 / 내가 확인','04 / UNIQDATA']){const at=hero.indexOf(text);assert.ok(at>last,text);last=at;}
- for(const text of ['진료 기록','검진 결과','처방·복약','웨어러블','건강 앱','생활 기록','형식·항목·단위 표준화','원본과 출처는 보존','원본과 대조해 확인·수정·보류','내 개인 DB'])assert.ok(hero.includes(text),text);
+ let last=-1;for(const text of ['01 / 원본','02 / DATAQ','03 / 내가 확인','04 / UNIQDATA']){const at=hero.indexOf(text);assert.ok(at>last,text);last=at;}
+ for(const text of ['진료 기록','검진 결과','처방·복약','웨어러블','건강 앱','생활 기록','형식·항목·단위 표준화','원본과 출처는 보존','원본과 대조','확인·수정·보류','내 개인 DB'])assert.ok(hero.includes(text),text);
+ assert.ok(hero.includes('class="hero-scene"'));
+ assert.ok(!hero.includes('hero-flow'));
+ assert.ok(!hero.includes('class="hero-copy" data-reveal'));
  assert.doesNotMatch(hero,/<canvas\b|data-personal-network|hero-3d/);
  const script=readFileSync('assets/neon-site-20260921.js','utf8');
  assert.doesNotMatch(script,/personal-network-hero-3d|WebGLRenderer|addEventListener\(['"]scroll['"]/);
@@ -37,7 +40,7 @@ test('hero explains the concrete record flow without a canvas or scroll runway',
 test('home defines data fragmentation as the problem and preserves individual AI and sharing choice',()=>{
  const order=['id="problem"','id="system"','id="world"','id="value"','id="products-title"','id="journey-title"','id="care-title"'];
  let last=-1;for(const marker of order){const at=html.indexOf(marker);assert.ok(at>last,marker);last=at;}
- for(const text of ['DATA FRAGMENTATION','건강데이터는','파편화되어 있습니다.','내 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인이 확인합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','내 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','Bodab을 만들며','2025년 XRPL','건강기록 원문은 개인 DB에'])assert.ok(html.includes(text),text);
+ for(const text of ['DATA FRAGMENTATION','흩어진 건강기록,','내 개인 DB로.','내 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인이 확인합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','내 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','Bodab을 만들며','2025년 XRPL','건강기록 원문은 개인 DB에'])assert.ok(html.includes(text),text);
  assert.match(html,/<h2 id="routes-title">(?:(?!<\/h2>)[\s\S])*자유/);
  for(const rejected of ['한 사람의 이야기','이야기의 시작','돌봄이었습니다.','정리할 후보','정리 후보','내 기준은','기록의 기준점','세계는 서버의 지도','NOT A COVERAGE MAP','보호자와 함께 봅니다.'])assert.ok(!html.includes(rejected),rejected);
 });
