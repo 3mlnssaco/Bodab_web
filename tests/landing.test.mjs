@@ -43,7 +43,7 @@ test('hero explains the concrete record flow without a canvas or scroll runway',
 test('home defines data fragmentation as the problem and preserves individual AI and sharing choice',()=>{
  const order=['id="problem"','id="system"','id="world"','id="value"','id="products-title"','id="journey-title"','id="care-title"'];
  let last=-1;for(const marker of order){const at=html.indexOf(marker);assert.ok(at>last,marker);last=at;}
- for(const text of ['DATA FRAGMENTATION','흩어진 건강기록,','개인의 DB로.','개인의 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인이 확인합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','개인의 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','Bodab을 만들며','더 큰 문제를<br>찾았습니다.','복약 일정과 확인 상태','여러 기록을 대조하고 서로 다시 물어야','2025년 XRPL','건강기록 원문은 개인 DB에','연결 약포의 이송·분리와 미수령 약포 보관'])assert.ok(html.includes(text),text);
+ for(const text of ['DATA FRAGMENTATION','흩어진 건강기록,','개인의 DB로.','개인의 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인이 확인합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','개인의 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','Bodab을 만들며','더 큰 문제를<br>찾았습니다.','복약 확인 상태','여러 곳의 기록을 대조하고 서로 다시 물어야','2025년 XRPL','건강기록 원문은 개인 DB에','연결 약포의 이송·분리와 미수령 약포 보관'])assert.ok(html.includes(text),text);
  assert.match(html,/<h2 id="routes-title">(?:(?!<\/h2>)[\s\S])*자유/);
  for(const rejected of ['한 사람의 이야기','이야기의 시작','돌봄이었습니다.','정리할 후보','정리 후보','내 기준은','기록의 기준점','세계는 서버의 지도','NOT A COVERAGE MAP','보호자와 함께 봅니다.','문제를 먼저 봤습니다.','문제를 먼저 만났습니다.','상단 롤에서 약포를 아래 수령부로'])assert.ok(!html.includes(rejected),rejected);
 });
@@ -59,6 +59,9 @@ test('every public page has the same original-logo neon shell and real instituti
  for(const file of pageFiles){const page=readFileSync(file,'utf8');assert.ok(page.includes(`/assets/neon-site-20260921.css?v=${version}`),file);assert.ok(page.includes(`/assets/neon-site-20260921.js?v=${version}`),file);assert.ok(page.includes('class="brand original-brand"'),file);assert.ok(page.includes('https://org.sportique.biz/products/uniqlab'),file);assert.ok(page.includes('aria-label="모바일 메뉴"'),file);assert.ok(!page.includes('src="/assets/index-org-20260817.js"'),file);assert.ok(!page.includes('admin.sportique.biz'),file);assert.ok(!page.includes('정리할 후보'),file);assert.ok(!page.includes('정리 후보'),file);assert.doesNotMatch(page,/(?<![가-힣])(?:내가|내 개인|내 기록|내 선택|내 건강기록|내 역할|나의 기록|나의 일상|우리가|저희)|MY RECORD|MY CHOICE/,file);assert.equal((page.match(/<h1(?:\s|>)/g)||[]).length,1,file);}
  const about=readFileSync('about/index.html','utf8');
  assert.ok(about.includes('DataQ가 원본과 출처를 보존하면서 형식·항목·단위를 표준화하고'));
+ assert.ok(about.includes('돌봄에서 찾은 문제.<br><em>기록은 흩어져 있었습니다.</em>'));
+ for(const text of ['복약 정보·활동 이력·진료·처방 기록','병원·약국·앱에 흩어져','어떤 기록을 가족 중 누구와 공유할지 선택할 서비스가 부족'])assert.ok(about.includes(text),text);
+ assert.ok(!about.includes('누군가를 더 잘 돌보려면'));
  assert.ok(about.includes('주도권을<br><em>기업에서 개인으로.</em>'));
  assert.ok(about.includes('공유의 결정도, 개인이 직접.'));
  assert.ok(!about.includes('주도권의 방향을'));
