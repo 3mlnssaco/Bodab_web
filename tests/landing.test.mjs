@@ -24,8 +24,8 @@ test('product-led home uses the verified UniQdata screen and preserves navigatio
 test('hero explains the concrete record flow without a canvas or scroll runway',()=>{
  const hero=html.match(/<section class="product-hero"[\s\S]*?<\/section>/)?.[0];
  assert.ok(hero,'product hero');
- let last=-1;for(const text of ['01 / 원본','02 / DATAQ','03 / 내가 확인','04 / UNIQDATA']){const at=hero.indexOf(text);assert.ok(at>last,text);last=at;}
- for(const text of ['진료 기록','검진 결과','처방·복약','웨어러블','건강 앱','생활 기록','형식·항목·단위 표준화','원본과 출처는 보존','원본과 대조','확인·수정·보류','내 개인 DB'])assert.ok(hero.includes(text),text);
+ let last=-1;for(const text of ['01 / 원본','02 / DATAQ','03 / 개인 확인','04 / UNIQDATA']){const at=hero.indexOf(text);assert.ok(at>last,text);last=at;}
+ for(const text of ['진료 기록','검진 결과','처방·복약','웨어러블','건강 앱','생활 기록','형식·항목·단위 표준화','원본과 출처는 보존','원본과 대조','확인·수정·보류','개인 DB'])assert.ok(hero.includes(text),text);
  assert.ok(hero.includes('class="hero-scene"'));
  assert.ok(!hero.includes('hero-flow'));
  assert.ok(!hero.includes('class="hero-copy" data-reveal'));
@@ -40,12 +40,12 @@ test('hero explains the concrete record flow without a canvas or scroll runway',
 test('home defines data fragmentation as the problem and preserves individual AI and sharing choice',()=>{
  const order=['id="problem"','id="system"','id="world"','id="value"','id="products-title"','id="journey-title"','id="care-title"'];
  let last=-1;for(const marker of order){const at=html.indexOf(marker);assert.ok(at>last,marker);last=at;}
- for(const text of ['DATA FRAGMENTATION','흩어진 건강기록,','내 개인 DB로.','내 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인이 확인합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','내 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','Bodab을 만들며','2025년 XRPL','건강기록 원문은 개인 DB에','연결 약포의 이송·분리와 미수령 약포 보관'])assert.ok(html.includes(text),text);
+ for(const text of ['DATA FRAGMENTATION','흩어진 건강기록,','개인의 DB로.','개인의 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인이 확인합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','개인의 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','Bodab을 만들며','2025년 XRPL','건강기록 원문은 개인 DB에','연결 약포의 이송·분리와 미수령 약포 보관'])assert.ok(html.includes(text),text);
  assert.match(html,/<h2 id="routes-title">(?:(?!<\/h2>)[\s\S])*자유/);
  for(const rejected of ['한 사람의 이야기','이야기의 시작','돌봄이었습니다.','정리할 후보','정리 후보','내 기준은','기록의 기준점','세계는 서버의 지도','NOT A COVERAGE MAP','보호자와 함께 봅니다.','상단 롤에서 약포를 아래 수령부로'])assert.ok(!html.includes(rejected),rejected);
 });
 test('assembled records open the full personal-use path without converting research compensation into a SportiQue payout claim',()=>{
- for(const text of ['내 기록을 리포트로 받습니다.','내 기록을 바탕으로 AI에 질문합니다.','보호자에게 필요한 기록만 공유합니다.','해외에서도 필요한 기록을 꺼내 씁니다.','참여할 연구와 공유할 기록을 고릅니다.','돌봄·복약 앱에 기록을 연결합니다.','이용 이력을 다시 확인합니다.','지급 주체가 정한 방식으로 처리','국가별 정책·데이터 레지던시 조건'])assert.ok(html.includes(text),text);
+ for(const text of ['개인은 기록을 리포트로 확인합니다.','개인은 자신의 기록을 바탕으로 AI에 질문합니다.','보호자에게 필요한 기록만 공유합니다.','해외에서도 필요한 기록을 꺼내 씁니다.','참여할 연구와 공유할 기록을 고릅니다.','돌봄·복약 앱에 기록을 연결합니다.','이용 이력을 다시 확인합니다.','지급 주체가 정한 방식으로 처리','국가별 정책·데이터 레지던시 조건'])assert.ok(html.includes(text),text);
  for(const rejected of ['데이터 판매','토큰 보상','SportiQue가 직접 지급'])assert.ok(!html.includes(rejected),rejected);
 });
 const pageFiles=['index.html','products/index.html','about/index.html','founder/index.html','awards/index.html','contact/index.html','institutions/index.html','404.html'];
@@ -53,10 +53,11 @@ const publicRecords=JSON.parse(readFileSync('assets/public-records.json','utf8')
 const escapeHtml=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 test('every public page has the same original-logo neon shell and real institution login destination',()=>{
  const version=createHash('sha256').update(readFileSync('assets/neon-site-20260921.css')).update(readFileSync('assets/neon-site-20260921.js')).digest('hex').slice(0,12);
- for(const file of pageFiles){const page=readFileSync(file,'utf8');assert.ok(page.includes(`/assets/neon-site-20260921.css?v=${version}`),file);assert.ok(page.includes(`/assets/neon-site-20260921.js?v=${version}`),file);assert.ok(page.includes('class="brand original-brand"'),file);assert.ok(page.includes('https://org.sportique.biz/products/uniqlab'),file);assert.ok(page.includes('aria-label="모바일 메뉴"'),file);assert.ok(!page.includes('src="/assets/index-org-20260817.js"'),file);assert.ok(!page.includes('admin.sportique.biz'),file);assert.ok(!page.includes('정리할 후보'),file);assert.ok(!page.includes('정리 후보'),file);assert.equal((page.match(/<h1(?:\s|>)/g)||[]).length,1,file);}
+ for(const file of pageFiles){const page=readFileSync(file,'utf8');assert.ok(page.includes(`/assets/neon-site-20260921.css?v=${version}`),file);assert.ok(page.includes(`/assets/neon-site-20260921.js?v=${version}`),file);assert.ok(page.includes('class="brand original-brand"'),file);assert.ok(page.includes('https://org.sportique.biz/products/uniqlab'),file);assert.ok(page.includes('aria-label="모바일 메뉴"'),file);assert.ok(!page.includes('src="/assets/index-org-20260817.js"'),file);assert.ok(!page.includes('admin.sportique.biz'),file);assert.ok(!page.includes('정리할 후보'),file);assert.ok(!page.includes('정리 후보'),file);assert.doesNotMatch(page,/(?<![가-힣])(?:내가|내 개인|내 기록|내 선택|내 건강기록|내 역할|나의 기록|나의 일상|우리가|저희)|MY RECORD|MY CHOICE/,file);assert.equal((page.match(/<h1(?:\s|>)/g)||[]).length,1,file);}
  const about=readFileSync('about/index.html','utf8');
  assert.ok(about.includes('DataQ가 원본과 출처를 보존하면서 형식·항목·단위를 표준화하고'));
  assert.ok(about.includes('주도권을<br><em>기업에서 개인으로.</em>'));
+ assert.ok(about.includes('공유의 결정도, 개인이 직접.'));
  assert.ok(!about.includes('주도권의 방향을'));
 });
 test('redesign preserves each founder and award record, date and metadata without promoting its status',()=>{
