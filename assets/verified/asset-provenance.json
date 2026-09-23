@@ -18,6 +18,15 @@
       "transformation": "Resized to 1200x1800, JPEG quality 88, metadata stripped; face and scene unchanged."
     },
     {
+      "public_path": "/assets/verified/founder-portrait-retouched-20260923.jpg",
+      "type": "AI-assisted retouched founder portrait",
+      "source": "founder-portrait-20260922.jpg",
+      "source_sha256": "7ef4c48b59c747f1d4ef6ce4bfd19b6e9ba8fdee0914f58b3b1d60e073bf904b",
+      "sha256": "fb7bcb505b33faece51f696f2ab96b07cbc7e73d0495d98abd113656ffa11f49",
+      "transformation": "ImageGen edit requested to reduce lower-cheek and jaw fullness, then encoded as metadata-stripped JPEG quality 88. The generated variant also changes fine facial and clothing details; the unedited web derivative remains available separately.",
+      "publication_note": "Edited portrait, not an unaltered photograph."
+    },
+    {
       "public_path": "/assets/verified/uniqdata-screen-20260922.webp",
       "type": "verified product UI capture",
       "source": "UniQdata UI QA safe UI evidence, routine recommendation registered detail",

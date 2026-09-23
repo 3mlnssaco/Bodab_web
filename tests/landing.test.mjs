@@ -81,8 +81,8 @@ test('product page uses provenance-reviewed media and contains no fabricated pro
  assert.ok(page.includes('실물 제작·작동 검증 자료는 아닙니다'));
  assert.ok(!existsSync('assets/uniqdata-phone-1.png'));assert.ok(!existsSync('assets/uniqdata-phone-2.png'));
 });
-test('founder page uses the actual portrait and contact keeps institution login out of the page content',()=>{
- const founder=readFileSync('founder/index.html','utf8');assert.ok(founder.includes('/assets/verified/founder-portrait-20260922.jpg'));assert.ok(existsSync('assets/verified/founder-portrait-20260922.jpg'));assert.ok(!founder.includes('class="founder-symbol"'));
+test('founder page uses the requested retouch, retains the original portrait, and keeps institution login out of contact content',()=>{
+ const founder=readFileSync('founder/index.html','utf8');assert.ok(founder.includes('/assets/verified/founder-portrait-retouched-20260923.jpg'));assert.ok(existsSync('assets/verified/founder-portrait-retouched-20260923.jpg'));assert.ok(existsSync('assets/verified/founder-portrait-20260922.jpg'));assert.ok(!founder.includes('class="founder-symbol"'));
  const contact=readFileSync('contact/index.html','utf8');const main=contact.slice(contact.indexOf('<main'),contact.indexOf('</main>'));
  assert.ok(!main.includes('기관 계정 로그인'));assert.ok(!main.includes('https://org.sportique.biz/products/uniqlab'));assert.ok(main.includes('https://org.sportique.biz/onboarding'));assert.ok(main.includes('mailto:daniel@sportique.biz'));
 });
