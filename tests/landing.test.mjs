@@ -28,6 +28,7 @@ test('hero explains the concrete record flow without a canvas or scroll runway',
  let last=-1;for(const text of ['01 / 흩어진 원본','02 / DATAQ','03 / 개인 확인','04 / UNIQDATA','05 / 선택한 활용']){const at=hero.indexOf(text);assert.ok(at>last,text);last=at;}
  for(const text of ['진료 기록','검진 결과','처방·복약','웨어러블','건강 앱','생활 기록','형식·항목·단위 표준화','원본과 출처는 보존','원본과 대조','확인·수정·보류','개인 DB','개인 리포트','AI에 질문','가족과 공유','동의한 연구'])assert.ok(hero.includes(text),text);
  assert.ok(hero.includes('class="hero-network"'));
+ assert.ok(hero.includes('class="network-connections"'));
  assert.ok(!hero.includes('class="hero-scene"'));
  assert.ok(!hero.includes('hero-flow'));
  assert.ok(!hero.includes('class="hero-copy" data-reveal'));
