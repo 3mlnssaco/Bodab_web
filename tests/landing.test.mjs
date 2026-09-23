@@ -43,9 +43,9 @@ test('hero explains the concrete record flow without a canvas or scroll runway',
 test('home defines data fragmentation as the problem and preserves individual AI and sharing choice',()=>{
  const order=['id="problem"','id="system"','id="world"','id="value"','id="products-title"','id="journey-title"','id="care-title"'];
  let last=-1;for(const marker of order){const at=html.indexOf(marker);assert.ok(at>last,marker);last=at;}
- for(const text of ['DATA FRAGMENTATION','흩어진 건강기록,','개인의 DB로.','개인의 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인이 확인합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','개인의 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','Bodab을 만들며','2025년 XRPL','건강기록 원문은 개인 DB에','연결 약포의 이송·분리와 미수령 약포 보관'])assert.ok(html.includes(text),text);
+ for(const text of ['DATA FRAGMENTATION','흩어진 건강기록,','개인의 DB로.','개인의 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인이 확인합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','개인의 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','Bodab을 만들며','더 큰 문제를<br>찾았습니다.','복약 일정과 확인 상태','여러 기록을 대조하고 서로 다시 물어야','2025년 XRPL','건강기록 원문은 개인 DB에','연결 약포의 이송·분리와 미수령 약포 보관'])assert.ok(html.includes(text),text);
  assert.match(html,/<h2 id="routes-title">(?:(?!<\/h2>)[\s\S])*자유/);
- for(const rejected of ['한 사람의 이야기','이야기의 시작','돌봄이었습니다.','정리할 후보','정리 후보','내 기준은','기록의 기준점','세계는 서버의 지도','NOT A COVERAGE MAP','보호자와 함께 봅니다.','상단 롤에서 약포를 아래 수령부로'])assert.ok(!html.includes(rejected),rejected);
+ for(const rejected of ['한 사람의 이야기','이야기의 시작','돌봄이었습니다.','정리할 후보','정리 후보','내 기준은','기록의 기준점','세계는 서버의 지도','NOT A COVERAGE MAP','보호자와 함께 봅니다.','문제를 먼저 봤습니다.','문제를 먼저 만났습니다.','상단 롤에서 약포를 아래 수령부로'])assert.ok(!html.includes(rejected),rejected);
 });
 test('assembled records open the full personal-use path without converting research compensation into a SportiQue payout claim',()=>{
  for(const text of ['개인은 기록을 리포트로 확인합니다.','개인은 자신의 기록을 바탕으로 AI에 질문합니다.','보호자에게 필요한 기록만 공유합니다.','해외에서도 필요한 기록을 꺼내 씁니다.','참여할 연구와 공유할 기록을 고릅니다.','돌봄·복약 앱에 기록을 연결합니다.','이용 이력을 다시 확인합니다.','지급 주체가 정한 방식으로 처리','국가별 정책·데이터 레지던시 조건'])assert.ok(html.includes(text),text);
