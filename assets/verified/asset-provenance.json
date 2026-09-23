@@ -60,22 +60,6 @@
       "publication_note": "Synthetic review persona shown in the submitted app UI."
     },
     {
-      "public_path": "/assets/verified/yakson-designer-exterior-20260922.png",
-      "type": "designer exterior reference render",
-      "source": "YAKSON clean-roll-stepper-v1, designer exterior scene",
-      "source_sha256": "be175158cab91f42a4465aa4181f96365062945147599403b5b0d80874bcc8de",
-      "sha256": "be175158cab91f42a4465aa4181f96365062945147599403b5b0d80874bcc8de",
-      "publication_note": "Original designer-proportioned exterior reference; not a fabrication drawing or physical validation."
-    },
-    {
-      "public_path": "/assets/verified/yakson-designer-motion-20260922.mp4",
-      "type": "digital design motion preview",
-      "source": "YAKSON clean-roll-stepper-v1 design-cycle preview",
-      "source_sha256": "7fce453f8386d58fdfb936ae4127960d129d1071367e55ab13fd2be7eebd85be",
-      "sha256": "7fce453f8386d58fdfb936ae4127960d129d1071367e55ab13fd2be7eebd85be",
-      "publication_note": "Digital review of the top roll, downward feed, isolation shutter, and receiving door; not physical test evidence."
-    },
-    {
       "public_path": "/assets/verified/awards/minister-award-20251107.webp",
       "type": "masked award certificate web derivative",
       "source": "docs/evidence/awards-certificates/project/cert_교육부장관상_masked.jpeg",
@@ -99,6 +83,22 @@
       "sha256": "b6949e0ef23f3d3cd01ef3f77dd13d0dbe135b94f70b50d6aa6d78af3e6b4567",
       "transformation": "Cropped the award-stage photo from the public 2025 organizer post screenshot; WebP quality 88, metadata stripped.",
       "publication_note": "Historical organizer event photo, not evidence of any current product capability."
+    },
+    {
+      "public_path": "/assets/verified/yakson-evt-v3-frame-20260916.png",
+      "type": "current open-frame V3 digital mechanism review image",
+      "source": "yakson-device/workspace-assets/device/design/evt-open-frame-v1/missed-dose-v3-frame-411.png",
+      "source_sha256": "c3aded2ae7a4ba4e75e98c445aa25467528d10a451877bbe4132388daa3ec45c",
+      "sha256": "c3aded2ae7a4ba4e75e98c445aa25467528d10a451877bbe4132388daa3ec45c",
+      "publication_note": "Current open-frame mechanism candidate, including the connected pouch roll and lower missed-dose hold. Digital path review only; no final exterior or physical test."
+    },
+    {
+      "public_path": "/assets/verified/yakson-evt-v3-preview-20260916.mp4",
+      "type": "current open-frame V3 digital motion preview",
+      "source": "yakson-device/workspace-assets/device/design/evt-open-frame-v1/YAKSON_MISSED_DOSE_V3_PREVIEW.mp4",
+      "source_sha256": "d89bd859cf3ef69eb375bb4ff1d8aeb5df6da1cbe4a54fe28fa6261d7d8c7c62",
+      "sha256": "d89bd859cf3ef69eb375bb4ff1d8aeb5df6da1cbe4a54fe28fa6261d7d8c7c62",
+      "publication_note": "Digital review of lower missed-dose hold and presentation of the next pouch. Not a physical test, manufacturing release, or complete product demonstration."
     }
   ],
   "blocked_assets": [
@@ -121,6 +121,16 @@
       "former_path": "/assets/uniqdata-phone-2.png",
       "sha256": "c11ead23eb8407fc8b98034ab5ffdd7dfa5426218f723a4d99b27df7cdc35952",
       "reason": "Fabricated English phone mockup; removed from the public site."
+    },
+    {
+      "former_path": "/assets/verified/yakson-designer-exterior-20260922.png",
+      "sha256": "be175158cab91f42a4465aa4181f96365062945147599403b5b0d80874bcc8de",
+      "reason": "Superseded clean-roll-stepper-v1 history; not the current YAKSON mechanism or approved exterior. Retained in the device source archive, removed from the website."
+    },
+    {
+      "former_path": "/assets/verified/yakson-designer-motion-20260922.mp4",
+      "sha256": "7fce453f8386d58fdfb936ae4127960d129d1071367e55ab13fd2be7eebd85be",
+      "reason": "Superseded clean-roll-stepper-v1 history; not the current YAKSON mechanism or approved exterior. Retained in the device source archive, removed from the website."
     }
   ]
 }

@@ -77,11 +77,15 @@ test('brand rendering and the personal-world layer remain progressive enhancemen
 });
 test('product page uses provenance-reviewed media and contains no fabricated product drawings or jump strip',()=>{
  const page=readFileSync('products/index.html','utf8');
- for(const asset of ['uniqdata-home-dev-20260916.png','uniqlab-screen-20260922.png','bodab-screen-20260922.png','yakson-designer-exterior-20260922.png','yakson-designer-motion-20260922.mp4']){assert.ok(page.includes(`/assets/verified/${asset}`),asset);assert.ok(existsSync(`assets/verified/${asset}`),asset);}
+ for(const asset of ['uniqdata-home-dev-20260916.png','uniqlab-screen-20260922.png','bodab-screen-20260922.png','yakson-evt-v3-frame-20260916.png','yakson-evt-v3-preview-20260916.mp4']){assert.ok(page.includes(`/assets/verified/${asset}`),asset);assert.ok(existsSync(`assets/verified/${asset}`),asset);}
  assert.ok(!page.includes('/assets/verified/uniqdata-screen-20260922.webp'));
  for(const rejected of ['uniqdata-phone-1.png','uniqdata-phone-2.png','lab-window','lab-chart','care-orbit','care-center','device-sculpture','product-jump'])assert.ok(!page.includes(rejected),rejected);
- assert.ok(page.includes('디자이너 외관 원본 · 비율 참고 시안'));
- assert.ok(page.includes('실물 제작·작동 검증 자료는 아닙니다'));
+ assert.ok(page.includes('2026.09 개방형 기구 V3 · 디지털 검토본'));
+ assert.ok(page.includes('완성 외관·실물 반복 작동·제조 적합성은 검증 전입니다'));
+ assert.ok(!page.includes('yakson-designer-exterior-20260922.png'));
+ assert.ok(!page.includes('yakson-designer-motion-20260922.mp4'));
+ assert.ok(!existsSync('assets/verified/yakson-designer-exterior-20260922.png'));
+ assert.ok(!existsSync('assets/verified/yakson-designer-motion-20260922.mp4'));
  assert.ok(!existsSync('assets/uniqdata-phone-1.png'));assert.ok(!existsSync('assets/uniqdata-phone-2.png'));
 });
 test('founder page uses the requested retouch, retains the original portrait, and keeps institution login out of contact content',()=>{
@@ -133,5 +137,5 @@ test('published media hashes match the provenance manifest and rejected mocks re
  const manifest=JSON.parse(readFileSync('assets/verified/asset-provenance.json','utf8'));
  const sha=path=>createHash('sha256').update(readFileSync(path)).digest('hex');
  for(const asset of manifest.assets){const path=asset.public_path.slice(1);assert.ok(existsSync(path),path);assert.equal(sha(path),asset.sha256,path);}
- for(const blocked of ['934864ba68c485a9adf4470280316ab4b8cf84277cc4eedb783cd97d748800d6','f4db41857b81b5ac42d35140d22601acf512ad7291003d424309921185a812c9','ec8a1752a1c4128677de07c65bb3f84f497dff458e3fddc067f27a4772b9c67f','c11ead23eb8407fc8b98034ab5ffdd7dfa5426218f723a4d99b27df7cdc35952'])assert.ok(manifest.blocked_assets.some(asset=>asset.sha256===blocked),blocked);
+ for(const blocked of ['934864ba68c485a9adf4470280316ab4b8cf84277cc4eedb783cd97d748800d6','f4db41857b81b5ac42d35140d22601acf512ad7291003d424309921185a812c9','ec8a1752a1c4128677de07c65bb3f84f497dff458e3fddc067f27a4772b9c67f','c11ead23eb8407fc8b98034ab5ffdd7dfa5426218f723a4d99b27df7cdc35952','be175158cab91f42a4465aa4181f96365062945147599403b5b0d80874bcc8de','7fce453f8386d58fdfb936ae4127960d129d1071367e55ab13fd2be7eebd85be'])assert.ok(manifest.blocked_assets.some(asset=>asset.sha256===blocked),blocked);
 });

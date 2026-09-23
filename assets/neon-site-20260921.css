@@ -120,6 +120,10 @@ body{overflow-x:clip}
 .founder-statement h2{font-size:clamp(38px,3.6vw,52px);word-break:keep-all}
 @media(max-width:700px){.founder-statement h2{font-size:clamp(32px,8.5vw,40px)}}
 @media(max-width:700px){.manifesto-grid h2{font-size:clamp(28px,8vw,40px);word-break:keep-all}}
+.device-study-media{display:block;min-height:0;background:#363d40}
+.device-study-media::before{display:none}
+.device-study-media img{display:block;width:100%;height:auto;max-height:none;filter:none}
+.device-study-media figcaption{position:static;background:#13202b;color:#dce9f3;padding:11px 14px;font-size:11px;letter-spacing:0;text-transform:none}
 .problem-heading h2,.problem-cards h3,.world-copy h2,.value-path h3,.system-heading h2{word-break:keep-all;overflow-wrap:break-word}
 .world-continent{fill:#1b2d48;stroke:#476385}.world-continent--context{fill:#315c68;stroke:#8cebdc}.world-route{stroke-width:2.2;opacity:.94}
 @media(max-width:700px){.product-hero{min-height:auto}.hero-copy{position:relative;top:auto}.hero-art{position:relative;top:auto;width:100%;min-height:0}.problem-cards h3{font-size:22px}.world-stage{min-height:clamp(360px,90vw,520px)}.personal-world-map{left:50%;width:140%;max-width:none;height:auto;min-height:0;margin-top:28px;transform:translateX(-50%)}.world-stage figcaption{background:linear-gradient(90deg,#0b1222f0,#0b1222a8);padding:10px 0}.world-context-labels text{font-size:11px}}
