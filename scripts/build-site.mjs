@@ -39,7 +39,7 @@ const awardCategories=[...new Set(awardsRecords.map(awardCategory))];
 const awardFilters=awardCategories.map(category=>`<button type="button" data-filter="${esc(category)}" aria-pressed="false">${esc(awardLabels[category]??category)} ${awardsRecords.filter(r=>awardCategory(r)===category).length}</button>`).join('');
 function awardEvidence(record){
  const evidence=record.evidence;if(!evidence)return '';
- const image=evidence.image?`<a class="award-proof-image" href="${esc(evidence.image)}" target="_blank" rel="noopener noreferrer"><img src="${esc(evidence.image)}" alt="${esc(evidence.imageAlt)}" loading="lazy" decoding="async"><span>${esc(evidence.imageLabel)}</span></a>`:'';
+ const image=evidence.image?`<figure class="award-proof-image"><img src="${esc(evidence.image)}" alt="${esc(evidence.imageAlt)}" loading="lazy" decoding="async"><figcaption>${esc(evidence.imageLabel)}</figcaption></figure>`:'';
  const links=(evidence.links??[]).map(link=>`<a class="award-proof-link" href="${esc(link.href)}" target="_blank" rel="noopener noreferrer">${esc(link.label)} ${arrow}</a>`).join('');
  return `<div class="award-evidence">${image}${links?`<div class="award-proof-links">${links}</div>`:''}</div>`;
 }

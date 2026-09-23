@@ -76,14 +76,6 @@
       "publication_note": "Digital review of the top roll, downward feed, isolation shutter, and receiving door; not physical test evidence."
     },
     {
-      "public_path": "/assets/verified/awards/student-300plus-20251017.webp",
-      "type": "masked selection certificate web derivative",
-      "source": "docs/evidence/awards-certificates/project/cert_300plus_masked.png",
-      "source_sha256": "ef399fdc20a9d9d57d07d66235f77bcc1ef0a351b8b47b1be89536dc123f0d81",
-      "sha256": "e3516b773cc22d66436d751dba158cdc02f04f100fe7cc34cba900e1e0df0762",
-      "transformation": "Resized within 1600x2200, WebP quality 88, metadata stripped; existing privacy mask retained."
-    },
-    {
       "public_path": "/assets/verified/awards/minister-award-20251107.webp",
       "type": "masked award certificate web derivative",
       "source": "docs/evidence/awards-certificates/project/cert_교육부장관상_masked.jpeg",

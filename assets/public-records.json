@@ -254,7 +254,7 @@
       "evidence": {
         "image": "/assets/verified/awards/minister-award-20251107.webp",
         "imageAlt": "제3회 대학창업대전 학생창업 IR 교육부장관상 상장",
-        "imageLabel": "상장 보기",
+        "imageLabel": "상장",
         "links": [{"label": "보도 기사·현장 사진", "href": "https://magazine.hankyung.com/job-joy/article/202511117991d"}]
       }
     },
@@ -264,12 +264,7 @@
       "category": "selected",
       "title": "2025 학생 창업유망팀 300+ 성장트랙 최종선정",
       "organizer": "교육부 / 과학기술정보통신부 / 한국연구재단 / 한국청년기업가정신재단",
-      "body": "SportiQue 팀이 성장트랙 최종 선정 인증서를 받았습니다.",
-      "evidence": {
-        "image": "/assets/verified/awards/student-300plus-20251017.webp",
-        "imageAlt": "2025 학생 창업유망팀 300+ 성장트랙 최종 선정 인증서",
-        "imageLabel": "선정 인증서 보기"
-      }
+      "body": "SportiQue 팀이 성장트랙 최종 선정 인증서를 받았습니다."
     },
     {
       "date": "2025.10",
@@ -289,7 +284,7 @@
       "evidence": {
         "image": "/assets/verified/awards/xrpl-stage-202509.webp",
         "imageAlt": "XRPL Hackathon Seoul 2025 최우수상 수상 현장 사진",
-        "imageLabel": "수상 현장 보기",
+        "imageLabel": "수상 현장",
         "links": [{"label": "수상 보도 기사", "href": "https://www.tokenpost.kr/amp/news/blockchain/290321"}]
       }
     },
@@ -304,7 +299,7 @@
       "evidence": {
         "image": "/assets/verified/awards/china-startup-20241129.webp",
         "imageAlt": "2024 한중 글로벌 청년 창업대전 최우수상 상장",
-        "imageLabel": "상장 보기"
+        "imageLabel": "상장"
       }
     }
   ],
