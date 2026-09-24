@@ -1,6 +1,6 @@
 {
   "schema": "sportique.public-asset-provenance.v1",
-  "reviewed_at": "2026-09-22",
+  "reviewed_at": "2026-09-23",
   "assets": [
     {
       "public_path": "/assets/sportique-icon.jpg",
@@ -18,12 +18,29 @@
       "transformation": "Resized to 1200x1800, JPEG quality 88, metadata stripped; face and scene unchanged."
     },
     {
+      "public_path": "/assets/verified/founder-portrait-retouched-20260923.jpg",
+      "type": "AI-assisted retouched founder portrait",
+      "source": "founder-portrait-20260922.jpg",
+      "source_sha256": "7ef4c48b59c747f1d4ef6ce4bfd19b6e9ba8fdee0914f58b3b1d60e073bf904b",
+      "sha256": "fb7bcb505b33faece51f696f2ab96b07cbc7e73d0495d98abd113656ffa11f49",
+      "transformation": "ImageGen edit requested to reduce lower-cheek and jaw fullness, then encoded as metadata-stripped JPEG quality 88. The generated variant also changes fine facial and clothing details; the unedited web derivative remains available separately.",
+      "publication_note": "Edited portrait, not an unaltered photograph."
+    },
+    {
       "public_path": "/assets/verified/uniqdata-screen-20260922.webp",
       "type": "verified product UI capture",
       "source": "UniQdata UI QA safe UI evidence, routine recommendation registered detail",
       "source_sha256": "10ffba81b522c8b0a0ed4571b36fc2be4401f5c2a3c22c3851051ed4393ad12e",
       "sha256": "10ffba81b522c8b0a0ed4571b36fc2be4401f5c2a3c22c3851051ed4393ad12e",
       "privacy_review": "No account identifier, credential, or personal health record visible."
+    },
+    {
+      "public_path": "/assets/verified/uniqdata-home-dev-20260916.png",
+      "type": "development product UI capture",
+      "source": "outputs/zerobase-office-hour-20260910/visual-assets-20260916/real-uniqdata-home.png",
+      "source_sha256": "77b4b657d2d4b259d3476b2f4ee4ed85be6b3379baf65dc35a57c3c1f68ee6f6",
+      "sha256": "77b4b657d2d4b259d3476b2f4ee4ed85be6b3379baf65dc35a57c3c1f68ee6f6",
+      "publication_note": "Actual UniQdata development capture with test data; shows personal data entry and health-data connection, not live user records."
     },
     {
       "public_path": "/assets/verified/uniqlab-screen-20260922.png",
@@ -43,20 +60,45 @@
       "publication_note": "Synthetic review persona shown in the submitted app UI."
     },
     {
-      "public_path": "/assets/verified/yakson-designer-exterior-20260922.png",
-      "type": "designer exterior reference render",
-      "source": "YAKSON clean-roll-stepper-v1, designer exterior scene",
-      "source_sha256": "be175158cab91f42a4465aa4181f96365062945147599403b5b0d80874bcc8de",
-      "sha256": "be175158cab91f42a4465aa4181f96365062945147599403b5b0d80874bcc8de",
-      "publication_note": "Original designer-proportioned exterior reference; not a fabrication drawing or physical validation."
+      "public_path": "/assets/verified/awards/minister-award-20251107.webp",
+      "type": "masked award certificate web derivative",
+      "source": "docs/evidence/awards-certificates/project/cert_교육부장관상_masked.jpeg",
+      "source_sha256": "4e4fc504468132463169c299fe05eaf660b81617adfb044523c472e011452680",
+      "sha256": "78d3165b2bdfef7a795fec5a334cf3d343c46957b0cc5222771f0faa3b1ec666",
+      "transformation": "Resized within 1600x2200, WebP quality 88, metadata stripped; existing privacy mask retained."
     },
     {
-      "public_path": "/assets/verified/yakson-designer-motion-20260922.mp4",
-      "type": "digital design motion preview",
-      "source": "YAKSON clean-roll-stepper-v1 design-cycle preview",
-      "source_sha256": "7fce453f8386d58fdfb936ae4127960d129d1071367e55ab13fd2be7eebd85be",
-      "sha256": "7fce453f8386d58fdfb936ae4127960d129d1071367e55ab13fd2be7eebd85be",
-      "publication_note": "Digital review of the top roll, downward feed, isolation shutter, and receiving door; not physical test evidence."
+      "public_path": "/assets/verified/awards/china-startup-20241129.webp",
+      "type": "masked award certificate web derivative",
+      "source": "docs/evidence/awards-certificates/project/cert_한중창업대전_masked.png",
+      "source_sha256": "caf33314a466f7e9a3872d50d61216ed4d090a5f76ef15f35c9bbb4423afd60a",
+      "sha256": "a4c6f2d0e0f8aa1ed22a5b901a7b0ae7f097ece7065eb964a9cc834ccbc93c25",
+      "transformation": "Resized within 1600x2200, WebP quality 88, metadata stripped; existing privacy mask retained."
+    },
+    {
+      "public_path": "/assets/verified/awards/xrpl-stage-202509.webp",
+      "type": "public organizer award-stage photo crop",
+      "source": "docs/evidence/awards-certificates/project/cert_xrpl_hackathon.png",
+      "source_sha256": "4d03a7cc4ac0b8205f7f68af90198e8fb0ca3701c9d1f4ac8d6de94b9871a5da",
+      "sha256": "b6949e0ef23f3d3cd01ef3f77dd13d0dbe135b94f70b50d6aa6d78af3e6b4567",
+      "transformation": "Cropped the award-stage photo from the public 2025 organizer post screenshot; WebP quality 88, metadata stripped.",
+      "publication_note": "Historical organizer event photo, not evidence of any current product capability."
+    },
+    {
+      "public_path": "/assets/verified/yakson-evt-v3-frame-20260916.png",
+      "type": "current open-frame V3 digital mechanism review image",
+      "source": "yakson-device/workspace-assets/device/design/evt-open-frame-v1/missed-dose-v3-frame-411.png",
+      "source_sha256": "c3aded2ae7a4ba4e75e98c445aa25467528d10a451877bbe4132388daa3ec45c",
+      "sha256": "c3aded2ae7a4ba4e75e98c445aa25467528d10a451877bbe4132388daa3ec45c",
+      "publication_note": "Current open-frame mechanism candidate, including the connected pouch roll and lower missed-dose hold. Digital path review only; no final exterior or physical test."
+    },
+    {
+      "public_path": "/assets/verified/yakson-evt-v3-preview-20260916.mp4",
+      "type": "current open-frame V3 digital motion preview",
+      "source": "yakson-device/workspace-assets/device/design/evt-open-frame-v1/YAKSON_MISSED_DOSE_V3_PREVIEW.mp4",
+      "source_sha256": "d89bd859cf3ef69eb375bb4ff1d8aeb5df6da1cbe4a54fe28fa6261d7d8c7c62",
+      "sha256": "d89bd859cf3ef69eb375bb4ff1d8aeb5df6da1cbe4a54fe28fa6261d7d8c7c62",
+      "publication_note": "Digital review of lower missed-dose hold and presentation of the next pouch. Not a physical test, manufacturing release, or complete product demonstration."
     }
   ],
   "blocked_assets": [
@@ -66,9 +108,29 @@
       "reason": "Fabricated English phone mockup; removed from the public site."
     },
     {
+      "former_path": "/assets/generated/personal-data-vault-v1.png",
+      "sha256": "f4db41857b81b5ac42d35140d22601acf512ad7291003d424309921185a812c9",
+      "reason": "Static conceptual focal image rejected for the homepage; not published."
+    },
+    {
+      "former_path": "/assets/generated/personal-data-atmosphere-v1.webp",
+      "sha256": "ec8a1752a1c4128677de07c65bb3f84f497dff458e3fddc067f27a4772b9c67f",
+      "reason": "Generated background for a rejected hero animation; not published."
+    },
+    {
       "former_path": "/assets/uniqdata-phone-2.png",
       "sha256": "c11ead23eb8407fc8b98034ab5ffdd7dfa5426218f723a4d99b27df7cdc35952",
       "reason": "Fabricated English phone mockup; removed from the public site."
+    },
+    {
+      "former_path": "/assets/verified/yakson-designer-exterior-20260922.png",
+      "sha256": "be175158cab91f42a4465aa4181f96365062945147599403b5b0d80874bcc8de",
+      "reason": "Superseded clean-roll-stepper-v1 history; not the current YAKSON mechanism or approved exterior. Retained in the device source archive, removed from the website."
+    },
+    {
+      "former_path": "/assets/verified/yakson-designer-motion-20260922.mp4",
+      "sha256": "7fce453f8386d58fdfb936ae4127960d129d1071367e55ab13fd2be7eebd85be",
+      "reason": "Superseded clean-roll-stepper-v1 history; not the current YAKSON mechanism or approved exterior. Retained in the device source archive, removed from the website."
     }
   ]
 }
