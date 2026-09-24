@@ -107,6 +107,8 @@ test('brand rendering and the personal-world layer remain progressive enhancemen
  const emblem=readFileSync('assets/sportique-emblem-3d.js','utf8');for(const proof of ['ExtrudeGeometry','original green S','IntersectionObserver','prefers-reduced-motion','renderer.dispose()'])assert.ok(emblem.includes(proof),proof);assert.ok(!emblem.includes('TextureLoader'));
  assert.ok(script.includes('mountPersonalWorld'));assert.ok(script.includes('world-countries-20260921.json'));assert.ok(css.includes('world-route-in'));assert.ok(css.includes('world-pulse'));
  assert.ok(css.includes('word-break:keep-all'));assert.ok(!css.includes('assembly-orbit'));
+ const mobileWorldWidth=css.match(/\.personal-world-map\{left:50%;width:(\d+)%/);
+ assert.ok(mobileWorldWidth && Number(mobileWorldWidth[1])<=120,'mobile world labels may clip');
  assert.ok(!script.includes('world-home-20260921.js'));assert.ok(!script.includes('world-hologram-20260921.js'));assert.ok(!html.includes('holo-stage'));
 });
 test('product page uses provenance-reviewed media and contains no fabricated product drawings or jump strip',()=>{
@@ -124,6 +126,8 @@ test('product page uses provenance-reviewed media and contains no fabricated pro
 });
 test('founder page uses the requested retouch, retains the original portrait, and keeps institution login out of contact content',()=>{
  const founder=readFileSync('founder/index.html','utf8');assert.ok(founder.includes('/assets/verified/founder-portrait-retouched-20260923.jpg'));assert.ok(existsSync('assets/verified/founder-portrait-retouched-20260923.jpg'));assert.ok(existsSync('assets/verified/founder-portrait-20260922.jpg'));assert.ok(!founder.includes('class="founder-symbol"'));
+ assert.ok(founder.includes('alt="SportiQue 이승헌 대표 프로필 사진, AI 보정본"'));
+ assert.ok(founder.includes('<figcaption>이승헌 · SportiQue · AI 보정 사진</figcaption>'));
  assert.ok(founder.includes('이승헌 · Founder, CEO &amp; CTO'));
  assert.ok(!founder.includes('Founder &amp; Representative'));
  assert.ok(founder.includes('제품을 직접<br><em>만듭니다.</em>'));
