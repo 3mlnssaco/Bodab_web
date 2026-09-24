@@ -73,7 +73,7 @@ test('every public page has the same original-logo neon shell and real instituti
  assert.ok(!about.includes('주도권의 방향을'));
 });
 test('redesign preserves each founder and award record, date and metadata without promoting its status',()=>{
- for(const [key,file,card] of [['founder','founder/index.html','record-item'],['awards','awards/index.html','timeline-event']]){const page=readFileSync(file,'utf8');assert.equal((page.match(new RegExp(`class="${card}"`,'g'))||[]).length,publicRecords[key].length,file+' count');for(const record of publicRecords[key])for(const field of ['date','title','meta','organizer','venue','body'])if(record[field])assert.ok(page.includes(escapeHtml(record[field])),file+': '+record[field]);}
+ for(const [key,file,card] of [['founder','founder/index.html','record-item'],['awards','awards/index.html','timeline-event']]){const page=readFileSync(file,'utf8');assert.equal((page.match(new RegExp(`class="${card}"`,'g'))||[]).length,publicRecords[key].length,file+' count');for(const record of publicRecords[key])for(const field of ['date','started','title','meta','organizer','venue','body'])if(record[field])assert.ok(page.includes(escapeHtml(record[field])),file+': '+record[field]);}
  assert.ok(!JSON.stringify(publicRecords).includes('피우다'));
  assert.ok(!JSON.stringify(publicRecords).includes('(2등)'));
  for(const file of pageFiles)assert.ok(!readFileSync(file,'utf8').includes('피우다'),file);
@@ -155,6 +155,7 @@ test('founder page uses the requested retouch, retains the original portrait, an
  for(const record of featured){assert.ok(founder.includes(escapeHtml(record.title)));assert.ok(founder.includes(escapeHtml(record.founderHighlight)));}
  assert.ok(!founder.includes('2025 학생 창업유망팀 300+ 성장트랙 최종선정'));
  assert.ok(founder.includes('2026 적정기술 기반 청년 창업 글로벌 실증 지원사업 몽골팀'));
+ assert.ok(founder.includes('법인 설립 전인 4월부터 팀으로 신청을 준비했고'));
  assert.ok(founder.includes('산학협동재단 / 대학산업기술지원단 / 적정기술학회'));
  const contact=readFileSync('contact/index.html','utf8');const main=contact.slice(contact.indexOf('<main'),contact.indexOf('</main>'));
  assert.ok(!main.includes('기관 계정 로그인'));assert.ok(!main.includes('https://org.sportique.biz/products/uniqlab'));assert.ok(main.includes('https://org.sportique.biz/onboarding'));assert.ok(main.includes('mailto:hello@sportique.biz'));assert.ok(!main.includes('mailto:daniel@sportique.biz'));
@@ -163,9 +164,12 @@ test('founder page uses the requested retouch, retains the original portrait, an
 });
 test('awards render as a latest-first vertical timeline while preserving source date precision',()=>{
  const page=readFileSync('awards/index.html','utf8');assert.ok(page.includes('class="awards-timeline"'));assert.ok(!page.includes('class="awards-grid"'));
- const rendered=[...page.matchAll(/<time(?: datetime="[^"]+")?>([^<]+)<\/time>/g)].map(match=>match[1]);
+ const rendered=[...page.matchAll(/<time(?: datetime="[^"]+")?>([^<]+)(?:<small class="timeline-start">[^<]+<\/small>)?<\/time>/g)].map(match=>match[1]);
  assert.deepEqual(rendered,[...publicRecords.awards].sort((a,b)=>b.sortDate-a.sortDate).map(record=>record.date));
  assert.ok(rendered.includes('2026.05'));assert.ok(!page.includes('2026.05.01'));
+ assert.ok(page.includes('준비 시작 2026.04 · 법인 설립 전'));
+ assert.ok(page.includes('준비 시작 2026.07'));
+ assert.ok(page.includes('법인 설립 전 SportiQue 팀 활동부터'));
  assert.ok(page.includes(`공개 기록 ${publicRecords.awards.length}건`));
  const categories=[...page.matchAll(/class="timeline-event" data-category="([^"]+)"/g)].map(match=>match[1]);
  for(const category of new Set(categories))assert.ok(page.includes(`data-filter="${category}"`),category+' filter');
