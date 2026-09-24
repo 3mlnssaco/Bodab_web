@@ -5,8 +5,8 @@ import {createHash} from 'node:crypto';
 const html=readFileSync('index.html','utf8');
 test('product-led home uses the verified UniQdata screen and preserves navigation and product destinations',()=>{
  assert.ok(html.indexOf('class="product-hero"')<html.indexOf('id="problem"'));
- for(const url of ['/products/','/about/','/founder/','/awards/','/contact/','/institutions/','https://org.sportique.biz/products/uniqlab','https://uniqdata.io/'])assert.ok(html.includes(`href="${url}"`),url);
- for(const route of ['about','products','founder','awards','contact'])assert.ok(existsSync(route+'/index.html'));
+ for(const url of ['/products/','/about/','/vision/','/founder/','/awards/','/contact/','/institutions/','https://org.sportique.biz/products/uniqlab','https://uniqdata.io/'])assert.ok(html.includes(`href="${url}"`),url);
+ for(const route of ['about','products','vision','founder','awards','contact'])assert.ok(existsSync(route+'/index.html'));
  for(const asset of ['sportique-icon.jpg','verified/uniqdata-home-dev-20260916.png'])assert.ok(existsSync('assets/'+asset));
  assert.ok(html.includes('/assets/verified/uniqdata-home-dev-20260916.png'));
  assert.ok(!html.includes('/assets/verified/uniqdata-screen-20260922.webp'));
@@ -57,7 +57,7 @@ test('assembled records open the full personal-use path without converting resea
  for(const text of ['개인은 기록을 리포트로 확인합니다.','개인은 자신의 기록을 바탕으로 AI에 질문합니다.','보호자에게 필요한 기록만 공유합니다.','해외에서도 필요한 기록을 꺼내 씁니다.','참여할 연구와 공유할 기록을 고릅니다.','돌봄·복약 앱에 기록을 연결합니다.','이용 이력을 다시 확인합니다.','지급 주체가 정한 방식으로 처리','국가별 정책·데이터 레지던시 조건'])assert.ok(html.includes(text),text);
  for(const rejected of ['데이터 판매','토큰 보상','SportiQue가 직접 지급'])assert.ok(!html.includes(rejected),rejected);
 });
-const pageFiles=['index.html','products/index.html','about/index.html','founder/index.html','awards/index.html','contact/index.html','institutions/index.html','404.html'];
+const pageFiles=['index.html','products/index.html','about/index.html','vision/index.html','founder/index.html','awards/index.html','contact/index.html','institutions/index.html','404.html'];
 const publicRecords=JSON.parse(readFileSync('assets/public-records.json','utf8'));
 const escapeHtml=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 test('every public page has the same original-logo neon shell and real institution login destination',()=>{
@@ -75,6 +75,7 @@ test('every public page has the same original-logo neon shell and real instituti
 test('redesign preserves each founder and award record, date and metadata without promoting its status',()=>{
  for(const [key,file,card] of [['founder','founder/index.html','record-item'],['awards','awards/index.html','timeline-event']]){const page=readFileSync(file,'utf8');assert.equal((page.match(new RegExp(`class="${card}"`,'g'))||[]).length,publicRecords[key].length,file+' count');for(const record of publicRecords[key])for(const field of ['date','title','meta','organizer','venue','body'])if(record[field])assert.ok(page.includes(escapeHtml(record[field])),file+': '+record[field]);}
  assert.ok(!JSON.stringify(publicRecords).includes('피우다'));
+ assert.ok(!JSON.stringify(publicRecords).includes('(2등)'));
  for(const file of pageFiles)assert.ok(!readFileSync(file,'utf8').includes('피우다'),file);
 });
 test('featured product anchors, original destinations and feature descriptions remain usable',()=>{
@@ -92,6 +93,14 @@ test('product page states each role and stage without presenting four equal prod
  assert.ok(page.includes('UniQLab은 연구자와 기관이 연구 준비'));
  assert.ok(page.includes('개발 중인 복약 보조 장치 PoC'));
  for(const rejected of ['연결되는 네 가지 제품','가족의 하루를 챙기는 일까지','고령자와 가족이 복약, 일정, 생활 상태를 함께 챙기는 가족 돌봄 앱'])assert.ok(!page.includes(rejected),rejected);
+});
+test('vision page shows a global network direction without presenting a server footprint',()=>{
+ const page=readFileSync('vision/index.html','utf8');
+ for(const text of ['개인의 기록으로,<br><em>세계를 잇습니다.</em>','저장·활용·공유의 선택은 그 사람에게 남습니다.','나라가 달라도,','data-vision-map','data-personal-world-countries','PERSONAL DB','CARE','CLINIC','AI','RESEARCH','MISSION / OUR ANSWER','흩어진 기록을<br><em>개인에게 돌려줍니다.</em>','세계를 잇는 비전을 위해','01 / STORE','02 / USE','03 / CHOOSE','기록의 출발점은,<br><em>UniQdata.</em>','국가별 제공은 현지 정책과 데이터 보관 조건에 맞춰 검증합니다.'])assert.ok(page.includes(text),text);
+ for(const rejected of ['확인된 서버 거점','US WEST','현재 서비스 제공 국가','전 세계 서비스 중','세계는 서버의 지도'])assert.ok(!page.includes(rejected),rejected);
+ assert.ok(page.includes('href="/vision/" aria-current="page">비전</a>'));
+ const atlas=JSON.parse(readFileSync('assets/world-countries-20260921.json','utf8'));
+ assert.ok(atlas.countries.length>=150);
 });
 test('brand rendering and the personal-world layer remain progressive enhancement without the retired server-footprint runtime',()=>{
  const script=readFileSync('assets/neon-site-20260921.js','utf8');const css=readFileSync('assets/neon-site-20260921.css','utf8');assert.ok(script.includes('prefers-reduced-motion'));assert.ok(script.includes('mountEmblems'));assert.ok(script.includes('IntersectionObserver'));assert.ok(script.includes('[data-reveal]'));assert.ok(css.includes('reveal-sweep-left'));assert.ok(css.includes('reveal-sweep-right'));assert.ok(css.includes('prefers-reduced-motion:reduce'));assert.ok(existsSync('assets/vendor/LICENSE'));assert.ok(existsSync('assets/vendor/three.core.js'));assert.ok(existsSync('assets/vendor/three.module.js'));
