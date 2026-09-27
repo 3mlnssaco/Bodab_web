@@ -171,10 +171,16 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.ok(contact.includes('mailto:hello@sportique.biz">hello@sportique.biz</a>'));
  assert.ok(founder.includes('mailto:daniel@sportique.biz'));
 });
-test('awards render as a latest-first vertical timeline while preserving source date precision',()=>{
+test('awards swap the Mongolia visit and incorporation cards while preserving their dates',()=>{
  const page=readFileSync('awards/index.html','utf8');assert.ok(page.includes('class="awards-timeline"'));assert.ok(!page.includes('class="awards-grid"'));
  const rendered=[...page.matchAll(/<time(?: datetime="[^"]+")?>([^<]+)(?:<small class="timeline-start">[^<]+<\/small>)?<\/time>/g)].map(match=>match[1]);
- assert.deepEqual(rendered,[...publicRecords.awards].sort((a,b)=>b.sortDate-a.sortDate).map(record=>record.date));
+ const expected=[...publicRecords.awards].sort((a,b)=>b.sortDate-a.sortDate).map(record=>record.date);
+ const visit=expected.indexOf('2026.07.27-07.31'), incorporation=expected.indexOf('2026.06.01');
+ assert.ok(visit>=0&&incorporation>=0);
+ [expected[visit],expected[incorporation]]=[expected[incorporation],expected[visit]];
+ assert.deepEqual(rendered,expected);
+ assert.ok(page.indexOf('스포티큐 주식회사 설립')<page.indexOf('몽골 현지 프로그램 참가'));
+ assert.ok(page.includes('MILESTONES / HISTORY'));assert.ok(!page.includes('MILESTONES / LATEST FIRST'));
  assert.ok(rendered.includes('2026.05'));assert.ok(!page.includes('2026.05.01'));
  assert.ok(page.includes('준비 시작 2026.04 · 법인 설립 전'));
  assert.ok(page.includes('준비 시작 2026.07'));
