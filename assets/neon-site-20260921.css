@@ -165,3 +165,10 @@ body{overflow-x:clip}
 .world-principles li{border-top:1px solid #34425f}
 .world-stage{min-height:0}
 @media(max-width:700px){.world-continuity{gap:32px}.world-copy>p:not(.eyebrow){font-size:14px}.world-principles{grid-template-columns:1fr;gap:0;margin:28px 0 24px}.world-stage{min-height:clamp(360px,90vw,520px)}}
+
+.care-origin{grid-template-columns:minmax(0,1fr);gap:42px;padding-top:clamp(80px,8vw,120px);padding-bottom:clamp(80px,8vw,120px)}
+.care-origin h2{max-width:1050px;font-size:clamp(40px,5vw,68px)}
+.care-origin-copy{max-width:760px}
+.care-origin-copy p{font-size:16px;line-height:1.85;word-break:keep-all}
+.care-origin-copy .care-lead{font-size:clamp(22px,2.2vw,29px);line-height:1.6}
+@media(max-width:700px){.care-origin{gap:30px}.care-origin h2{font-size:clamp(38px,9vw,44px)}.care-origin-copy p{font-size:14px}.care-origin-copy .care-lead{font-size:20px}}
