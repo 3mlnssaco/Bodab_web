@@ -21,15 +21,12 @@ test('product-led home uses the verified UniQdata screen and preserves navigatio
  assert.ok(html.includes('class="world-continuity"'));assert.ok(html.includes('data-personal-world'));
  assert.equal(readFileSync('CNAME','utf8').trim(),'www.sportique.biz');
 });
-test('hero explains the concrete record flow without a canvas or scroll runway',()=>{
+test('hero states the personal benefit without the dense network diagram',()=>{
  const hero=html.slice(html.indexOf('<section class="product-hero"'),html.indexOf('<section class="problem-section"'));
  assert.ok(hero,'product hero');
- assert.deepEqual([...hero.matchAll(/class="network-panel ([^"]+)"/g)].map(match=>match[1]),['network-fragments','network-db','network-uses']);
- let last=-1;for(const text of ['01 / 흩어진 원본','02 / DATAQ','03 / UNIQDATA','04 / 선택한 활용']){const at=hero.indexOf(text);assert.ok(at>last,text);last=at;}
- for(const text of ['진료 기록','검진 결과','처방·복약','웨어러블','건강 앱','생활 기록','형식·항목·단위 표준화','원본과 출처는 보존','한곳에 모인 기록','개인 DB','개인 리포트','AI에 질문','가족과 공유','동의한 연구'])assert.ok(hero.includes(text),text);
- for(const rejected of ['개인 확인','원본과 대조','확인·수정·보류'])assert.ok(!hero.includes(rejected),rejected);
- assert.ok(hero.includes('class="hero-network"'));
- assert.ok(hero.includes('class="network-connections"'));
+ for(const text of ['건강기록은 한곳에.','선택은 개인에게.','그 시작이 UniQdata입니다.','왜 필요한가요?'])assert.ok(hero.includes(text),text);
+ assert.ok(!hero.includes('DataQ'));
+ assert.ok(!hero.includes('hero-network'));
  assert.ok(!hero.includes('class="hero-scene"'));
  assert.ok(!hero.includes('hero-flow'));
  assert.ok(!hero.includes('class="hero-copy" data-reveal'));
@@ -41,10 +38,16 @@ test('hero explains the concrete record flow without a canvas or scroll runway',
  assert.doesNotMatch(heroStyles,/position:\s*sticky/);
  for(const [,height] of heroStyles.matchAll(/(?:min-)?height:[^;}]*?(\d+)(?:d|s)?vh/g))assert.ok(Number(height)<=100,'hero exceeds one viewport');
 });
+test('world section stacks its copy above the map on desktop',()=>{
+ const world=html.slice(html.indexOf('<section class="world-continuity"'),html.indexOf('<section class="value-section"'));
+ assert.ok(world.indexOf('class="world-copy"')<world.indexOf('class="world-stage"'));
+ const css=readFileSync('assets/neon-site-20260921.css','utf8');
+ assert.match(css,/\.world-continuity\{grid-template-columns:minmax\(0,1fr\);gap:42px\}/);
+});
 test('home defines data fragmentation as the problem and preserves individual AI and sharing choice',()=>{
  const order=['id="problem"','id="system"','id="world"','id="value"','id="products-title"','id="journey-title"','id="care-title"'];
  let last=-1;for(const marker of order){const at=html.indexOf(marker);assert.ok(at>last,marker);last=at;}
- for(const text of ['DATA FRAGMENTATION','흩어진 건강기록,','개인의 DB로.','개인의 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','개인의 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','Bodab을 만들며','더 큰 문제를<br>찾았습니다.','복약 확인 상태','여러 곳의 기록을 대조하고 서로 다시 물어야','2025년 XRPL','건강기록 원문은 개인 DB에','연결 약포의 이송·분리와 미수령 약포 보관'])assert.ok(html.includes(text),text);
+ for(const text of ['DATA FRAGMENTATION','건강기록은 한곳에.','선택은 개인에게.','개인의 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','개인의 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','Bodab을 만들며','더 큰 문제를<br>찾았습니다.','복약 확인 상태','여러 곳의 기록을 대조하고 서로 다시 물어야','2025년 XRPL','건강기록 원문은 개인 DB에','연결 약포의 이송·분리와 미수령 약포 보관'])assert.ok(html.includes(text),text);
  const system=html.slice(html.indexOf('<section class="data-system"'),html.indexOf('<section class="world-continuity"'));
  assert.deepEqual([...system.matchAll(/<li data-reveal><span>\d+<\/span><small>([^<]+)<\/small>/g)].map(match=>match[1]),['DATAQ','UNIQDATA','CHOOSE']);
  assert.ok(!html.includes('<small>CONFIRM</small>'));
