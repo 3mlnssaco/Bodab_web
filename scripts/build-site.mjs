@@ -66,14 +66,14 @@ const pages=[
     <p>제품 · 파트너십 · 기관 및 연구 협업</p>
   </div>
   <div class="contact-options">
-    <details class="contact-option">
-      <summary><span>01</span><div><h2>함께 만들고 싶어요.</h2><p>기관·연구 협업, 현장 적용과 제품 파트너십</p></div><span aria-hidden="true">＋</span></summary>
-      <div class="contact-choice"><p>사용 중인 메일에서 아래 주소로 보내주세요. 메일 앱이 열리지 않으면 주소를 복사할 수 있습니다.</p><strong class="contact-choice-address">hello@sportique.biz</strong><div class="contact-choice-actions"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hello%40sportique.biz&amp;su=SportiQue%20협업%20문의" target="_blank" rel="noopener noreferrer">Gmail로 작성 ${arrow}</a><a href="mailto:hello@sportique.biz?subject=SportiQue%20협업%20문의">메일 앱에서 작성 ${arrow}</a><button type="button" data-copy-email="hello@sportique.biz">주소 복사</button></div><span role="status" data-copy-status></span></div>
-    </details>
-    <details class="contact-option">
-      <summary><span>02</span><div><h2>제품을 사용하고 있어요.</h2><p>UniQdata · UniQLab · Bodab · YAKSON 이용 문의</p></div><span aria-hidden="true">＋</span></summary>
-      <div class="contact-choice"><p>제품 이용 내용은 지원 메일로 보내주세요. 메일 앱이 열리지 않으면 주소를 복사할 수 있습니다.</p><strong class="contact-choice-address">support@sportique.biz</strong><div class="contact-choice-actions"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=support%40sportique.biz&amp;su=SportiQue%20제품%20이용%20문의" target="_blank" rel="noopener noreferrer">Gmail로 작성 ${arrow}</a><a href="mailto:support@sportique.biz?subject=SportiQue%20제품%20이용%20문의">메일 앱에서 작성 ${arrow}</a><button type="button" data-copy-email="support@sportique.biz">주소 복사</button></div><span role="status" data-copy-status></span></div>
-    </details>
+    <article class="contact-option">
+      <div class="contact-option-heading"><span>01</span><div><h2>함께 만들고 싶어요.</h2><p>기관·연구 협업, 현장 적용과 제품 파트너십</p></div></div>
+      <div class="contact-choice"><strong class="contact-choice-address">hello@sportique.biz</strong><div class="contact-choice-actions"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hello%40sportique.biz&amp;su=SportiQue%20협업%20문의" target="_blank" rel="noopener noreferrer">Gmail로 작성 ${arrow}</a><a href="mailto:hello@sportique.biz?subject=SportiQue%20협업%20문의">메일 앱에서 작성 ${arrow}</a><button type="button" data-copy-email="hello@sportique.biz">주소 복사</button></div><span role="status" data-copy-status></span></div>
+    </article>
+    <article class="contact-option">
+      <div class="contact-option-heading"><span>02</span><div><h2>제품을 사용하고 있어요.</h2><p>UniQdata · UniQLab · Bodab · YAKSON 이용 문의</p></div></div>
+      <div class="contact-choice"><strong class="contact-choice-address">support@sportique.biz</strong><div class="contact-choice-actions"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=support%40sportique.biz&amp;su=SportiQue%20제품%20이용%20문의" target="_blank" rel="noopener noreferrer">Gmail로 작성 ${arrow}</a><a href="mailto:support@sportique.biz?subject=SportiQue%20제품%20이용%20문의">메일 앱에서 작성 ${arrow}</a><button type="button" data-copy-email="support@sportique.biz">주소 복사</button></div><span role="status" data-copy-status></span></div>
+    </article>
     <a href="https://org.sportique.biz/onboarding"><span>03</span><div><h2>기관에 도입하고 싶어요.</h2><p>기관 정보와 필요한 제품으로 도입 절차 시작하기</p></div>${arrow}</a>
   </div>
 </section>`},

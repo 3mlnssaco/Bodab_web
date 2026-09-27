@@ -168,7 +168,8 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.ok(founder.includes('산학협동재단 / 대학산업기술지원단 / 적정기술학회'));
  const contact=readFileSync('contact/index.html','utf8');const main=contact.slice(contact.indexOf('<main'),contact.indexOf('</main>'));
  assert.ok(!main.includes('기관 계정 로그인'));assert.ok(!main.includes('https://org.sportique.biz/products/uniqlab'));assert.ok(main.includes('https://org.sportique.biz/onboarding'));assert.ok(main.includes('mailto:hello@sportique.biz'));assert.ok(!main.includes('mailto:daniel@sportique.biz'));
- assert.equal((main.match(/<details class="contact-option">/g)||[]).length,2);
+ assert.equal((main.match(/<article class="contact-option">/g)||[]).length,2);
+ assert.ok(!main.includes('<details class="contact-option">'));
  for(const address of ['hello@sportique.biz','support@sportique.biz'])assert.ok(main.includes(`data-copy-email="${address}"`),address);
  assert.ok(main.includes('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hello%40sportique.biz'));
  assert.ok(main.includes('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=support%40sportique.biz'));
