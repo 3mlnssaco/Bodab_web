@@ -44,10 +44,16 @@ test('world section stacks its copy above the map on desktop',()=>{
  const css=readFileSync('assets/neon-site-20260921.css','utf8');
  assert.match(css,/\.world-continuity\{grid-template-columns:minmax\(0,1fr\);gap:42px\}/);
 });
+test('care origin leads with the family problem and stacks its story',()=>{
+ const care=html.slice(html.indexOf('<section class="care-origin section-shell"'),html.indexOf('<section class="contact-section section-shell"'));
+ assert.ok(care.includes('가족이 어르신의 복약·활동·진료를 함께 챙기려 해도'));
+ assert.ok(!care.includes('Bodab을 만들며'));
+ assert.match(readFileSync('assets/neon-site-20260921.css','utf8'),/\.care-origin\{grid-template-columns:minmax\(0,1fr\);gap:42px/);
+});
 test('home defines data fragmentation as the problem and preserves individual AI and sharing choice',()=>{
  const order=['id="problem"','id="system"','id="world"','id="value"','id="products-title"','id="journey-title"','id="care-title"'];
  let last=-1;for(const marker of order){const at=html.indexOf(marker);assert.ok(at>last,marker);last=at;}
- for(const text of ['DATA FRAGMENTATION','건강기록은 한곳에.','선택은 개인에게.','개인의 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','개인의 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','Bodab을 만들며','더 큰 문제를<br>찾았습니다.','복약 확인 상태','여러 곳의 기록을 대조하고 서로 다시 물어야','2025년 XRPL','건강기록 원문은 개인 DB에','연결 약포의 이송·분리와 미수령 약포 보관'])assert.ok(html.includes(text),text);
+ for(const text of ['DATA FRAGMENTATION','건강기록은 한곳에.','선택은 개인에게.','개인의 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','개인의 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','가족이 어르신의 복약·활동·진료','더 큰 문제를 찾았습니다.','복약 확인 상태','여러 곳의 기록을 대조하고 서로 다시 물어야','2025년 XRPL','건강기록 원문은 개인 DB에','연결 약포의 이송·분리와 미수령 약포 보관'])assert.ok(html.includes(text),text);
  const system=html.slice(html.indexOf('<section class="data-system"'),html.indexOf('<section class="world-continuity"'));
  assert.deepEqual([...system.matchAll(/<li data-reveal><span>\d+<\/span><small>([^<]+)<\/small>/g)].map(match=>match[1]),['DATAQ','UNIQDATA','CHOOSE']);
  assert.ok(!html.includes('<small>CONFIRM</small>'));
