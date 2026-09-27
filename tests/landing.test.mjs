@@ -146,8 +146,9 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.ok(founder.includes('처방 검토부터 약포 수령과 복용 자기보고까지의 사용자 여정'));
  assert.ok(!founder.includes('ACK 2026 약손 단독저자 논문 제출'));
  assert.ok(!founder.includes('몽골 현장 조사와 기관 후속 협의'));
- assert.ok(founder.includes('2026.08 초'));
- assert.ok(founder.includes('베이징 PKU 창업·AI 교육 및 IR 캠프 참여'));
+ assert.ok(!founder.includes('2026.08 초'));
+ assert.ok(!founder.includes('베이징 PKU 창업·AI 교육 및 IR 캠프 참여'));
+ assert.ok(!founder.includes('8월 4일 IR 피칭'));
  assert.ok(founder.includes('ZeroBase SF Camp 참여'));
  assert.ok(!founder.includes('샌프란시스코 SF Camp 참여'));
  assert.ok(readFileSync('awards/index.html','utf8').includes('ZeroBase SF Camp 참가'));
@@ -155,7 +156,6 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.equal(publicRecords.founder.filter(record=>record.title==='북경대 창업훈련캠프').length,1);
  assert.ok(!founder.includes('한중 청년 창업훈련캠프 참가·수료'));
  assert.ok(!founder.includes('북경대 창업훈련캠프 한국 교류일 참여'));
- assert.ok(founder.indexOf('2026.08 초')<founder.indexOf('2026.07.27-07.31'));
  assert.ok(founder.includes('벤처프런티어 창업 활동'));
  assert.deepEqual([...founder.matchAll(/<div class="record-date">([^<]+)<\/div>/g)].slice(0,2).map(match=>match[1]),['현재','현재']);
  const featured=publicRecords.awards.filter(record=>record.founderHighlight);
@@ -168,6 +168,11 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.ok(founder.includes('산학협동재단 / 대학산업기술지원단 / 적정기술학회'));
  const contact=readFileSync('contact/index.html','utf8');const main=contact.slice(contact.indexOf('<main'),contact.indexOf('</main>'));
  assert.ok(!main.includes('기관 계정 로그인'));assert.ok(!main.includes('https://org.sportique.biz/products/uniqlab'));assert.ok(main.includes('https://org.sportique.biz/onboarding'));assert.ok(main.includes('mailto:hello@sportique.biz'));assert.ok(!main.includes('mailto:daniel@sportique.biz'));
+ assert.equal((main.match(/<details class="contact-option">/g)||[]).length,2);
+ for(const address of ['hello@sportique.biz','support@sportique.biz'])assert.ok(main.includes(`data-copy-email="${address}"`),address);
+ assert.ok(main.includes('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hello%40sportique.biz'));
+ assert.ok(main.includes('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=support%40sportique.biz'));
+ assert.ok(readFileSync('assets/neon-site-20260921.js','utf8').includes('navigator.clipboard.writeText'));
  assert.ok(contact.includes('mailto:hello@sportique.biz">hello@sportique.biz</a>'));
  assert.ok(founder.includes('mailto:daniel@sportique.biz'));
 });
