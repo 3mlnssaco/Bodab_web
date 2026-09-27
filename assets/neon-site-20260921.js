@@ -9,6 +9,15 @@ for(const menu of document.querySelectorAll('.mobile-menu')){
  menu.addEventListener('keydown',event=>{if(event.key==='Escape'){menu.open=false;menu.querySelector('summary').focus();}});
  menu.addEventListener('click',event=>{if(event.target.closest('a'))menu.open=false;});
 }
+for(const button of document.querySelectorAll('[data-copy-email]'))button.addEventListener('click',async()=>{
+ const status=button.closest('.contact-choice,.contact-address-tools')?.querySelector('[data-copy-status]');
+ try{
+  await navigator.clipboard.writeText(button.dataset.copyEmail);
+  if(status)status.textContent='이메일 주소를 복사했습니다.';
+ }catch{
+  if(status)status.textContent='복사하지 못했습니다. 표시된 주소를 직접 복사해 주세요.';
+ }
+});
 for(const filter of document.querySelectorAll('[data-filter]'))filter.addEventListener('click',()=>{
  const value=filter.dataset.filter;let count=0;
  for(const button of document.querySelectorAll('[data-filter]'))button.setAttribute('aria-pressed',String(button===filter));

@@ -172,3 +172,22 @@ body{overflow-x:clip}
 .care-origin-copy p{font-size:16px;line-height:1.85;word-break:keep-all}
 .care-origin-copy .care-lead{font-size:clamp(22px,2.2vw,29px);line-height:1.6}
 @media(max-width:700px){.care-origin{gap:30px}.care-origin h2{font-size:clamp(38px,9vw,44px)}.care-origin-copy p{font-size:14px}.care-origin-copy .care-lead{font-size:20px}}
+
+.contact-address-display{display:flex;flex-wrap:wrap;align-items:center;margin:35px 0;color:#eef4ff;font-size:clamp(28px,3.4vw,48px);font-weight:600;letter-spacing:-.055em}
+.contact-address-display span{color:#9caecc;white-space:nowrap}
+.contact-address-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:26px}
+.contact-options details{border-bottom:1px solid #2c3851}
+.contact-options summary{display:grid;grid-template-columns:45px 1fr auto;gap:25px;padding:33px 0;cursor:pointer;list-style:none}
+.contact-options summary::-webkit-details-marker{display:none}
+.contact-options summary>span:first-child{color:#687996;font-size:10px}
+.contact-options summary>span:last-child{color:var(--cyan);font-size:20px;transition:transform .2s}
+.contact-options details[open] summary>span:last-child{transform:rotate(45deg)}
+.contact-choice{padding:0 0 30px 70px}
+.contact-choice>p{max-width:520px;margin:0 0 12px;color:#aab8cf;font-size:13px;line-height:1.7}
+.contact-choice-address{color:#f0f5ff;font-size:16px;overflow-wrap:anywhere}
+.contact-choice-actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 10px}
+.contact-choice-actions a,.contact-choice-actions button,.contact-address-tools button{padding:10px 14px;border:1px solid #50627f;background:#111c2b;color:#e9f3ff;font:inherit;font-size:12px;cursor:pointer}
+.contact-choice-actions a:hover,.contact-choice-actions button:hover,.contact-address-tools button:hover{border-color:var(--cyan)}
+.contact-options summary:focus-visible,.contact-choice-actions a:focus-visible,.contact-choice-actions button:focus-visible,.contact-address-tools button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+[data-copy-status]{min-height:1.4em;color:var(--cyan);font-size:12px}
+@media(max-width:700px){.contact-address-display{font-size:32px}.contact-options summary{grid-template-columns:30px 1fr auto;gap:14px}.contact-choice{padding-left:44px}}
