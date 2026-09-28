@@ -91,6 +91,17 @@ test('featured product anchors, original destinations and feature descriptions r
  const page=readFileSync('products/index.html','utf8');for(const product of publicRecords.products){assert.ok(page.includes(`id="${product.id}"`));assert.ok(page.includes(`href="${escapeHtml(product.href)}"`));for(const value of [product.description,product.detail,...product.features,...product.modules])assert.ok(page.includes(escapeHtml(value)),value);}
  const institution=readFileSync('institutions/index.html','utf8');assert.ok(institution.includes('https://org.sportique.biz/onboarding'));assert.ok(institution.includes('https://web.uniqlab.io/'));assert.ok(!/<input[^>]+type="password"/.test(institution));
 });
+test('company product introduction connects to the three institution product details',()=>{
+ const home=readFileSync('index.html','utf8');
+ const page=readFileSync('products/index.html','utf8');
+ assert.ok(home.includes('href="https://org.sportique.biz/products">기관용 제품 상세 보기'));
+ for(const slug of ['uniqlab','athleq','bodab'])assert.ok(page.includes(`href="https://org.sportique.biz/products/${slug}"`),slug);
+ const section=page.match(/<section class="institution-product-links"[\s\S]*?<\/section>/)?.[0];
+ assert.ok(section);
+ assert.equal((section.match(/href="https:\/\/org\.sportique\.biz\/products\//g)||[]).length,3);
+ assert.ok(!section.includes('sovi_data_intelligence'));
+ assert.ok(section.includes('href="https://org.sportique.biz/onboarding"'));
+});
 test('product page states each role and stage without presenting four equal products',()=>{
  const page=readFileSync('products/index.html','utf8');
  assert.ok(page.includes('<h1>개인이 기록을 모으고,<br><em>활용을 선택합니다.</em></h1>'));
