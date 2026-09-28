@@ -187,3 +187,14 @@ body{overflow-x:clip}
 .contact-choice-actions a:focus-visible,.contact-choice-actions button:focus-visible,.contact-address-tools button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 [data-copy-status]{min-height:1.4em;color:var(--cyan);font-size:12px}
 @media(max-width:700px){.contact-address-display{font-size:32px}.contact-option-heading{grid-template-columns:30px 1fr;gap:14px}.contact-choice{padding-left:44px}}
+
+.institution-product-links{max-width:1180px;margin:35px auto 100px;padding:60px 5vw;border-top:1px solid #35425e;border-bottom:1px solid #35425e}
+.institution-product-links h2{margin:15px 0 14px;font-size:clamp(30px,4vw,48px);letter-spacing:-.05em}
+.institution-product-links>p:not(.eyebrow){max-width:730px;color:#a6b7cb;font-size:14px;line-height:1.85;word-break:keep-all}
+.institution-product-links nav{margin:35px 0 22px;border-top:1px solid #35425e}
+.institution-product-links nav a{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr) 20px;align-items:center;gap:20px;padding:21px 0;border-bottom:1px solid #35425e;color:#e9f2ff}
+.institution-product-links nav a strong{font-size:20px;letter-spacing:-.035em}
+.institution-product-links nav a span{color:#9caec5;font-size:12px}
+.institution-product-links nav a:hover strong,.institution-product-links nav a:focus-visible strong{color:var(--green)}
+.institution-product-links>.text-link{margin-top:12px}
+@media(max-width:700px){.institution-product-links{margin:20px 6vw 70px;padding:45px 0}.institution-product-links nav a{grid-template-columns:minmax(0,1fr) 20px;gap:5px}.institution-product-links nav a span{grid-column:1;grid-row:2}.institution-product-links nav a>span:last-child{grid-column:2;grid-row:1}}
