@@ -164,6 +164,22 @@
   ],
   "awards": [
     {
+      "date": "2026.09.14",
+      "sortDate": 20260914,
+      "category": "award",
+      "title": "호서대학교 ‘모두의 창업 Pre-League’ 대상",
+      "organizer": "호서대학교 창업중심대학사업단",
+      "body": "SportiQue의 개인 중심 건강데이터 네트워크 아이디어가 교내 ‘모두의 창업 Pre-League’에서 대상을 받았습니다. 전국 ‘모두의 창업’ 2기 본사업 선정과는 별개의 수상입니다.",
+      "evidence": {
+        "links": [
+          {
+            "label": "수상 보도 기사",
+            "href": "https://magazine.hankyung.com/job-joy/article/202609156830d"
+          }
+        ]
+      }
+    },
+    {
       "date": "2026.08.05",
       "sortDate": 20260805,
       "started": "2026.07",
