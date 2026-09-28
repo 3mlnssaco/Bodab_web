@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 const html=readFileSync('index.html','utf8');
 test('product-led home uses the verified UniQdata screen and preserves navigation and product destinations',()=>{
  assert.ok(html.indexOf('class="product-hero"')<html.indexOf('id="problem"'));
- for(const url of ['/products/','/about/','/vision/','/founder/','/awards/','/contact/','/institutions/','https://org.sportique.biz/products/uniqlab','https://uniqdata.io/'])assert.ok(html.includes(`href="${url}"`),url);
+ for(const url of ['/products/','/about/','/vision/','/founder/','/awards/','/contact/','/institutions/','https://org.sportique.biz/workspace','https://uniqdata.io/'])assert.ok(html.includes(`href="${url}"`),url);
  for(const route of ['about','products','vision','founder','awards','contact'])assert.ok(existsSync(route+'/index.html'));
  for(const asset of ['sportique-icon.jpg','verified/uniqdata-home-dev-20260916.png'])assert.ok(existsSync('assets/'+asset));
  assert.ok(html.includes('/assets/verified/uniqdata-home-dev-20260916.png'));
@@ -66,12 +66,12 @@ test('assembled records open the full personal-use path without converting resea
  for(const text of ['개인은 기록을 리포트로 확인합니다.','개인은 자신의 기록을 바탕으로 AI에 질문합니다.','보호자에게 필요한 기록만 공유합니다.','해외에서도 필요한 기록을 꺼내 씁니다.','참여할 연구와 공유할 기록을 고릅니다.','돌봄·복약 앱에 기록을 연결합니다.','이용 이력을 다시 확인합니다.','지급 주체가 정한 방식으로 처리','국가별 정책·데이터 레지던시 조건'])assert.ok(html.includes(text),text);
  for(const rejected of ['데이터 판매','토큰 보상','SportiQue가 직접 지급'])assert.ok(!html.includes(rejected),rejected);
 });
-const pageFiles=['index.html','products/index.html','about/index.html','vision/index.html','founder/index.html','awards/index.html','contact/index.html','institutions/index.html','404.html'];
 const publicRecords=JSON.parse(readFileSync('assets/public-records.json','utf8'));
+const pageFiles=['index.html','products/index.html',...publicRecords.products.map(product=>`products/${product.id}/index.html`),'about/index.html','vision/index.html','founder/index.html','awards/index.html','contact/index.html','institutions/index.html','404.html'];
 const escapeHtml=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 test('every public page has the same original-logo neon shell and real institution login destination',()=>{
  const version=createHash('sha256').update(readFileSync('assets/neon-site-20260921.css')).update(readFileSync('assets/neon-site-20260921.js')).digest('hex').slice(0,12);
- for(const file of pageFiles){const page=readFileSync(file,'utf8');assert.ok(page.includes(`/assets/neon-site-20260921.css?v=${version}`),file);assert.ok(page.includes(`/assets/neon-site-20260921.js?v=${version}`),file);assert.ok(page.includes('class="brand original-brand"'),file);assert.ok(page.includes('https://org.sportique.biz/products/uniqlab'),file);assert.ok(page.includes('aria-label="모바일 메뉴"'),file);assert.ok(!page.includes('src="/assets/index-org-20260817.js"'),file);assert.ok(!page.includes('admin.sportique.biz'),file);assert.ok(!page.includes('정리할 후보'),file);assert.ok(!page.includes('정리 후보'),file);assert.doesNotMatch(page,/(?<![가-힣])(?:내가|내 개인|내 기록|내 선택|내 건강기록|내 역할|나의 기록|나의 일상|우리가|저희)|MY RECORD|MY CHOICE/,file);assert.equal((page.match(/<h1(?:\s|>)/g)||[]).length,1,file);}
+ for(const file of pageFiles){const page=readFileSync(file,'utf8');assert.ok(page.includes(`/assets/neon-site-20260921.css?v=${version}`),file);assert.ok(page.includes(`/assets/neon-site-20260921.js?v=${version}`),file);assert.ok(page.includes('class="brand original-brand"'),file);assert.ok(page.includes('https://org.sportique.biz/workspace'),file);assert.ok(page.includes('aria-label="모바일 메뉴"'),file);assert.ok(!page.includes('src="/assets/index-org-20260817.js"'),file);assert.ok(!page.includes('admin.sportique.biz'),file);assert.ok(!page.includes('정리할 후보'),file);assert.ok(!page.includes('정리 후보'),file);assert.doesNotMatch(page,/(?<![가-힣])(?:내가|내 개인|내 기록|내 선택|내 건강기록|내 역할|나의 기록|나의 일상|우리가|저희)|MY RECORD|MY CHOICE/,file);assert.equal((page.match(/<h1(?:\s|>)/g)||[]).length,1,file);}
  const about=readFileSync('about/index.html','utf8');
  assert.ok(about.includes('DataQ가 원본과 출처를 보존하면서 형식·항목·단위를 표준화하고, UniQdata가 기록을 개인 DB에서 관리합니다.'));
  assert.ok(about.includes('돌봄에서 찾은 문제.<br><em>기록은 흩어져 있었습니다.</em>'));
@@ -87,20 +87,35 @@ test('redesign preserves each founder and award record, date and metadata withou
  assert.ok(!JSON.stringify(publicRecords).includes('(2등)'));
  for(const file of pageFiles)assert.ok(!readFileSync(file,'utf8').includes('피우다'),file);
 });
-test('featured product anchors, original destinations and feature descriptions remain usable',()=>{
- const page=readFileSync('products/index.html','utf8');for(const product of publicRecords.products){assert.ok(page.includes(`id="${product.id}"`));assert.ok(page.includes(`href="${escapeHtml(product.href)}"`));for(const value of [product.description,product.detail,...product.features,...product.modules])assert.ok(page.includes(escapeHtml(value)),value);}
+test('featured product panels link to their own detail pages with examples and honest status',()=>{
+ const page=readFileSync('products/index.html','utf8');
+ assert.ok(!page.includes('institution-product-links'));
+ for(const product of publicRecords.products){
+   assert.ok(page.includes(`id="${product.id}"`));
+   assert.ok(page.includes(`href="/products/${product.id}/" aria-label="${product.name} 상세 보기"`));
+   const panel=page.slice(page.indexOf(`id="${product.id}"`),page.indexOf('</article>',page.indexOf(`id="${product.id}"`)));
+   assert.ok(panel.indexOf('product-panel-copy')<panel.indexOf('product-media'),`${product.id}: copy must precede media`);
+   assert.ok(panel.includes('class="product-detail-button"'),`${product.id}: visible detail action`);
+   assert.ok(panel.includes('class="product-panel-hit"'),`${product.id}: full card link`);
+   for(const value of [product.description,product.detail,...product.features,...product.modules])assert.ok(page.includes(escapeHtml(value)),value);
+   const detail=readFileSync(`products/${product.id}/index.html`,'utf8');
+   assert.ok(detail.includes(`<h1>${product.name}</h1>`));
+   assert.ok(detail.includes('활용 예시'));
+   assert.ok(detail.includes('현재 범위'));
+   for(const value of [product.description,product.detail,...product.features])assert.ok(detail.includes(escapeHtml(value)),value);
+   assert.ok(detail.includes('href="/products/"'));
+ }
+ assert.ok(readFileSync('products/yakson/index.html','utf8').includes('개발 중인 기능'));
+ assert.ok(readFileSync('products/bodab/index.html','utf8').includes('Bodab Senior에서 별도로 설명합니다'));
+ const css=readFileSync('assets/neon-site-20260921.css','utf8');
+ assert.ok(css.includes('.product-panel:nth-child(even) .product-panel-copy{order:0}'));
+ assert.ok(css.includes('.product-panel-hit{position:absolute;inset:0'));
  const institution=readFileSync('institutions/index.html','utf8');assert.ok(institution.includes('https://org.sportique.biz/onboarding'));assert.ok(institution.includes('https://web.uniqlab.io/'));assert.ok(!/<input[^>]+type="password"/.test(institution));
 });
-test('company product introduction connects to the three institution product details',()=>{
- const home=readFileSync('index.html','utf8');
- const page=readFileSync('products/index.html','utf8');
- assert.ok(home.includes('href="https://org.sportique.biz/products">기관용 제품 상세 보기'));
- for(const slug of ['uniqlab','athleq','bodab'])assert.ok(page.includes(`href="https://org.sportique.biz/products/${slug}"`),slug);
- const section=page.match(/<section class="institution-product-links"[\s\S]*?<\/section>/)?.[0];
- assert.ok(section);
- assert.equal((section.match(/href="https:\/\/org\.sportique\.biz\/products\//g)||[]).length,3);
- assert.ok(!section.includes('sovi_data_intelligence'));
- assert.ok(section.includes('href="https://org.sportique.biz/onboarding"'));
+test('public details lead to the relevant institution product without promoting SOVI',()=>{
+ assert.ok(!readFileSync('index.html','utf8').includes('기관용 제품 상세 보기'));
+ for(const slug of ['uniqlab','bodab'])assert.ok(readFileSync(`products/${slug}/index.html`,'utf8').includes(`href="https://org.sportique.biz/products/${slug}"`));
+ for(const file of pageFiles)assert.ok(!readFileSync(file,'utf8').includes('sovi_data_intelligence'));
 });
 test('product page states each role and stage without presenting four equal products',()=>{
  const page=readFileSync('products/index.html','utf8');
@@ -133,7 +148,9 @@ test('brand rendering and the personal-world layer remain progressive enhancemen
 });
 test('product page uses provenance-reviewed media and contains no fabricated product drawings or jump strip',()=>{
  const page=readFileSync('products/index.html','utf8');
- for(const asset of ['uniqdata-home-dev-20260916.png','uniqlab-screen-20260922.png','bodab-screen-20260922.png','yakson-evt-v3-frame-20260916.png','yakson-evt-v3-preview-20260916.mp4']){assert.ok(page.includes(`/assets/verified/${asset}`),asset);assert.ok(existsSync(`assets/verified/${asset}`),asset);}
+ for(const asset of ['uniqdata-home-dev-20260916.png','uniqlab-data-table-20260513.png','bodab-screen-20260922.png','yakson-evt-v3-frame-20260916.png','yakson-evt-v3-preview-20260916.mp4']){assert.ok(page.includes(`/assets/verified/${asset}`),asset);assert.ok(existsSync(`assets/verified/${asset}`),asset);}
+ assert.ok(!page.includes('uniqlab-screen-20260922.png'));
+ assert.ok(!existsSync('assets/verified/uniqlab-screen-20260922.png'));
  assert.ok(!page.includes('/assets/verified/uniqdata-screen-20260922.webp'));
  for(const rejected of ['uniqdata-phone-1.png','uniqdata-phone-2.png','lab-window','lab-chart','care-orbit','care-center','device-sculpture','product-jump'])assert.ok(!page.includes(rejected),rejected);
  assert.ok(page.includes('2026.09 개방형 기구 V3 · 디지털 검토본'));

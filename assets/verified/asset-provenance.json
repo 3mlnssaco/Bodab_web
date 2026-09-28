@@ -1,6 +1,6 @@
 {
   "schema": "sportique.public-asset-provenance.v1",
-  "reviewed_at": "2026-09-23",
+  "reviewed_at": "2026-09-28",
   "assets": [
     {
       "public_path": "/assets/sportique-icon.jpg",
@@ -43,13 +43,12 @@
       "publication_note": "Actual UniQdata development capture with test data; shows personal data entry and health-data connection, not live user records."
     },
     {
-      "public_path": "/assets/verified/uniqlab-screen-20260922.png",
-      "type": "verified demo product UI capture, privacy crop",
-      "source": "UniQdata KFIP 2026 proof research hub capture",
-      "source_sha256": "13d38d063fbbec3da21500bd6d9b2244af65104221512a200f1abca70744bef6",
-      "sha256": "5a9c010c2f5bd44b5586aee017d9d2029767e0bf77820d4f7c12140e452d354c",
-      "transformation": "Cropped to the research-hub product surface and stripped metadata; no UI content was synthesized.",
-      "publication_note": "Shown as a demo UI, not as evidence of a live customer study."
+      "public_path": "/assets/verified/uniqlab-data-table-20260513.png",
+      "type": "public proof product UI capture",
+      "source": "docs/presentations/kfip_2026_submission/uniqlab_data_table_live_20260513.png",
+      "source_sha256": "db2203ab45736326dc0bc156befc93de986e89a780274aca357c061d72244ed3",
+      "sha256": "db2203ab45736326dc0bc156befc93de986e89a780274aca357c061d72244ed3",
+      "publication_note": "2026-05-13 KFIP public proof capture of a demo research table. It shows a public proof account label and demo participant codes, not evidence of a live customer study."
     },
     {
       "public_path": "/assets/verified/bodab-screen-20260922.png",
@@ -102,6 +101,11 @@
     }
   ],
   "blocked_assets": [
+    {
+      "former_path": "/assets/verified/uniqlab-screen-20260922.png",
+      "sha256": "5a9c010c2f5bd44b5586aee017d9d2029767e0bf77820d4f7c12140e452d354c",
+      "reason": "User rejected the generic research hub image as a poor product example; removed from public site."
+    },
     {
       "former_path": "/assets/uniqdata-phone-1.png",
       "sha256": "934864ba68c485a9adf4470280316ab4b8cf84277cc4eedb783cd97d748800d6",
