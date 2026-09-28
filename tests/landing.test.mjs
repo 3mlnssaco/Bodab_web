@@ -198,12 +198,20 @@ test('awards swap the Mongolia visit and incorporation cards while preserving th
  assert.equal(categories.length,publicRecords.awards.length);
  assert.ok(page.includes('id="record-count" aria-live="polite"'));
  const evidence=publicRecords.awards.filter(record=>record.evidence);
- assert.equal(evidence.length,3);
+ assert.equal(evidence.length,4);
  assert.equal((page.match(/class="timeline-body has-evidence"/g)||[]).length,evidence.length);
  assert.match(readFileSync('assets/neon-site-20260921.css','utf8'),/\.award-proof-image img\{[^}]*object-fit:cover/);
  assert.ok(!page.includes('student-300plus-20251017.webp'));
  assert.ok(!existsSync('assets/verified/awards/student-300plus-20251017.webp'));
- for(const record of evidence){assert.ok(page.includes(`src="${record.evidence.image}"`),record.title);assert.ok(!page.includes(`href="${record.evidence.image}"`),record.title+' photo must not open');assert.ok(existsSync(record.evidence.image.slice(1)));for(const link of record.evidence.links??[]){assert.ok(link.href.startsWith('https://'));assert.ok(page.includes(`href="${link.href}"`),link.href);}}
+ for(const record of evidence){if(record.evidence.image){assert.ok(page.includes(`src="${record.evidence.image}"`),record.title);assert.ok(!page.includes(`href="${record.evidence.image}"`),record.title+' photo must not open');assert.ok(existsSync(record.evidence.image.slice(1)));}for(const link of record.evidence.links??[]){assert.ok(link.href.startsWith('https://'));assert.ok(page.includes(`href="${link.href}"`),link.href);}}
+ const preLeague=publicRecords.awards.find(record=>record.title==='호서대학교 ‘모두의 창업 Pre-League’ 대상');
+ assert.equal(preLeague?.category,'award');
+ assert.equal(preLeague?.date,'2026.09.14');
+ assert.ok(preLeague?.body.includes('본사업 선정과는 별개의 수상'));
+ assert.ok(!preLeague?.founderHighlight);
+ assert.ok(page.includes('호서대학교 ‘모두의 창업 Pre-League’ 대상'));
+ assert.ok(page.indexOf('호서대학교 ‘모두의 창업 Pre-League’ 대상')<page.indexOf('2026 AI·데이터 문제해결은행 DX 적용지원 선정'));
+ assert.ok(page.includes('href="https://magazine.hankyung.com/job-joy/article/202609156830d"'));
 });
 test('published media hashes match the provenance manifest and rejected mocks remain recorded',()=>{
  const manifest=JSON.parse(readFileSync('assets/verified/asset-provenance.json','utf8'));
