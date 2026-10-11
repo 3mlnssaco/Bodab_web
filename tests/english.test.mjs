@@ -43,7 +43,7 @@ test('English contact retains Gmail, mail app, copy-address and onboarding actio
     assert.ok(contact.includes(`href="mailto:${address}`));
     assert.ok(contact.includes(`to=${address.replace('@', '%40')}`));
   }
-  for (const marker of ['contact-editorial', 'contact-address-display', 'contact-choice-actions', 'https://org.sportique.biz/onboarding', 'https://org.sportique.biz/workspace']) assert.ok(contact.includes(marker), marker);
+  for (const marker of ['contact-editorial', 'contact-address-display', 'contact-choice-actions', 'https://org.sportique.biz/onboarding', 'https://org.sportique.biz/workspace?lang=en']) assert.ok(contact.includes(marker), marker);
   assert.ok(contact.includes('Compose in Gmail'));
   assert.ok(contact.includes('Compose in your mail app'));
   const runtime = readFileSync('assets/neon-site-20260921.js', 'utf8');
