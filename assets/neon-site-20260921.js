@@ -61,3 +61,9 @@ for(const stage of document.querySelectorAll('[data-research-3d]')){
  });
  area.addEventListener('pointerleave',()=>{stage.style.removeProperty('--research-x');stage.style.removeProperty('--research-y');});
 }
+
+for(const button of document.querySelectorAll('[data-sharing-pause]'))button.addEventListener('click',()=>{
+ const paused=button.closest('[data-sharing-motion]').classList.toggle('is-paused');
+ button.setAttribute('aria-pressed',String(paused));
+ button.textContent=english?(paused?'Play animation':'Pause animation'):(paused?'애니메이션 재생':'애니메이션 멈추기');
+});

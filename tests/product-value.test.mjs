@@ -58,3 +58,16 @@ test('Every public product explains the designed sharing architecture without co
   }
  }
 });
+
+
+test('All sharing architectures are illustrated with controllable motion and recipient labels',()=>{
+ for(const prefix of ['', 'en/']){
+  const page=readFileSync(`${prefix}products/index.html`,'utf8');
+  assert.equal((page.match(/data-sharing-motion/g)||[]).length,3);
+  assert.equal((page.match(/data-sharing-pause/g)||[]).length,3);
+  for(const id of ['uniqdata','uniqlab','bodab'])assert.ok(readFileSync(`${prefix}products/${id}/index.html`,'utf8').includes('sharing-packet-three'));
+ }
+ const css=readFileSync('assets/neon-site-20260921.css','utf8');
+ assert.ok(css.includes('@media(prefers-reduced-motion:reduce){.sharing-packet,.sharing-node-halo{animation:none}'));
+ assert.ok(css.includes('animation-play-state:paused'));
+});

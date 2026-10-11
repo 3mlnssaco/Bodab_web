@@ -526,5 +526,15 @@
   "원문과 분리된 증빙": "Evidence separate from originals",
   "동의·접근·공유 이력의 증빙을 배치로 묶고, 원문을 공개하지 않는 블록체인 검증 구조에 연결합니다.": "Evidence of consent, access and sharing is grouped into batches for blockchain verification, without publishing original records.",
   "철회와 이력 확인": "Revocation and evidence review",
-  "새로운 접근을 차단하는 철회와, 이미 남은 이력의 증빙 확인을 구분합니다.": "Revocation that blocks new access is separate from verification of existing history."
+  "새로운 접근을 차단하는 철회와, 이미 남은 이력의 증빙 확인을 구분합니다.": "Revocation that blocks new access is separate from verification of existing history.",
+  "개인의 기록에서 동의와 권한 확인, 암호화 전달, 블록체인 증빙으로 이어지는 공유 아키텍처": "Sharing architecture from personal records through consent and permission checks to encrypted delivery and blockchain evidence",
+  "선택한 활용처": "Chosen services",
+  "동의한 연구팀": "Consented research team",
+  "허용한 가족": "Authorized family",
+  "동의·권한 확인": "Consent and permissions",
+  "암호화 전달": "Encrypted delivery",
+  "블록체인 증빙": "Blockchain evidence",
+  "원문은 공개 원장 밖에": "Originals stay off the public ledger",
+  "공유 아키텍처 · 동의한 범위의 연결": "Sharing architecture · Connected within consent",
+  "애니메이션 멈추기": "Pause animation"
 }
