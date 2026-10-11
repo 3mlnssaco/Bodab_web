@@ -266,3 +266,9 @@ html:lang(en) .award-evidence::before{content:"SUPPORTING MATERIAL"}
 .founder-focus small{display:block;margin-bottom:11px;color:#77dbd0;font-size:10px;font-weight:700;letter-spacing:.14em}
 .founder-focus strong{display:block;color:#c9d8e5;font-size:18px;line-height:1.5;font-weight:500}
 @media(max-width:700px){.founder-statement{margin:55px auto 65px;gap:8px}.founder-statement h2{font-size:clamp(32px,8.5vw,40px)}.founder-statement>div>p:not(.eyebrow){font-size:14px}.founder-focus{grid-template-columns:1fr;gap:0;margin-top:26px}.founder-focus li{padding:17px 0}.founder-focus strong{font-size:16px}}
+
+.header-actions .language-switch{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:62px;min-height:36px;padding:7px 10px;border:1px solid #2b3b50;border-radius:999px;background:#0b121c;color:#acbed0;font-family:inherit;font-size:11px;font-weight:600;line-height:1;letter-spacing:.04em;text-decoration:none;white-space:nowrap}
+.language-switch svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.header-actions .language-switch:hover{background:#122433;border-color:#4d777e;color:#b8f4df}
+.language-switch:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+@media(max-width:700px){.header-actions .language-switch{min-height:40px;min-width:60px}}

@@ -31,7 +31,11 @@ export function buildEnglish(paths) {
       });
     });
     // Each language switch stays on the matching page.
-    html = html.replace(`<a href="/en/en${path}" lang="en">English</a>`, `<a href="${path}" lang="ko">한국어</a>`);
+    html = html.replace(/<a class="language-switch"[^>]*>[\s\S]*?<\/a>/, link => link
+      .replace(`href="/en/en${path}"`, `href="${path}"`)
+      .replace('lang="en"', 'lang="ko"')
+      .replaceAll('Switch to English', 'Switch to Korean')
+      .replace('<span>EN</span>', '<span>KO</span>'));
     html = html.replace('</head>', `<link rel="alternate" hreflang="ko" href="https://www.sportique.biz${path}"><link rel="alternate" hreflang="en" href="https://www.sportique.biz${route(path)}"></head>`);
     mkdirSync(output.slice(0, output.lastIndexOf('/')), { recursive: true });
     writeFileSync(output, html);
