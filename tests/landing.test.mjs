@@ -174,7 +174,8 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.ok(founder.includes('<figcaption>이승헌 · SportiQue · AI 보정 사진</figcaption>'));
  assert.ok(founder.includes('이승헌 · Founder, CEO &amp; CTO'));
  assert.ok(!founder.includes('Founder &amp; Representative'));
- assert.ok(founder.includes('제품을 직접<br><em>만듭니다.</em>'));
+ assert.ok(founder.includes('문제를 이해하고,<br><em>제품으로 구현합니다.</em>'));
+ assert.ok(founder.includes('class="founder-focus"'));
  assert.ok(!founder.includes('직접 <em>만드는 사람.</em>'));
  assert.ok(!founder.includes('UCL TIDH 2026 확장초록 제출'));
  assert.ok(!founder.includes('User-Journey and Information-Processing Design of an App–Server–Device Medication Platform for Older Adults'));

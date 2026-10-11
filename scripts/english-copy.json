@@ -253,7 +253,7 @@
   "무엇을 어디에 왜 썼는지 확인하고, 동의 범위를 줄이거나 철회한 뒤 이후 활용에 반영합니다.": "Review what was used, where and why; reduce or withdraw consent and apply those decisions to subsequent use.",
   "문의": "Contact",
   "문의하기": "Get in touch",
-  "문제를 이해하고,": "Understand problems,",
+  "문제를 이해하고,": "Understanding problems.",
   "미국 샌프란시스코": "San Francisco, USA",
   "미국 창업자·투자자 커뮤니티와 교류하며 제품을 설명하고, 고객 문제와 유료 파일럿을 검증하는 방법에 관한 피드백을 받았습니다.": "Explained the product to US founder and investor communities, and received feedback on validating customer problems and paid pilots.",
   "미복용·지연 복용 관찰 로그": "Observed missed or delayed medication logs",
@@ -496,5 +496,9 @@
   "Bodab의 가족 돌봄, MediQ의 진료 준비처럼 같은 기록을 목적에 맞게 활용합니다.": "Use the same records for specific purposes, such as family care with Bodab and visit preparation with MediQ.",
   "Bodab은 어르신의 복약·일정·체크인과 허용된 가족 공유를 연결합니다.": "Bodab connects older adults’ medication, schedules and check-ins with authorized family sharing.",
   "공개 기록 14건": "14 public records",
-  "선정 4": "Selections 4"
+  "선정 4": "Selections 4",
+  "제품으로 구현합니다.": "Building products.",
+  "제품 방향과 설계": "Product direction and design",
+  "앱·서버·AI 구현": "App, server and AI development",
+  "기관과 현장 협업": "Institutional and field collaboration"
 }
