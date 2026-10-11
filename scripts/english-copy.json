@@ -536,5 +536,12 @@
   "블록체인 증빙": "Blockchain evidence",
   "원문은 공개 원장 밖에": "Originals stay off the public ledger",
   "공유 아키텍처 · 동의한 범위의 연결": "Sharing architecture · Connected within consent",
-  "애니메이션 멈추기": "Pause animation"
+  "애니메이션 멈추기": "Pause animation",
+  "기록 카드가 동의 게이트에서 승인된 뒤 잠긴 묶음으로 전달되고, 원문과 분리된 증빙이 블록체인에 연결되는 입체 공유 아키텍처": "A 3D sharing architecture: a record bundle passes the consent gate, locks for authorized delivery, and separate evidence connects to blockchain",
+  "원문은 개인 보관": "Originals stay with the individual",
+  "동의 게이트": "Consent gate",
+  "대상 · 목적 · 범위": "Recipient · Purpose · Scope",
+  "허용된 기록만 전달": "Authorized records only",
+  "증빙만 별도 연결": "Evidence on a separate path",
+  "기록은 잠긴 묶음으로, 증빙은 별도 경로로.": "Records in a locked bundle. Evidence on a separate path."
 }
