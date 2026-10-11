@@ -75,7 +75,9 @@ test('every public page has the same original-logo neon shell and real instituti
  for(const file of pageFiles){const page=readFileSync(file,'utf8');assert.ok(page.includes(`/assets/neon-site-20260921.css?v=${version}`),file);assert.ok(page.includes(`/assets/neon-site-20260921.js?v=${version}`),file);assert.ok(page.includes('class="brand original-brand"'),file);assert.ok(page.includes('https://org.sportique.biz/workspace'),file);assert.ok(page.includes('aria-label="모바일 메뉴"'),file);assert.ok(!page.includes('src="/assets/index-org-20260817.js"'),file);assert.ok(!page.includes('admin.sportique.biz'),file);assert.ok(!page.includes('정리할 후보'),file);assert.ok(!page.includes('정리 후보'),file);assert.doesNotMatch(page,/(?<![가-힣])(?:내가|내 개인|내 기록|내 선택|내 건강기록|내 역할|나의 기록|나의 일상|우리가|저희)|MY RECORD|MY CHOICE/,file);assert.equal((page.match(/<h1(?:\s|>)/g)||[]).length,1,file);}
  const about=readFileSync('about/index.html','utf8');
  assert.ok(about.includes('DataQ가 원본과 출처를 보존하면서 형식·항목·단위를 표준화하고, UniQdata가 기록을 개인 DB에서 관리합니다.'));
- assert.ok(about.includes('돌봄에서 찾은 문제.<br><em>기록은 흩어져 있었습니다.</em>'));
+ assert.ok(about.includes('건강기록의 중심을,<br><em>개인에게 돌려줍니다.</em>'));
+ assert.ok(about.includes('WHAT WE BUILD TODAY'));
+ assert.ok(about.includes('OUR DIRECTION'));
  for(const text of ['복약 정보·활동 이력·진료·처방 기록','병원·약국·앱에 흩어져','어떤 기록을 가족 중 누구와 공유할지 선택할 서비스가 부족'])assert.ok(about.includes(text),text);
  assert.ok(!about.includes('누군가를 더 잘 돌보려면'));
  assert.ok(about.includes('주도권을<br><em>기업에서 개인으로.</em>'));
