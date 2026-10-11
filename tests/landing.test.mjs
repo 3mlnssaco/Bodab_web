@@ -54,7 +54,7 @@ test('care origin leads with the family problem and stacks its story',()=>{
 test('home defines data fragmentation as the problem and preserves individual AI and sharing choice',()=>{
  const order=['id="problem"','id="system"','id="world"','id="value"','id="products-title"','id="journey-title"','id="care-title"'];
  let last=-1;for(const marker of order){const at=html.indexOf(marker);assert.ok(at>last,marker);last=at;}
- for(const text of ['DATA FRAGMENTATION','건강기록은 한곳에.','선택은 개인에게.','개인의 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','개인의 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','가족이 어르신의 복약·활동·진료','더 큰 문제를 찾았습니다.','복약 확인 상태','여러 곳의 기록을 대조하고 서로 다시 물어야','2025년 XRPL','건강기록 원문은 개인 DB에','연결 약포의 이송·분리와 미수령 약포 보관'])assert.ok(html.includes(text),text);
+ for(const text of ['DATA FRAGMENTATION','건강기록은 한곳에.','선택은 개인에게.','개인의 선택을 막습니다.','AI 모델이나 플랫폼','DataQ','형식을 표준화합니다.','개인 DB로 쌓습니다.','AI·공유를 선택합니다.','국가가 달라도,','개인의 기록을 이어 씁니다.','국가별 정책·데이터 레지던시 조건','가족이 어르신의 복약·활동·진료','더 큰 문제를 찾았습니다.','복약 확인 상태','여러 곳의 기록을 대조하고 서로 다시 물어야','2025년 XRPL','건강기록 원문은 개인 DB에'])assert.ok(html.includes(text),text);
  const system=html.slice(html.indexOf('<section class="data-system"'),html.indexOf('<section class="world-continuity"'));
  assert.deepEqual([...system.matchAll(/<li data-reveal><span>\d+<\/span><small>([^<]+)<\/small>/g)].map(match=>match[1]),['DATAQ','UNIQDATA','CHOOSE']);
  assert.ok(!html.includes('<small>CONFIRM</small>'));
@@ -67,7 +67,9 @@ test('assembled records open the full personal-use path without converting resea
  for(const text of ['개인은 기록을 리포트로 확인합니다.','개인은 자신의 기록을 바탕으로 AI에 질문합니다.','보호자에게 필요한 기록만 공유합니다.','해외에서도 필요한 기록을 꺼내 씁니다.','참여할 연구와 공유할 기록을 고릅니다.','돌봄·복약 앱에 기록을 연결합니다.','이용 이력을 다시 확인합니다.','지급 주체가 정한 방식으로 처리','국가별 정책·데이터 레지던시 조건'])assert.ok(html.includes(text),text);
  for(const rejected of ['데이터 판매','토큰 보상','SportiQue가 직접 지급'])assert.ok(!html.includes(rejected),rejected);
 });
-const publicRecords=JSON.parse(readFileSync('assets/public-records.json','utf8'));
+const retainedRecords=JSON.parse(readFileSync('assets/public-records.json','utf8'));
+const published=records=>records.filter(record=>!/YAKSON|약손/i.test(JSON.stringify(record)));
+const publicRecords={...retainedRecords,products:retainedRecords.products.filter(product=>product.id!=='yakson'),founder:published(retainedRecords.founder),awards:published(retainedRecords.awards)};
 const pageFiles=['index.html','products/index.html',...publicRecords.products.map(product=>`products/${product.id}/index.html`),'about/index.html','vision/index.html','founder/index.html','awards/index.html','contact/index.html','institutions/index.html','404.html'];
 const escapeHtml=value=>String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 test('every public page has the same original-logo neon shell and real institution login destination',()=>{
@@ -84,7 +86,7 @@ test('every public page has the same original-logo neon shell and real instituti
  assert.ok(about.includes('공유의 결정도, 개인이 직접.'));
  assert.ok(!about.includes('주도권의 방향을'));
 });
-test('redesign preserves each founder and award record, date and metadata without promoting its status',()=>{
+test('remaining public founder and award records preserve dates and metadata without promoting status',()=>{
  for(const [key,file,card] of [['founder','founder/index.html','record-item'],['awards','awards/index.html','timeline-event']]){const page=readFileSync(file,'utf8');assert.equal((page.match(new RegExp(`class="${card}"`,'g'))||[]).length,publicRecords[key].length,file+' count');for(const record of publicRecords[key])for(const field of ['date','started','title','meta','organizer','venue','body'])if(record[field])assert.ok(page.includes(escapeHtml(record[field])),file+': '+record[field]);}
  assert.ok(!JSON.stringify(publicRecords).includes('피우다'));
  assert.ok(!JSON.stringify(publicRecords).includes('(2등)'));
@@ -108,7 +110,7 @@ test('featured product panels link to their own detail pages with examples and h
    for(const value of [product.description,product.detail,...product.features])assert.ok(detail.includes(escapeHtml(value)),value);
    assert.ok(detail.includes('href="/products/"'));
  }
- assert.ok(readFileSync('products/yakson/index.html','utf8').includes('개발 중인 기능'));
+
  assert.ok(readFileSync('products/bodab/index.html','utf8').includes('Bodab Senior에서 별도로 설명합니다'));
  const css=readFileSync('assets/neon-site-20260921.css','utf8');
  assert.ok(css.includes('.product-panel:nth-child(even) .product-panel-copy{order:0}'));
@@ -124,12 +126,12 @@ test('product page states each role and stage without presenting four equal prod
  const page=readFileSync('products/index.html','utf8');
  assert.ok(page.includes('<h1>개인이 기록을 모으고,<br><em>활용을 선택합니다.</em></h1>'));
  assert.ok(page.includes('UniQdata는 흩어진 건강기록을 개인 DB에서 관리하는 출발점입니다.'));
- assert.ok(page.includes('주요 접점과 프로젝트를 소개합니다.'));
+ assert.ok(page.includes('같은 기반의 어르신용 앱 Bodab과 동의한 연구를 운영하는 UniQLab을 소개합니다.'));
  assert.ok(page.includes('DataQ는 원본과 출처를 보존하면서 반입·표준화 후보를 만드는 내부 단계입니다.'));
  assert.ok(page.includes('Bodab은 어르신이 큰 글씨와 짧은 단계로'));
  assert.ok(page.includes('FamilyCare에서 동의 범위 안에서 확인할 수 있습니다.'));
  assert.ok(page.includes('UniQLab은 연구자와 기관이 연구 준비'));
- assert.ok(page.includes('개발 중인 복약 보조 장치 PoC'));
+ assert.ok(!page.includes('YAKSON'));
  for(const rejected of ['연결되는 네 가지 제품','가족의 하루를 챙기는 일까지','고령자와 가족이 복약, 일정, 생활 상태를 함께 챙기는 가족 돌봄 앱'])assert.ok(!page.includes(rejected),rejected);
 });
 test('vision page shows a global network direction without presenting a server footprint',()=>{
@@ -149,17 +151,17 @@ test('brand rendering and the personal-world layer remain progressive enhancemen
  assert.ok(mobileWorldWidth && Number(mobileWorldWidth[1])<=120,'mobile world labels may clip');
  assert.ok(!script.includes('world-home-20260921.js'));assert.ok(!script.includes('world-hologram-20260921.js'));assert.ok(!html.includes('holo-stage'));
 });
-test('product page shows app value diagrams and retains provenance-reviewed hardware media',()=>{
+test('product page shows three app value diagrams without withdrawn hardware media',()=>{
  const page=readFileSync('products/index.html','utf8');
- for(const asset of ['yakson-evt-v3-frame-20260916.png','yakson-evt-v3-preview-20260916.mp4']){assert.ok(page.includes(`/assets/verified/${asset}`),asset);assert.ok(existsSync(`assets/verified/${asset}`),asset);}
+ for(const asset of ['yakson-evt-v3-frame-20260916.png','yakson-evt-v3-preview-20260916.mp4']){assert.ok(!page.includes(`/assets/verified/${asset}`),asset);assert.ok(existsSync(`assets/verified/${asset}`),asset);}
  for(const product of ['uniqdata','uniqlab','bodab'])assert.ok(page.includes(`value-visual-${product}`));
  for(const asset of ['uniqdata-home-dev-20260916.png','uniqlab-data-table-20260513.png','bodab-screen-20260922.png'])assert.ok(!page.includes(asset));
  assert.ok(!page.includes('uniqlab-screen-20260922.png'));
  assert.ok(!existsSync('assets/verified/uniqlab-screen-20260922.png'));
  assert.ok(!page.includes('/assets/verified/uniqdata-screen-20260922.webp'));
  for(const rejected of ['uniqdata-phone-1.png','uniqdata-phone-2.png','lab-window','lab-chart','care-orbit','care-center','device-sculpture','product-jump'])assert.ok(!page.includes(rejected),rejected);
- assert.ok(page.includes('2026.09 개방형 기구 V3 · 디지털 검토본'));
- assert.ok(page.includes('완성 외관·실물 반복 작동·제조 적합성은 검증 전입니다'));
+ assert.ok(!page.includes('2026.09 개방형 기구 V3 · 디지털 검토본'));
+ assert.ok(!page.includes('완성 외관·실물 반복 작동·제조 적합성은 검증 전입니다'));
  assert.ok(!page.includes('yakson-designer-exterior-20260922.png'));
  assert.ok(!page.includes('yakson-designer-motion-20260922.mp4'));
  assert.ok(!existsSync('assets/verified/yakson-designer-exterior-20260922.png'));
@@ -175,8 +177,8 @@ test('founder page uses the requested retouch, retains the original portrait, an
  assert.ok(founder.includes('제품을 직접<br><em>만듭니다.</em>'));
  assert.ok(!founder.includes('직접 <em>만드는 사람.</em>'));
  assert.ok(!founder.includes('UCL TIDH 2026 확장초록 제출'));
- assert.ok(founder.includes('User-Journey and Information-Processing Design of an App–Server–Device Medication Platform for Older Adults'));
- assert.ok(founder.includes('처방 검토부터 약포 수령과 복용 자기보고까지의 사용자 여정'));
+ assert.ok(!founder.includes('User-Journey and Information-Processing Design of an App–Server–Device Medication Platform for Older Adults'));
+ assert.ok(!founder.includes('YAKSON'));
  assert.ok(!founder.includes('ACK 2026 약손 단독저자 논문 제출'));
  assert.ok(!founder.includes('몽골 현장 조사와 기관 후속 협의'));
  assert.ok(!founder.includes('2026.08 초'));

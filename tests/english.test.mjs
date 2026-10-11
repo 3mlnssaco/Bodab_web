@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
-const routes = ['', 'about/', 'products/', 'products/uniqdata/', 'products/uniqlab/', 'products/bodab/', 'products/yakson/', 'vision/', 'founder/', 'awards/', 'contact/', 'institutions/'];
+const routes = ['', 'about/', 'products/', 'products/uniqdata/', 'products/uniqlab/', 'products/bodab/', 'vision/', 'founder/', 'awards/', 'contact/', 'institutions/'];
 const read = (prefix, route) => readFileSync(`${prefix}${route}index.html`, 'utf8');
 const tags = html => [...html.matchAll(/<[^>]+>/g)].map(match => match[0])
   .filter(tag => !tag.includes('hreflang='))
@@ -21,17 +21,15 @@ test('Every English page retains the Korean page structure, media and interactio
   assert.deepEqual(tags(readFileSync('en/404.html', 'utf8')), tags(readFileSync('404.html', 'utf8')));
 });
 
-test('English product pages explain app value and retain original hardware media and stage qualification', () => {
+test('English product pages explain the three remaining app values', () => {
   const home = read('en/', ''), products = read('en/', 'products/');
   assert.ok(home.includes('value-visual-uniqdata'));
   assert.ok(home.includes('Scattered records. Choices that are yours.'));
-  for (const asset of ['yakson-evt-v3-frame-20260916.png', 'yakson-evt-v3-preview-20260916.mp4']) assert.ok(products.includes(`/assets/verified/${asset}`), asset);
+  assert.doesNotMatch(products, /yakson|YAKSON/);
   for (const product of ['uniqdata', 'uniqlab', 'bodab']) assert.ok(products.includes(`value-visual-${product}`));
   for (const asset of ['uniqdata-home-dev-20260916.png', 'uniqlab-data-table-20260513.png', 'bodab-screen-20260922.png']) assert.ok(!products.includes(asset));
-  assert.ok(products.includes('digital reviews') || products.includes('Digital design review'));
-  assert.ok(products.includes('not yet validated'));
   assert.ok(products.includes('Individuals') || products.includes('individuals'));
-  for (const route of ['uniqdata', 'uniqlab', 'bodab', 'yakson']) assert.ok(products.includes(`href="/en/products/${route}/"`));
+  for (const route of ['uniqdata', 'uniqlab', 'bodab']) assert.ok(products.includes(`href="/en/products/${route}/"`));
   assert.ok(home.includes('https://uniqdata.io/?lang=en'));
 });
 
