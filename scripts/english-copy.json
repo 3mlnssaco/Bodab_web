@@ -510,5 +510,12 @@
   "개인의 선택": "Individual choice",
   "개인이 관리하는 기록": "Personally controlled records",
   "동의한 범위만 연결": "Within chosen consent",
-  "시간을 따라 이어지는 연구": "Research over time"
+  "시간을 따라 이어지는 연구": "Research over time",
+  "개인 통제와 블록체인 기반 검증": "Individual control and blockchain-based verification",
+  "개인 통제 · 블록체인 기반 검증": "INDIVIDUAL CONTROL · BLOCKCHAIN-BASED VERIFICATION",
+  "더 안전한 공유를 위한 설계.": "Designed for safer sharing.",
+  "UniQdata.io에서는 개인이 자신의 기록을 관리하고, 누구에게 어떤 기록을 공유할지 선택합니다.": "With UniQdata.io, individuals manage their records and choose which records to share and with whom.",
+  "UniQLab.io에서는 참여자가 동의한 연구 목적과 범위 안에서 기록을 연결합니다. 기관 계정만으로 개인 기록에 접근할 수 있는 것은 아닙니다.": "UniQLab.io connects records within the study purpose and scope agreed to by participants. An institutional account alone does not grant access to personal records.",
+  "Bodab에서 남긴 기록은 어르신이 허용한 범위 안에서 가족과 연결됩니다. 가족 공유와 기관의 돌봄 업무 권한은 구분됩니다.": "Records made in Bodab connect with family within the scope the older adult allows. Family sharing and institutional care permissions are separate.",
+  "건강기록 원문은 블록체인에 공개하지 않습니다. 동의·접근·공유 이력의 증빙을 검증할 수 있도록 블록체인 기반 구조를 개발하고 있습니다.": "Original health records are not published on a blockchain. We are developing a blockchain-based structure to verify evidence of consent, access and sharing history."
 }

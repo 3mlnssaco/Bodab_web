@@ -41,3 +41,18 @@ test('UniQLab 3D explains personal choice without app UI and keeps reduced-motio
  assert.ok(js.includes("reduced.matches||event.pointerType!=='mouse'"));
  assert.ok(js.includes("style.removeProperty('--research-x')"));
 });
+
+
+test('Every public product explains individual sharing and development-stage blockchain proof',()=>{
+ for(const prefix of ['', 'en/']){
+  const listing=readFileSync(`${prefix}products/index.html`,'utf8');
+  assert.equal((listing.match(/class="product-sharing"/g)||[]).length,3);
+  for(const id of ['uniqdata','uniqlab','bodab']){
+   const detail=readFileSync(`${prefix}products/${id}/index.html`,'utf8');
+   assert.match(detail,/class="product-sharing"/);
+   assert.ok(detail.includes(prefix?'We are developing a blockchain-based structure':'블록체인 기반 구조를 개발하고 있습니다'));
+   assert.ok(detail.includes(prefix?'Original health records are not published on a blockchain':'건강기록 원문은 블록체인에 공개하지 않습니다'));
+   assert.doesNotMatch(detail,/all events are on-chain|blockchain guarantees|100% secure/i);
+  }
+ }
+});
