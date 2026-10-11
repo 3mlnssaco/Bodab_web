@@ -298,3 +298,5 @@ html:lang(en) .award-evidence::before{content:"SUPPORTING MATERIAL"}
  .header-actions>.institution-login{display:none}
  .mobile-menu nav .mobile-only-login{display:block}
 }
+
+@media(max-width:700px){html{scroll-padding-top:70px}}
