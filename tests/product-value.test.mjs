@@ -26,3 +26,16 @@ test('About explains the public company scope without IR commercial or competito
  assert.ok(about.includes('remain to be tested in the pilot'));
  assert.doesNotMatch(about,/Evidation|PicnicHealth|Citizen Health|Patientory|revenue model|unit economics|gross margin|subscription pricing|fundraising target|\bKRW\b|\bUSD\b/i);
 });
+
+
+test('UniQLab 3D uses the approved demo image and keeps consent and reduced-motion controls',()=>{
+ for(const prefix of ['', 'en/'])for(const route of ['products/', 'products/uniqlab/']){
+  const html=readFileSync(`${prefix}${route}index.html`,'utf8');
+  assert.ok(html.includes('data-research-3d'));
+  assert.ok(html.includes('/assets/verified/uniqlab-data-table-20260513.png'));
+  assert.ok(html.includes('research-3d-concept'));
+ }
+ const js=readFileSync('assets/neon-site-20260921.js','utf8');
+ assert.ok(js.includes("reduced.matches||event.pointerType!=='mouse'"));
+ assert.ok(js.includes("style.removeProperty('--research-x')"));
+});

@@ -307,3 +307,18 @@ html:lang(en) .award-evidence::before{content:"SUPPORTING MATERIAL"}
 }
 
 @media(max-width:700px){html{scroll-padding-top:70px}}
+
+/* The 3D treatment preserves the approved demo capture as an unchanged image. */
+.research-3d-stage{position:relative;width:100%;perspective:1100px;height:auto;aspect-ratio:1.45;min-height:300px;margin:28px -4px 10px;isolation:isolate}
+.research-3d-stage::before{content:"";position:absolute;inset:15% 5%;background:radial-gradient(ellipse at 25% 50%,#50e7bf44,transparent 65%),radial-gradient(ellipse at 80% 60%,#9577ef44,transparent 65%);filter:blur(25px);z-index:-1}
+.research-3d-scene{position:absolute;inset:30px 18px;transform-style:preserve-3d;transform:rotateX(var(--research-x,9deg)) rotateY(var(--research-y,-13deg)) rotateZ(-2deg);transition:transform .25s ease-out}
+.research-3d-screen{position:absolute;inset:12px 0 auto;overflow:hidden;border:1px solid #66e2d9aa;border-radius:12px;background:#101824;box-shadow:4px 6px 0 #213237,8px 12px 0 #17232f,0 25px 55px #000a,0 0 35px #70cfb51f}
+.research-3d-bar{height:28px;display:flex;align-items:center;gap:5px;padding:0 10px;background:linear-gradient(100deg,#143d37,#211b3a);color:#a5d6d3;font-size:7px;letter-spacing:.12em}.research-3d-bar i{width:4px;height:4px;border-radius:50%;background:#71d4bb}.research-3d-bar span{margin-left:auto}
+.product-media .research-3d-screen img,.product-detail-hero .product-media .research-3d-screen img{display:block;width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain;filter:none;transform:none;opacity:1}
+.research-3d-chip{position:absolute;z-index:2;padding:12px 16px;border:1px solid #70e8c466;border-radius:10px;background:linear-gradient(120deg,#12342eee,#191c32ee);box-shadow:0 15px 35px #0007;transform:translateZ(38px);color:#c5eee6;font-size:11px;line-height:1.5}
+.research-3d-chip-period{left:-10px;bottom:0;max-width:48%}.research-3d-chip-records{right:-9px;bottom:14px;max-width:48%;border-color:#a795eb88}
+.research-3d-timeline{display:flex;gap:3px;margin-top:9px}.research-3d-timeline i{width:23px;height:7px;border-radius:2px;background:#6be1be}.research-3d-timeline i:nth-child(2){background:#5bc9d9}.research-3d-timeline i:nth-child(3){background:#a88bea}.research-3d-timeline i:nth-child(4){background:#c3afd3}
+.research-3d-chip svg{display:block;width:120px;height:32px;margin-top:3px;fill:none;stroke:#a897fb;stroke-width:2}
+.research-3d-note{font-size:10px;color:#98acbf;margin:20px 0 14px}.research-3d-concept{border-top:1px solid #294057;padding-top:12px}.research-3d-concept summary{cursor:pointer;color:#9accc2;font-size:12px}
+@media(max-width:700px){.research-3d-stage{height:280px;margin:24px 0 0}.research-3d-scene{inset:18px 10px;transform:rotateX(5deg) rotateY(-6deg) rotateZ(-1deg)}.research-3d-chip{font-size:9px;padding:9px 10px}.research-3d-chip svg{width:90px;height:24px}}
+@media(prefers-reduced-motion:reduce){.research-3d-scene{transition:none;transform:rotateX(5deg) rotateY(-6deg)}}
