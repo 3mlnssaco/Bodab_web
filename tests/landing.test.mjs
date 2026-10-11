@@ -3,15 +3,16 @@ import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const html=readFileSync('index.html','utf8');
-test('product-led home uses the verified UniQdata screen and preserves navigation and product destinations',()=>{
+test('product-led home shows UniQdata value while preserving navigation and product destinations',()=>{
  assert.ok(html.indexOf('class="product-hero"')<html.indexOf('id="problem"'));
  for(const url of ['/products/','/about/','/vision/','/founder/','/awards/','/contact/','/institutions/','https://org.sportique.biz/workspace','https://uniqdata.io/'])assert.ok(html.includes(`href="${url}"`),url);
  for(const route of ['about','products','vision','founder','awards','contact'])assert.ok(existsSync(route+'/index.html'));
  for(const asset of ['sportique-icon.jpg','verified/uniqdata-home-dev-20260916.png'])assert.ok(existsSync('assets/'+asset));
- assert.ok(html.includes('/assets/verified/uniqdata-home-dev-20260916.png'));
+ assert.ok(html.includes('value-visual-uniqdata'));
+ assert.ok(!html.includes('/assets/verified/uniqdata-home-dev-20260916.png'));
  assert.ok(!html.includes('/assets/verified/uniqdata-screen-20260922.webp'));
- assert.ok(html.includes('class="uniqdata-screen-crop"'));
- assert.ok(html.includes('UniQdata 개발 화면'));
+ assert.ok(html.includes('class="value-diagram"'));
+ assert.ok(html.includes('기록은 한곳에, 활용과 공유의 선택은 개인에게'));
  assert.ok(!html.includes('class="assembly-links"'));
  assert.ok(!html.includes('class="record-fragment"'));
  assert.ok(!html.includes('hero-3d-phase'));
@@ -146,9 +147,11 @@ test('brand rendering and the personal-world layer remain progressive enhancemen
  assert.ok(mobileWorldWidth && Number(mobileWorldWidth[1])<=120,'mobile world labels may clip');
  assert.ok(!script.includes('world-home-20260921.js'));assert.ok(!script.includes('world-hologram-20260921.js'));assert.ok(!html.includes('holo-stage'));
 });
-test('product page uses provenance-reviewed media and contains no fabricated product drawings or jump strip',()=>{
+test('product page shows app value diagrams and retains provenance-reviewed hardware media',()=>{
  const page=readFileSync('products/index.html','utf8');
- for(const asset of ['uniqdata-home-dev-20260916.png','uniqlab-data-table-20260513.png','bodab-screen-20260922.png','yakson-evt-v3-frame-20260916.png','yakson-evt-v3-preview-20260916.mp4']){assert.ok(page.includes(`/assets/verified/${asset}`),asset);assert.ok(existsSync(`assets/verified/${asset}`),asset);}
+ for(const asset of ['yakson-evt-v3-frame-20260916.png','yakson-evt-v3-preview-20260916.mp4']){assert.ok(page.includes(`/assets/verified/${asset}`),asset);assert.ok(existsSync(`assets/verified/${asset}`),asset);}
+ for(const product of ['uniqdata','uniqlab','bodab'])assert.ok(page.includes(`value-visual-${product}`));
+ for(const asset of ['uniqdata-home-dev-20260916.png','uniqlab-data-table-20260513.png','bodab-screen-20260922.png'])assert.ok(!page.includes(asset));
  assert.ok(!page.includes('uniqlab-screen-20260922.png'));
  assert.ok(!existsSync('assets/verified/uniqlab-screen-20260922.png'));
  assert.ok(!page.includes('/assets/verified/uniqdata-screen-20260922.webp'));

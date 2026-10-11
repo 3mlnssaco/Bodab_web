@@ -21,10 +21,13 @@ test('Every English page retains the Korean page structure, media and interactio
   assert.deepEqual(tags(readFileSync('en/404.html', 'utf8')), tags(readFileSync('404.html', 'utf8')));
 });
 
-test('English product pages retain actual UI screens, hardware media and qualification of their status', () => {
+test('English product pages explain app value and retain original hardware media and stage qualification', () => {
   const home = read('en/', ''), products = read('en/', 'products/');
-  assert.ok(home.includes('/assets/verified/uniqdata-home-dev-20260916.png'));
-  for (const asset of ['uniqdata-home-dev-20260916.png', 'uniqlab-data-table-20260513.png', 'bodab-screen-20260922.png', 'yakson-evt-v3-frame-20260916.png', 'yakson-evt-v3-preview-20260916.mp4']) assert.ok(products.includes(`/assets/verified/${asset}`), asset);
+  assert.ok(home.includes('value-visual-uniqdata'));
+  assert.ok(home.includes('Scattered records. Choices that are yours.'));
+  for (const asset of ['yakson-evt-v3-frame-20260916.png', 'yakson-evt-v3-preview-20260916.mp4']) assert.ok(products.includes(`/assets/verified/${asset}`), asset);
+  for (const product of ['uniqdata', 'uniqlab', 'bodab']) assert.ok(products.includes(`value-visual-${product}`));
+  for (const asset of ['uniqdata-home-dev-20260916.png', 'uniqlab-data-table-20260513.png', 'bodab-screen-20260922.png']) assert.ok(!products.includes(asset));
   assert.ok(products.includes('digital reviews') || products.includes('Digital design review'));
   assert.ok(products.includes('not yet validated'));
   assert.ok(products.includes('Individuals') || products.includes('individuals'));

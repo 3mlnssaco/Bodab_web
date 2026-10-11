@@ -226,3 +226,20 @@ body{overflow-x:clip}
 @media(max-width:700px){.product-panel,.product-panel:nth-child(even){min-height:0;padding:65px 0}.product-detail{padding:44px 6vw 78px}.product-back{margin-bottom:32px}.product-detail-hero{padding-bottom:40px}.product-detail-hero .product-media{height:370px}.product-detail-hero .device-media .product-media{height:280px}.product-detail-features{grid-template-columns:1fr}.product-detail-body p:not(.eyebrow){font-size:14px}}
 
 html:lang(en) .award-evidence::before{content:"SUPPORTING MATERIAL"}
+
+/* Product value diagrams use real text, not fabricated app screens. */
+.product-media.value-visual{display:block;min-height:0;overflow:visible;padding:30px 24px 22px;border:1px solid #294057;background:radial-gradient(ellipse at 50% 48%,#14312c66,transparent 65%),#080e16}
+.product-media.value-visual::before{display:none}
+.value-visual-heading h3{margin:14px 0 10px;font-size:clamp(24px,2.6vw,34px);line-height:1.3;letter-spacing:-.035em;color:#eef6fb}
+.value-visual-heading>p:not(.eyebrow){margin:0;color:#9bb0c5;font-size:13px;line-height:1.8}
+.value-diagram{display:block;width:100%;height:auto;margin:25px 0 10px;overflow:visible}
+.value-node>circle{fill:#0c1922;stroke:#456776;stroke-width:1.5}.value-node-main>circle{fill:#102c2c;stroke:#70efb1;stroke-width:2}
+.value-icon{fill:none;stroke:#90dfd6;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.value-node text{fill:#b4c9d7;font-size:19px;font-weight:600;letter-spacing:-.3px}.value-node-main text{fill:#a7f2cd;font-size:22px}
+.value-connection{fill:none;stroke:#68dacf;stroke-width:2;stroke-dasharray:4 7;opacity:.65}
+.value-visual.is-visible .value-connection{animation:value-flow 2.4s ease-out var(--flow-delay) 1}
+.product-media.value-visual figcaption,.product-panel .value-visual figcaption{position:static;margin-top:18px;padding-top:15px;border-top:1px solid #253b49;color:#7894a6;font-size:10px;line-height:1.7;letter-spacing:.03em;text-transform:none}
+.product-detail-hero .product-media.value-visual{height:auto;min-height:0;padding:30px 24px 22px}
+@keyframes value-flow{from{stroke-dashoffset:100;opacity:.2}to{stroke-dashoffset:0;opacity:.65}}
+@media(max-width:700px){.product-media.value-visual,.product-detail-hero .product-media.value-visual{padding:24px 14px 18px}.value-visual-heading h3{font-size:25px}.value-node text{font-size:25px}.value-node-main text{font-size:28px}}
+@media(prefers-reduced-motion:reduce){.value-visual.is-visible .value-connection{animation:none}}
