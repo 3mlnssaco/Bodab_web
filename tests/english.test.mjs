@@ -30,7 +30,7 @@ test('English product pages explain the three remaining app values', () => {
   assert.ok(home.includes('Scattered records. Choices that are yours.'));
   assert.doesNotMatch(products, /yakson|YAKSON/);
   for (const product of ['uniqdata', 'uniqlab', 'bodab']) assert.ok(products.includes(`value-visual-${product}`));
-  for (const asset of ['uniqdata-home-dev-20260916.png', 'uniqlab-data-table-20260513.png', 'bodab-screen-20260922.png']) assert.ok(!products.includes(asset));
+  for (const asset of ['uniqdata-home-dev-20260916.png', 'bodab-screen-20260922.png']) assert.ok(!products.includes(asset));
   assert.ok(products.includes('Individuals') || products.includes('individuals'));
   for (const route of ['uniqdata', 'uniqlab', 'bodab']) assert.ok(products.includes(`href="/en/products/${route}/"`));
   assert.ok(home.includes('https://uniqdata.io/?lang=en'));

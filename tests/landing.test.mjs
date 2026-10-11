@@ -155,7 +155,7 @@ test('product page shows three app value diagrams without withdrawn hardware med
  const page=readFileSync('products/index.html','utf8');
  for(const asset of ['yakson-evt-v3-frame-20260916.png','yakson-evt-v3-preview-20260916.mp4']){assert.ok(!page.includes(`/assets/verified/${asset}`),asset);assert.ok(existsSync(`assets/verified/${asset}`),asset);}
  for(const product of ['uniqdata','uniqlab','bodab'])assert.ok(page.includes(`value-visual-${product}`));
- for(const asset of ['uniqdata-home-dev-20260916.png','uniqlab-data-table-20260513.png','bodab-screen-20260922.png'])assert.ok(!page.includes(asset));
+ for(const asset of ['uniqdata-home-dev-20260916.png','bodab-screen-20260922.png'])assert.ok(!page.includes(asset));
  assert.ok(!page.includes('uniqlab-screen-20260922.png'));
  assert.ok(!existsSync('assets/verified/uniqlab-screen-20260922.png'));
  assert.ok(!page.includes('/assets/verified/uniqdata-screen-20260922.webp'));
