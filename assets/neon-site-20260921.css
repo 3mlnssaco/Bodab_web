@@ -224,3 +224,5 @@ body{overflow-x:clip}
 .product-detail-actions .text-link{margin-top:0}
 @media(max-width:900px){.product-panel,.product-panel:nth-child(even){grid-template-columns:minmax(0,1fr);gap:35px}.product-detail-hero,.product-detail-body{grid-template-columns:minmax(0,1fr);gap:35px}.product-detail-hero{min-height:0}.product-detail-hero .product-media{height:420px}}
 @media(max-width:700px){.product-panel,.product-panel:nth-child(even){min-height:0;padding:65px 0}.product-detail{padding:44px 6vw 78px}.product-back{margin-bottom:32px}.product-detail-hero{padding-bottom:40px}.product-detail-hero .product-media{height:370px}.product-detail-hero .device-media .product-media{height:280px}.product-detail-features{grid-template-columns:1fr}.product-detail-body p:not(.eyebrow){font-size:14px}}
+
+html:lang(en) .award-evidence::before{content:"SUPPORTING MATERIAL"}
