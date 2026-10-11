@@ -505,5 +505,10 @@
   "연구 기간과 세션": "Study periods and sessions",
   "참여자별 기록과 변화": "Participant records and changes",
   "실제 데모 UI · 2026.05 · 예시 데이터": "Actual demo UI · May 2026 · Example data",
-  "기록과 동의의 연결 보기": "Explore records and consent"
+  "기록과 동의의 연결 보기": "Explore records and consent",
+  "개인이 기록의 공유 범위를 선택하고, 동의한 기록이 연구에 연결되는 입체 개념도": "A three-dimensional concept: individuals choose sharing scope, and consented records connect to research",
+  "개인의 선택": "Individual choice",
+  "개인이 관리하는 기록": "Personally controlled records",
+  "동의한 범위만 연결": "Within chosen consent",
+  "시간을 따라 이어지는 연구": "Research over time"
 }

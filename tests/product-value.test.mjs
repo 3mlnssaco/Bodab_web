@@ -28,11 +28,13 @@ test('About explains the public company scope without IR commercial or competito
 });
 
 
-test('UniQLab 3D uses the approved demo image and keeps consent and reduced-motion controls',()=>{
+test('UniQLab 3D explains personal choice without app UI and keeps reduced-motion controls',()=>{
  for(const prefix of ['', 'en/'])for(const route of ['products/', 'products/uniqlab/']){
   const html=readFileSync(`${prefix}${route}index.html`,'utf8');
   assert.ok(html.includes('data-research-3d'));
-  assert.ok(html.includes('/assets/verified/uniqlab-data-table-20260513.png'));
+  assert.ok(!html.includes('/assets/verified/uniqlab-data-table-20260513.png'));
+  assert.ok(html.includes('research-core'));
+  assert.ok(html.includes('research-consent-badge'));
   assert.ok(html.includes('research-3d-concept'));
  }
  const js=readFileSync('assets/neon-site-20260921.js','utf8');
