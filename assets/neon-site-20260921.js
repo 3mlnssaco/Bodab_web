@@ -1,3 +1,4 @@
+const english=document.documentElement.lang==='en';
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 try{
  const {mountEmblems}=await import('./sportique-emblem-3d.js?v=20260922');
@@ -13,16 +14,16 @@ for(const button of document.querySelectorAll('[data-copy-email]'))button.addEve
  const status=button.closest('.contact-choice,.contact-address-tools')?.querySelector('[data-copy-status]');
  try{
   await navigator.clipboard.writeText(button.dataset.copyEmail);
-  if(status)status.textContent='이메일 주소를 복사했습니다.';
+  if(status)status.textContent=english?'Email address copied.':'이메일 주소를 복사했습니다.';
  }catch{
-  if(status)status.textContent='복사하지 못했습니다. 표시된 주소를 직접 복사해 주세요.';
+  if(status)status.textContent=english?'Could not copy. Please copy the displayed address manually.':'복사하지 못했습니다. 표시된 주소를 직접 복사해 주세요.';
  }
 });
 for(const filter of document.querySelectorAll('[data-filter]'))filter.addEventListener('click',()=>{
  const value=filter.dataset.filter;let count=0;
  for(const button of document.querySelectorAll('[data-filter]'))button.setAttribute('aria-pressed',String(button===filter));
  for(const card of document.querySelectorAll('[data-category]')){card.hidden=value!=='all'&&card.dataset.category!==value;if(!card.hidden)count++;}
- document.querySelector('#record-count').textContent=`공개 기록 ${count}건`;
+ document.querySelector('#record-count').textContent=english?`${count} public records`:`공개 기록 ${count}건`;
 });
 const svgNS='http://www.w3.org/2000/svg';
 async function mountPersonalWorld(){
