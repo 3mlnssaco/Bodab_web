@@ -22,7 +22,13 @@ const media={
  bodab:productValueVisual('bodab'),
  yakson:`<div class="device-media"><figure class="product-media device-study-media"><img src="/assets/verified/yakson-evt-v3-frame-20260916.png" alt="YAKSON 개방형 V3 기구의 디지털 검토 화면. 연결 약포 롤, 이송부와 전면 수령부가 보입니다." loading="lazy"><figcaption>2026.09 개방형 기구 V3 · 디지털 검토본</figcaption></figure><details class="model-preview"><summary>현재 기구 동작 검토 보기 <span aria-hidden="true">＋</span></summary><video controls playsinline preload="none" aria-label="YAKSON 하단 보관 및 다음 회차 제시 경로의 디지털 검토 영상"><source src="/assets/verified/yakson-evt-v3-preview-20260916.mp4" type="video/mp4">브라우저에서 영상을 지원하지 않습니다. <a href="/assets/verified/yakson-evt-v3-preview-20260916.mp4">디지털 검토 영상 열기</a></video><p>미수령 약포를 하단에 보관하고 다음 회차 한 봉을 제시하는 경로를 살핀 디지털 후보입니다. 완성 외관·실물 반복 작동·제조 적합성은 검증 전입니다.</p></details></div>`
 };
-const productCards=data.products.map((p,i)=>`<article class="product-panel product-${p.id}" id="${p.id}"><div class="product-panel-copy"><span class="index-number">0${i+1} / ${esc(p.label)}</span><h2>${esc(p.name)}</h2><p class="product-description">${esc(p.description)}</p><p>${esc(p.detail)}</p><ul class="feature-list">${p.features.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>${p.modules.length?`<p class="product-modules">${p.modules.map(esc).join(' · ')}</p>`:''}<span class="product-detail-button" aria-hidden="true">상세 보기 ${arrow}</span>${p.id==='uniqlab'?'<p class="product-consent">개인이 연구 참여와 공유 범위를 선택한 뒤 연결되는 활용처입니다.</p>':''}</div>${media[p.id]}<a class="product-panel-hit" href="/products/${p.id}/" aria-label="${esc(p.name)} 상세 보기"></a></article>`).join('');
+const sharingContexts={
+ uniqdata:'UniQdata.io에서는 개인이 자신의 기록을 관리하고, 누구에게 어떤 기록을 공유할지 선택합니다.',
+ uniqlab:'UniQLab.io에서는 참여자가 동의한 연구 목적과 범위 안에서 기록을 연결합니다. 기관 계정만으로 개인 기록에 접근할 수 있는 것은 아닙니다.',
+ bodab:'Bodab에서 남긴 기록은 어르신이 허용한 범위 안에서 가족과 연결됩니다. 가족 공유와 기관의 돌봄 업무 권한은 구분됩니다.',
+};
+function productSharing(id){return `<section class="product-sharing" aria-label="개인 통제와 블록체인 기반 검증"><p class="eyebrow">개인 통제 · 블록체인 기반 검증</p><h3>더 안전한 공유를 위한 설계.</h3><p>${sharingContexts[id]}</p><p>건강기록 원문은 블록체인에 공개하지 않습니다. 동의·접근·공유 이력의 증빙을 검증할 수 있도록 블록체인 기반 구조를 개발하고 있습니다.</p></section>`;}
+const productCards=data.products.map((p,i)=>`<article class="product-panel product-${p.id}" id="${p.id}"><div class="product-panel-copy"><span class="index-number">0${i+1} / ${esc(p.label)}</span><h2>${esc(p.name)}</h2><p class="product-description">${esc(p.description)}</p><p>${esc(p.detail)}</p><ul class="feature-list">${p.features.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>${p.modules.length?`<p class="product-modules">${p.modules.map(esc).join(' · ')}</p>`:''}${productSharing(p.id)}<span class="product-detail-button" aria-hidden="true">상세 보기 ${arrow}</span>${p.id==='uniqlab'?'<p class="product-consent">개인이 연구 참여와 공유 범위를 선택한 뒤 연결되는 활용처입니다.</p>':''}</div>${media[p.id]}<a class="product-panel-hit" href="/products/${p.id}/" aria-label="${esc(p.name)} 상세 보기"></a></article>`).join('');
 const productDetailContent={
   uniqdata:{exampleTitle:'검진 뒤 기록을 확인할 때',example:'검진 결과를 가져와 원본과 정리된 항목을 함께 확인하고, 이전 기록과 비교합니다. 가족이나 연구에 기록을 공유할지는 개인이 대상과 범위를 정합니다.',status:'개인 건강기록 관리의 출발점입니다. DataQ는 기록 반입과 정리 과정을 맡는 내부 단계입니다.',links:`<a class="text-link" href="https://uniqdata.io">UniQdata로 이동 ${arrow}</a>`},
   uniqlab:{exampleTitle:'반복 체크인이 필요한 연구',example:'연구팀은 연구 기간과 수집 항목을 정리하고, 참여자가 동의한 범위에서 체크인을 운영합니다. 빠진 응답과 출처를 확인해 연구별 자료를 정리합니다.',status:'연구팀과 기관을 위한 운영 도구입니다. 개인의 기록은 동의한 목적과 범위 밖으로 자동 공유되지 않습니다.',links:`<a class="text-link" href="https://org.sportique.biz/products/uniqlab">기관용 기능·예시 보기 ${arrow}</a><a class="text-link" href="https://org.sportique.biz/onboarding?product=uniqlab">기관 온보딩 안내 ${arrow}</a>`},
@@ -41,6 +47,7 @@ function productDetailPage(p){
    <section aria-labelledby="features-${p.id}"><h2 id="features-${p.id}">${p.id==='yakson'?'개발 중인 기능':'어떤 일을 할 수 있나요?'}</h2><ul class="product-detail-features">${p.features.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>${p.modules.length?`<p class="product-detail-note">${p.modules.map(esc).join(' · ')}</p>`:''}</section>
    <div><section aria-labelledby="example-${p.id}"><p class="eyebrow">활용 예시</p><h2 id="example-${p.id}">${esc(detail.exampleTitle)}</h2><p>${esc(detail.example)}</p></section><section aria-labelledby="status-${p.id}"><h2 id="status-${p.id}">현재 범위</h2><p>${esc(detail.status)}</p></section></div>
   </div>
+  ${productSharing(p.id)}
   <div class="product-detail-actions">${detail.links}</div>
  </article>`;
 }
