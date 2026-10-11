@@ -334,3 +334,10 @@ html:lang(en) .award-evidence::before{content:"SUPPORTING MATERIAL"}
 .product-sharing h3,.product-panel .product-sharing h3{margin:10px 0 12px;font-size:18px;line-height:1.4;letter-spacing:-.025em}
 .product-sharing p:not(.eyebrow),.product-panel .product-sharing p:not(.eyebrow){margin:10px 0 0;max-width:780px;color:#9dafc2;font-size:12px;line-height:1.9}
 .product-detail>.product-sharing{margin:0 0 30px;padding:25px}
+
+.sharing-architecture{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px;counter-reset:sharing-step}
+.sharing-architecture li{counter-increment:sharing-step;padding-left:28px;position:relative;color:#9dafc2;font-size:11px;line-height:1.8}
+.sharing-architecture li::before{content:counter(sharing-step,decimal-leading-zero);position:absolute;left:0;top:0;color:#83d9c7;font-size:9px}
+.sharing-architecture strong{display:block;color:#d0e9e4;font-size:12px;font-weight:600}.sharing-architecture span{display:block;margin-top:3px}
+.product-detail>.product-sharing .sharing-architecture{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+@media(max-width:700px){.product-detail>.product-sharing .sharing-architecture{grid-template-columns:1fr}}
