@@ -517,5 +517,14 @@
   "UniQdata.io에서는 개인이 자신의 기록을 관리하고, 누구에게 어떤 기록을 공유할지 선택합니다.": "With UniQdata.io, individuals manage their records and choose which records to share and with whom.",
   "UniQLab.io에서는 참여자가 동의한 연구 목적과 범위 안에서 기록을 연결합니다. 기관 계정만으로 개인 기록에 접근할 수 있는 것은 아닙니다.": "UniQLab.io connects records within the study purpose and scope agreed to by participants. An institutional account alone does not grant access to personal records.",
   "Bodab에서 남긴 기록은 어르신이 허용한 범위 안에서 가족과 연결됩니다. 가족 공유와 기관의 돌봄 업무 권한은 구분됩니다.": "Records made in Bodab connect with family within the scope the older adult allows. Family sharing and institutional care permissions are separate.",
-  "건강기록 원문은 블록체인에 공개하지 않습니다. 동의·접근·공유 이력의 증빙을 검증할 수 있도록 블록체인 기반 구조를 개발하고 있습니다.": "Original health records are not published on a blockchain. We are developing a blockchain-based structure to verify evidence of consent, access and sharing history."
+  "공유의 기준은 개인에게.": "Sharing starts with individual choice.",
+  "SportiQue의 공유 아키텍처는 개인의 기록 보관, 동의와 권한, 블록체인 기반 증빙 검증을 분리합니다. 건강기록 원문과 복호화 키를 공개 원장에 올리는 방식이 아닙니다.": "SportiQue’s sharing architecture separates personal record storage, consent and permissions, and blockchain-based evidence verification. Original health records and decryption keys stay outside the public ledger.",
+  "개인이 정하는 범위": "Scope chosen by the individual",
+  "공유 대상·목적·기록 범위를 동의에 연결합니다.": "Recipients, purposes and record scope are bound to consent.",
+  "권한에 맞춘 전달": "Delivery bound to permissions",
+  "수신자의 권한과 키를 확인하고, 허용된 범위의 암호화 전달을 연결하는 설계입니다.": "The design verifies recipient permissions and keys and connects encrypted delivery to the authorized scope.",
+  "원문과 분리된 증빙": "Evidence separate from originals",
+  "동의·접근·공유 이력의 증빙을 배치로 묶고, 원문을 공개하지 않는 블록체인 검증 구조에 연결합니다.": "Evidence of consent, access and sharing is grouped into batches for blockchain verification, without publishing original records.",
+  "철회와 이력 확인": "Revocation and evidence review",
+  "새로운 접근을 차단하는 철회와, 이미 남은 이력의 증빙 확인을 구분합니다.": "Revocation that blocks new access is separate from verification of existing history."
 }

@@ -43,15 +43,17 @@ test('UniQLab 3D explains personal choice without app UI and keeps reduced-motio
 });
 
 
-test('Every public product explains individual sharing and development-stage blockchain proof',()=>{
+test('Every public product explains the designed sharing architecture without completion claims',()=>{
  for(const prefix of ['', 'en/']){
   const listing=readFileSync(`${prefix}products/index.html`,'utf8');
   assert.equal((listing.match(/class="product-sharing"/g)||[]).length,3);
   for(const id of ['uniqdata','uniqlab','bodab']){
    const detail=readFileSync(`${prefix}products/${id}/index.html`,'utf8');
    assert.match(detail,/class="product-sharing"/);
-   assert.ok(detail.includes(prefix?'We are developing a blockchain-based structure':'블록체인 기반 구조를 개발하고 있습니다'));
-   assert.ok(detail.includes(prefix?'Original health records are not published on a blockchain':'건강기록 원문은 블록체인에 공개하지 않습니다'));
+   assert.ok(detail.includes(prefix?'sharing architecture separates':'공유 아키텍처는'));
+   assert.equal((detail.match(/<ol class="sharing-architecture">/g)||[]).length,1);
+   assert.doesNotMatch(detail,/We are developing a blockchain|블록체인 기반 구조를 개발하고|구현 예정/);
+   assert.ok(detail.includes(prefix?'decryption keys stay outside the public ledger':'복호화 키를 공개 원장에 올리는 방식이 아닙니다'));
    assert.doesNotMatch(detail,/all events are on-chain|blockchain guarantees|100% secure/i);
   }
  }
