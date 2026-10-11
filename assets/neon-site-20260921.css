@@ -341,3 +341,19 @@ html:lang(en) .award-evidence::before{content:"SUPPORTING MATERIAL"}
 .sharing-architecture strong{display:block;color:#d0e9e4;font-size:12px;font-weight:600}.sharing-architecture span{display:block;margin-top:3px}
 .product-detail>.product-sharing .sharing-architecture{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 @media(max-width:700px){.product-detail>.product-sharing .sharing-architecture{grid-template-columns:1fr}}
+
+.sharing-motion{margin:22px 0 18px;border:1px solid #294b5155;border-radius:16px;background:radial-gradient(ellipse at 25% 25%,#1c5b443f,transparent 65%),radial-gradient(ellipse at 80% 80%,#48307544,transparent 60%),#080f17;overflow:hidden}
+.sharing-motion>svg{display:block;width:100%;height:auto;max-height:480px}
+.sharing-track{fill:none;stroke:#426775;stroke-width:2;stroke-dasharray:3 9}
+.sharing-packet{fill:none;stroke:#8fffc9;stroke-width:4;stroke-linecap:round;stroke-dasharray:18 260;animation:sharing-transfer 6s linear infinite;opacity:0;filter:drop-shadow(0 0 6px #81f6c2)}
+.sharing-packet-two{animation-delay:2s;stroke:#80dff0}.sharing-packet-three{animation-delay:4s;stroke:#b5a1ff}
+.sharing-node{fill:#102e2b;stroke:#71dcb3;stroke-width:1.5;filter:drop-shadow(3px 9px 8px #0009)}.sharing-node-purple{fill:#29223e;stroke:#b19aec}
+.sharing-node-halo{fill:#28654a22;stroke:#70e6b355;stroke-width:1;animation:sharing-halo 6s ease-in-out infinite}.sharing-step-two .sharing-node-halo{animation-delay:1.5s}.sharing-step-three .sharing-node-halo{animation-delay:3s}.sharing-step-four .sharing-node-halo{animation-delay:4.5s}
+.sharing-glyph{fill:none;stroke:#b9f1df;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}.sharing-motion text{fill:#c0dedc;text-anchor:middle;font-size:18px;font-weight:500;letter-spacing:-.2px}.sharing-motion text.sharing-recipient{font-size:13px;fill:#a695d0}.sharing-motion text.sharing-center-note{font-size:13px;fill:#7f9fa7}
+.sharing-motion-caption{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #294b5155;padding:12px 14px;font-size:10px;color:#8db4b2;line-height:1.7}.sharing-motion-caption button{flex-shrink:0;border:1px solid #405863;border-radius:20px;background:#11232b;color:#bcd8df;padding:6px 10px;font:inherit;cursor:pointer;position:relative;z-index:4}.sharing-motion-caption button:hover{border-color:#80e7c4}
+.product-detail>.product-sharing .sharing-motion{max-width:780px}
+@keyframes sharing-transfer{0%{stroke-dashoffset:280;opacity:0}5%{opacity:1}31%{opacity:1}34%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes sharing-halo{0%,65%,100%{opacity:.35}20%,40%{opacity:1}}
+.sharing-motion.is-paused .sharing-packet,.sharing-motion.is-paused .sharing-node-halo{animation-play-state:paused}
+@media(max-width:700px){.sharing-motion text{font-size:20px}.sharing-motion-caption{flex-wrap:wrap;font-size:9px}}
+@media(prefers-reduced-motion:reduce){.sharing-packet,.sharing-node-halo{animation:none}.sharing-packet{opacity:.6;stroke-dasharray:4 10}.sharing-motion-caption button{display:none}}
