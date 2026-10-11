@@ -28,7 +28,7 @@ jobs:
         run: node scripts/build-site.mjs
 
       - name: Validate landing and retained routes
-        run: node --test tests/landing.test.mjs
+        run: node --test tests/*.test.mjs
 
       - name: Stamp deployed revision
         run: printf '%s\n' "$GITHUB_SHA" > DEPLOYED_COMMIT
