@@ -3,15 +3,16 @@ import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const html=readFileSync('index.html','utf8');
-test('product-led home uses the verified UniQdata screen and preserves navigation and product destinations',()=>{
+test('product-led home shows UniQdata value while preserving navigation and product destinations',()=>{
  assert.ok(html.indexOf('class="product-hero"')<html.indexOf('id="problem"'));
  for(const url of ['/products/','/about/','/vision/','/founder/','/awards/','/contact/','/institutions/','https://org.sportique.biz/workspace','https://uniqdata.io/'])assert.ok(html.includes(`href="${url}"`),url);
  for(const route of ['about','products','vision','founder','awards','contact'])assert.ok(existsSync(route+'/index.html'));
  for(const asset of ['sportique-icon.jpg','verified/uniqdata-home-dev-20260916.png'])assert.ok(existsSync('assets/'+asset));
- assert.ok(html.includes('/assets/verified/uniqdata-home-dev-20260916.png'));
+ assert.ok(html.includes('value-visual-uniqdata'));
+ assert.ok(!html.includes('/assets/verified/uniqdata-home-dev-20260916.png'));
  assert.ok(!html.includes('/assets/verified/uniqdata-screen-20260922.webp'));
- assert.ok(html.includes('class="uniqdata-screen-crop"'));
- assert.ok(html.includes('UniQdata 개발 화면'));
+ assert.ok(html.includes('class="value-diagram"'));
+ assert.ok(html.includes('기록은 한곳에, 활용과 공유의 선택은 개인에게'));
  assert.ok(!html.includes('class="assembly-links"'));
  assert.ok(!html.includes('class="record-fragment"'));
  assert.ok(!html.includes('hero-3d-phase'));
@@ -74,7 +75,9 @@ test('every public page has the same original-logo neon shell and real instituti
  for(const file of pageFiles){const page=readFileSync(file,'utf8');assert.ok(page.includes(`/assets/neon-site-20260921.css?v=${version}`),file);assert.ok(page.includes(`/assets/neon-site-20260921.js?v=${version}`),file);assert.ok(page.includes('class="brand original-brand"'),file);assert.ok(page.includes('https://org.sportique.biz/workspace'),file);assert.ok(page.includes('aria-label="모바일 메뉴"'),file);assert.ok(!page.includes('src="/assets/index-org-20260817.js"'),file);assert.ok(!page.includes('admin.sportique.biz'),file);assert.ok(!page.includes('정리할 후보'),file);assert.ok(!page.includes('정리 후보'),file);assert.doesNotMatch(page,/(?<![가-힣])(?:내가|내 개인|내 기록|내 선택|내 건강기록|내 역할|나의 기록|나의 일상|우리가|저희)|MY RECORD|MY CHOICE/,file);assert.equal((page.match(/<h1(?:\s|>)/g)||[]).length,1,file);}
  const about=readFileSync('about/index.html','utf8');
  assert.ok(about.includes('DataQ가 원본과 출처를 보존하면서 형식·항목·단위를 표준화하고, UniQdata가 기록을 개인 DB에서 관리합니다.'));
- assert.ok(about.includes('돌봄에서 찾은 문제.<br><em>기록은 흩어져 있었습니다.</em>'));
+ assert.ok(about.includes('건강기록의 중심을,<br><em>개인에게 돌려줍니다.</em>'));
+ assert.ok(about.includes('WHAT WE BUILD TODAY'));
+ assert.ok(about.includes('OUR DIRECTION'));
  for(const text of ['복약 정보·활동 이력·진료·처방 기록','병원·약국·앱에 흩어져','어떤 기록을 가족 중 누구와 공유할지 선택할 서비스가 부족'])assert.ok(about.includes(text),text);
  assert.ok(!about.includes('누군가를 더 잘 돌보려면'));
  assert.ok(about.includes('주도권을<br><em>기업에서 개인으로.</em>'));
@@ -146,9 +149,11 @@ test('brand rendering and the personal-world layer remain progressive enhancemen
  assert.ok(mobileWorldWidth && Number(mobileWorldWidth[1])<=120,'mobile world labels may clip');
  assert.ok(!script.includes('world-home-20260921.js'));assert.ok(!script.includes('world-hologram-20260921.js'));assert.ok(!html.includes('holo-stage'));
 });
-test('product page uses provenance-reviewed media and contains no fabricated product drawings or jump strip',()=>{
+test('product page shows app value diagrams and retains provenance-reviewed hardware media',()=>{
  const page=readFileSync('products/index.html','utf8');
- for(const asset of ['uniqdata-home-dev-20260916.png','uniqlab-data-table-20260513.png','bodab-screen-20260922.png','yakson-evt-v3-frame-20260916.png','yakson-evt-v3-preview-20260916.mp4']){assert.ok(page.includes(`/assets/verified/${asset}`),asset);assert.ok(existsSync(`assets/verified/${asset}`),asset);}
+ for(const asset of ['yakson-evt-v3-frame-20260916.png','yakson-evt-v3-preview-20260916.mp4']){assert.ok(page.includes(`/assets/verified/${asset}`),asset);assert.ok(existsSync(`assets/verified/${asset}`),asset);}
+ for(const product of ['uniqdata','uniqlab','bodab'])assert.ok(page.includes(`value-visual-${product}`));
+ for(const asset of ['uniqdata-home-dev-20260916.png','uniqlab-data-table-20260513.png','bodab-screen-20260922.png'])assert.ok(!page.includes(asset));
  assert.ok(!page.includes('uniqlab-screen-20260922.png'));
  assert.ok(!existsSync('assets/verified/uniqlab-screen-20260922.png'));
  assert.ok(!page.includes('/assets/verified/uniqdata-screen-20260922.webp'));
