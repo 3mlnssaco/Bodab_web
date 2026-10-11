@@ -13,6 +13,7 @@ function translate(value) {
 function destination(value) {
   if (value.startsWith('/') && !value.startsWith('//') && !value.startsWith('/assets/')) return route(value);
   if (/^https:\/\/www\.sportique\.biz\//.test(value)) return value.replace('https://www.sportique.biz/', 'https://www.sportique.biz/en/');
+  if (value === 'https://org.sportique.biz/workspace') return `${value}?lang=en`;
   if (/^https:\/\/(uniqdata|uniqlab)\.io\/?$/.test(value)) return `${value.replace(/\/$/, '')}/?lang=en`;
   return value.replace('SportiQue%20협업%20문의', 'SportiQue%20partnership%20inquiry').replace('SportiQue%20제품%20이용%20문의', 'SportiQue%20product%20support');
 }

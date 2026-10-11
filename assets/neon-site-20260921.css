@@ -280,17 +280,24 @@ html:lang(en) .award-evidence::before{content:"SUPPORTING MATERIAL"}
 .header-actions{flex-shrink:0}
 .mobile-menu nav .mobile-only-login{display:none}
 @media(max-width:1100px){
- .site-header{height:76px;padding:0 5vw;grid-template-columns:82px minmax(0,1fr);column-gap:20px}
+ .site-header{height:122px;padding:0 5vw;grid-template-columns:82px minmax(0,1fr);grid-template-rows:76px 46px;column-gap:20px}
  .site-header .original-brand img{width:70px;height:70px}
- .desktop-nav{display:none}
- .header-actions{justify-self:end;gap:16px}
+ .desktop-nav{display:flex;grid-column:1/-1;grid-row:2;justify-content:center;gap:clamp(16px,3vw,28px)}
+ .desktop-nav a{padding:10px 2px 14px}
+ .desktop-nav a[aria-current=page]::after{bottom:5px}
+ .header-actions{grid-column:2;grid-row:1;justify-self:end;gap:16px}
  .institution-login{font-size:11px;padding:10px 12px;gap:10px}
- .mobile-menu{display:block;position:relative}
+ .mobile-menu{display:none;position:relative}
  .mobile-menu summary{display:flex;width:32px;height:40px;flex-direction:column;justify-content:center;gap:6px;cursor:pointer;list-style:none}
  .mobile-menu summary::-webkit-details-marker{display:none}
  .mobile-menu summary>span{display:block;width:22px;height:1px;background:#d9e5f8}
  .mobile-menu nav{position:absolute;top:45px;right:0;min-width:230px;padding:12px;border:1px solid #35415e;background:#0a0e19f5;backdrop-filter:blur(18px)}
  .mobile-menu nav a{display:block;padding:12px;color:#c2cee3;font-size:12px}
+}
+@media(max-width:700px){
+ .site-header{height:76px;grid-template-columns:82px minmax(0,1fr);grid-template-rows:76px}
+ .desktop-nav{display:none}
+ .mobile-menu{display:block}
 }
 @media(max-width:420px){
  .site-header{grid-template-columns:70px minmax(0,1fr);column-gap:12px}
