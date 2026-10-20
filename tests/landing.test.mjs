@@ -115,7 +115,7 @@ test('featured product panels link to their own detail pages with examples and h
  const css=readFileSync('assets/neon-site-20260921.css','utf8');
  assert.ok(css.includes('.product-panel:nth-child(even) .product-panel-copy{order:0}'));
  assert.ok(css.includes('.product-panel-hit{position:absolute;inset:0'));
- const institution=readFileSync('institutions/index.html','utf8');assert.ok(institution.includes('https://org.sportique.biz/onboarding'));assert.ok(institution.includes('https://web.uniqlab.io/'));assert.ok(!/<input[^>]+type="password"/.test(institution));
+ const institution=readFileSync('institutions/index.html','utf8');assert.ok(institution.includes('https://org.sportique.biz/onboarding'));assert.ok(institution.includes('https://org.sportique.biz/workspace'));assert.ok(!institution.includes('href="https://web.uniqlab.io/"'));assert.ok(!/<input[^>]+type="password"/.test(institution));
 });
 test('public details lead to the relevant institution product without promoting SOVI',()=>{
  assert.ok(!readFileSync('index.html','utf8').includes('기관용 제품 상세 보기'));

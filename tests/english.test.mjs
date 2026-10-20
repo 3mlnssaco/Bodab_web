@@ -50,3 +50,17 @@ test('English contact retains Gmail, mail app, copy-address and onboarding actio
   assert.ok(runtime.includes('Email address copied.'));
   assert.ok(runtime.includes('${count} public records'));
 });
+
+test('institution guide explains both login roles without a UniQLab-only entry', () => {
+  const korean = read('', 'institutions/'), english = read('en/', 'institutions/');
+  assert.ok(korean.includes('기관 관리자·직원은 기관 계정으로 관리 업무를 이어갑니다.'));
+  assert.ok(korean.includes('서비스 실무자는 UniQdata 개인 계정으로 로그인해 현재 연결된 업무 플랫폼을 확인합니다.'));
+  assert.ok(korean.includes('href="https://org.sportique.biz/workspace"'));
+  assert.ok(korean.includes('href="https://org.sportique.biz/onboarding"'));
+  assert.ok(!korean.includes('UniQLab 기관 로그인'));
+  assert.ok(!korean.includes('href="https://web.uniqlab.io/"'));
+  assert.ok(english.includes('Institution administrators and staff use their institution account'));
+  assert.ok(english.includes('a personal UniQdata.io account'));
+  assert.ok(english.includes('href="https://org.sportique.biz/workspace?lang=en"'));
+  assert.ok(!english.includes('UniQLab.io institutional login'));
+});
